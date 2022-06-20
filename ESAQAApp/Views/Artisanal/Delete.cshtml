@@ -1,0 +1,144 @@
+﻿@model BAC007.Models.MasterArtisanal
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>MasterArtisanal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfRespondent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfRespondent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RespondentSignature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RespondentSignature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MobileNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobileNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfInterviewee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfInterviewee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IntervieweeSignature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IntervieweeSignature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDelete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletedDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

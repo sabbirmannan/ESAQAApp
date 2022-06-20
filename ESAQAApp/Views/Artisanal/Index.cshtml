@@ -1,0 +1,201 @@
+﻿@using PagedList;
+@using PagedList.Mvc;
+@model PagedList.PagedList<BAC007.Models.MasterArtisanal>
+
+@{
+    ViewBag.Title = "Artisanal Data List";
+    int counter = ViewBag.StartSerailNo;
+}
+
+<section class="panel panel-success">
+    <header class="panel-heading">
+        <i class="fa fa-list"></i> Artisanal Data List
+
+        <a class="btn btn-info pull-right" href="@Url.Action("Create", "Artisanal")" style="margin-top: -8px !important;">
+            <i class="fa fa-table"></i> @Resources.Resources.AddNew
+        </a>
+    </header>
+
+    <div class="row wrapper">
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading accordion-toggle pointer" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                    <i class="fa fa-search"></i> Searching Data
+                    <span class="pull-right">
+                        <i class="fa fa-angle-down text"></i>
+                        <i class="fa fa-angle-up text-active"></i>
+                    </span>
+                </div>
+                <div id="collapseOne" class="panel-collapse in">
+                    <div class="panel-body text-sm">
+                        <div class="col-sm-12">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.Label("DataArea", "Data Area", new { @class = "control-label" })
+                                    <select id="ddlDataArea" style="width: 100%;">
+                                        <option value=""></option>
+                                        <option value="1">Project Area</option>
+                                        <option value="2">Control Area</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.Label("CaseNo", "Case No", new { @class = "control-label" })
+                                    <input id="txtCaseNo" type="text" class="form-control" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                    @Html.Label("FormDate", "Date", new { @class = "control-label" })
+                                    <input id="txtFormDate" type="text" class="form-control datepicker-input" />
+                                </div>
+                            </div>
+
+                            <div class="col-md-2" style="margin-top: 22px;">
+                                <button id="btnSearch" class="btn btn-info btn-block" type="button">
+                                    Search
+                                </button>
+                            </div>
+
+                            <div class="col-md-2" style="margin-top: 22px;">
+                                <button id="btnCancel" class="btn btn-warning btn-block" type="button">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table">
+            <tr>
+                <th>Sl.</th>
+                <th>
+                    Area
+                </th>
+                <th>
+                    Case No
+                </th>
+                <th>
+                    Form Date
+                </th>
+                <th>
+                    Name of Respondent
+                </th>
+                <th>
+                    Mobile
+                </th>
+                <th>
+                    Name of Interviewee
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@counter</td>
+                    <td>
+                        @if (item.IsProjectArea == true)
+                        {
+                            <span>Project Area</span>
+                        }
+
+                        @if (item.IsControlArea == true)
+                        {
+                            <span>Control Area</span>
+                        }
+
+                        @if (item.IsProjectArea == null && item.IsControlArea == null)
+                        {
+                            <span>-</span>
+                        }
+
+                        @if (item.IsProjectArea == false && item.IsControlArea == false)
+                        {
+                            <span>-</span>
+                        }
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CaseNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.FormDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameOfRespondent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.MobileNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NameOfInterviewee)
+                    </td>
+                    <td>
+                        <a class="btn btn-info" href="@Url.Action("Edit", new { id = item.MasterDataId })">
+                            <i class="fa fa-edit fa-1x"></i>
+                        </a>
+                        <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.MasterDataId })">
+                            <i class="fa fa-times fa-1x"></i>
+                        </a>
+                    </td>
+                </tr>
+
+                counter++;
+            }
+        </table>
+    </div>
+
+    <footer class="panel-footer">
+        <div class="row">
+            <div class="col-sm-12 text-center">
+                @Html.PagedListPager(Model, page => Url.Action("Index", new { page, pageSize = Model.PageSize }))
+            </div>
+        </div>
+    </footer>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#ddlDataArea").select2({
+            placeholder: 'Select an option',
+            allowClear: true
+        }).on("change", function (e) {
+            var value = $("#ddlDataArea option:selected").val();
+        });
+
+        $("#btnSearch").click(function () {
+            var DataArea = $("#ddlDataArea option:selected").val();
+            DataArea = (DataArea == "") ? "NULL" : DataArea;
+            var CaseNo = $("#txtCaseNo").val();
+            CaseNo = (CaseNo == "") ? "NULL" : CaseNo;
+            var FormDate = $("#txtFormDate").val();
+            FormDate = (FormDate == "") ? "NULL" : FormDate;
+
+            var SearchingText = 'da**' + DataArea + '****cn**' + CaseNo + '****fd**' + FormDate;
+            Searching(SearchingText);
+        });
+
+        $("#btnCancel").click(function () {
+            $("#ddlDataArea").val('');
+            $("#txtCaseNo").val('');
+            $("#txtFormDate").val('');
+        });
+    });
+
+    function Searching(SearchingText) {
+        var url = "@Html.Raw(@Url.Action("Search", new { @param = "-111" }))";
+        url = url.replace("-111", SearchingText);
+
+        if (!window.location.hash) {
+            console.log(url);
+            window.location.replace(url)
+        }
+    }
+</script>

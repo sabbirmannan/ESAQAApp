@@ -1,0 +1,56 @@
+﻿@using Resources;
+@model BAC007.Models.LoginViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = Resources.Signin;
+}
+
+<section class="panel panel-default bg-white m-t-lg">
+    <header class="panel-heading text-center">
+        <strong>
+            @Resources.Signin
+        </strong>
+    </header>
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "panel-body wrapper-lg", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control input-lg", @placeholder = Resources.placeholder_userid })
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = Resources.placeholder_password })
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+        <div class="checkbox">
+            <label>
+                @Html.CheckBoxFor(m => m.RememberMe)
+                @Html.LabelFor(m => m.RememberMe, new { @style = "margin-left: -20px !important; width: 150px;" })
+            </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">
+            @Resources.Signin
+        </button>        
+        <a href="#" class="pull-right m-t-xs">
+            <small>
+                @Resources.Forgotpassword
+            </small>
+        </a>
+        <br />
+        <div class="line line-dashed">
+        </div>
+        <p class="text-muted text-center">
+            <small>
+                @Resources.DoNotHaveAnAccount
+            </small>
+        </p>
+        <a href="@Url.Action("Register", "Account")" class="btn btn-default btn-block">
+            @Resources.CreateAnAccount
+        </a>
+    }
+</section>

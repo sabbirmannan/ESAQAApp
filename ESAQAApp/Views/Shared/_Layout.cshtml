@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html>
+<html class="app js no-touch no-android no-chrome firefox no-iemobile no-ie no-ie10 no-ie11 no-ios no-ios7 ipad" lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/Content/images/cegis_favicon_icon.ico" type="image/x-icon" />
+    <meta name="description" content="cegis, wqms, water, quality, monitoring, system, water quality monitoring system, center for environmental and geographical information services, web app, web application" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    <asp:placeholder runat="server">
+        @Styles.Render("~/bundles/css")
+        <!-- App Scripts Start -->
+        @Scripts.Render("~/bundles/app")
+        @Scripts.Render("~/bundles/charts")
+        @Scripts.Render("~/bundles/calendar")
+        @Scripts.Render("~/bundles/sortable")
+        @Scripts.Render("~/bundles/plugin")
+        @RenderSection("scripts", required: false)
+    </asp:placeholder>
+
+    <link href="~/Content/css/app.css" rel="stylesheet" />
+    <!-- App Scripts End -->
+</head>
+<body class="">
+    <section class="vbox">
+        <header id="header" class="bg-dark dk header navbar navbar-fixed-top-xs">
+            @Html.Partial("_AppLogo")
+            @*<ul class="nav navbar-nav hidden-xs">
+                    @Html.Partial("_Activity")
+                </ul>*@
+
+            <div class="col-md-7 visible-md visible-sm" style="margin: 0; padding: 0; text-align: end;">
+                <div id="AppHeaderText" style="margin: 0; padding-top: 15px; letter-spacing: 1px; font-weight: bolder; color: #ffffff;
+                 font-size: 2em; font-family: 'Trebuchet MS';">খানা জরিপ প্রশ্নপত্র</div>
+            </div>
+
+            <div class="col-md-7 hidden-xs hidden-md hidden-sm hidden-tablet" style="margin: 0; padding: 0; text-align: end;">
+                <div id="AppHeaderText" style="margin: 0; padding-top: 15px; letter-spacing: 1px; font-weight: bolder; color: #ffffff;
+                 font-size: 2.5em; font-family: 'Trebuchet MS';">খানা জরিপ প্রশ্নপত্র (বেইজলাইন ২০১৯-২০২০)</div>
+            </div>
+            
+
+            <ul class="nav navbar-nav navbar-right m-n hidden-xs nav-user" style="height: 80px;">
+                @Html.Partial("_Notification")
+                @*<li class="dropdown hidden-xs">
+                            <a href="#" class="dropdown-toggle dker" data-toggle="dropdown"><i class="fa fa-fw fa-search"></i></a>
+                            <section class="dropdown-menu aside-xl animated fadeInUp">
+                                <section class="panel bg-white">
+                                    <form role="search">
+                                        <div class="form-group wrapper m-b-none">
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" placeholder="Search">
+                                                <span class="input-group-btn"> <button type="submit" class="btn btn-info btn-icon"><i class="fa fa-search"></i></button> </span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </section>
+                            </section>
+                        </li>
+                    @Html.Partial("_LoginPartial")*@
+            </ul>
+        </header>
+        <section>
+            <section class="hbox stretch">
+                <!-- .aside -->
+                <aside class="bg-light lter b-r aside-md hidden-print hidden-xs" id="nav">
+                    <section class="vbox">
+                        <header class="header bg-primary lter text-center clearfix">
+                            @Html.Partial("_Language")
+                        </header>
+                        <section class="w-f scrollable" style="margin-top: -30px;">
+                            @Html.Partial("_LeftMenu")
+                        </section>
+                        <footer class="footer lt hidden-xs b-t b-light">
+                            @Html.Partial("_Footer")
+                        </footer>
+                    </section>
+                </aside>
+                <!-- /.aside -->
+                <section id="content">
+                    <section class="vbox">
+                        <section class="scrollable padder">
+                            @Html.Partial("_Breadcrumb")
+                            @RenderBody()
+                        </section>
+                    </section>
+                    <a href="#" class="hide nav-off-screen-block" data-toggle="class:nav-off-screen, open" data-target="#nav,html"></a>
+                </section>
+                <aside class="bg-light lter b-l aside-md hide" id="notes">
+                    <div class="wrapper">Notification</div>
+                </aside>
+            </section>
+        </section>
+    </section>
+
+    @Styles.Render("~/bundles/intro")
+    @Scripts.Render("~/bundles/intro-js")
+    @Scripts.Render("~/bundles/clientbusiness")
+
+    @if (TempData["Message"] != null && TempData["Message"].ToString() != "")
+    {
+        var Message = TempData["Message"].ToString();
+        var Type = TempData["Message"].ToString().Contains("Success:") ? "Success" : TempData["Message"].ToString().Contains("Warning:") ? "Warning" : TempData["Message"].ToString().Contains("Info:") ? "Info" : TempData["Message"].ToString().Contains("Error:") ? "Danger" : "Error";
+
+        <script type="text/javascript">
+
+            $(document).ready(function () {
+                Notification('@Type', '@Message.Replace("Success: ", "").Replace("Error: ", "").Replace("Danger: ", "")', '@Type.ToLower()');
+            });
+        </script>
+    }
+    <input id="hidNitification" type="hidden" />
+    <script type="text/javascript">
+        function test() {
+            $(function () {
+                $('#AppHeaderText').text('');
+
+                var string = "খানা জরিপ প্রশ্নপত্র (বেইজলাইন ২০১৯-২০২০)";
+                var q = jQuery.map(string.split(''), function (letter) {
+                    return $('<span>' + letter + '</span>');
+                });
+
+                var dest = $('#AppHeaderText');
+
+                var c = 0;
+                var i = setInterval(function () {
+                    q[c].appendTo(dest).hide().fadeIn(1000);
+                    c += 1;
+                    if (c >= q.length) clearInterval(i);
+                }, 1000);
+            });
+        }
+
+        $(document).ready(function () {
+            //test();
+            //setInterval('test()', 50000);
+        });
+    </script>
+</body>
+</html>

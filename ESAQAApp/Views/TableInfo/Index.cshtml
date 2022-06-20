@@ -1,0 +1,82 @@
+﻿@model IEnumerable<BAC007.Models.TableInfo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FormOrder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FormTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TableTitle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LookupTableName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataSaveTableName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsIndividualTable)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsResponseCols)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsFiscalYearFlat)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsFiscalYearTwoCols)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormOrder)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FormTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TableTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LookupTableName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataSaveTableName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsIndividualTable)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsResponseCols)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFiscalYearFlat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsFiscalYearTwoCols)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.TableInfoId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.TableInfoId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.TableInfoId })
+            </td>
+        </tr>
+    }
+
+</table>

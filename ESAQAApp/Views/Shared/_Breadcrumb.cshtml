@@ -1,0 +1,52 @@
+﻿@{
+    var currentController = ViewContext.RouteData.Values["controller"].ToString();
+    var controllerName = System.Text.RegularExpressions.Regex.Replace(currentController, "([a-z?])[_ ]?([A-Z])", "$1 $2");
+    var currentAction = ViewContext.RouteData.Values["action"].ToString();
+    var actionName = System.Text.RegularExpressions.Regex.Replace(currentAction, "([a-z?])[_ ]?([A-Z])", "$1 $2");
+}
+
+@if (ViewContext.RouteData.Values["controller"].ToString() == "Home")
+{
+    <ul class="header breadcrumb no-radius b-b b-light pull-in ulli">
+        <li>
+            <a href="@Url.Action(currentAction, currentController)">
+                <i class="fa fa-home"></i>
+                @Html.Label(currentController, "Dashboard", new { @class = "pointer" })
+            </a>
+        </li>
+        @if (currentAction != "Index")
+        {
+            <li>
+                <a href="@Url.Action(currentAction, currentController)">
+                    @Html.Label(currentAction, currentAction, new { @class = "active pointer" })
+                </a>
+            </li>
+        }
+    </ul>
+}
+
+@if (ViewContext.RouteData.Values["controller"].ToString() != "Home")
+{
+    <ul class="header breadcrumb no-border no-radius b-b b-light pull-in ulli">
+        <li>
+            <a href="@Url.Action("Index", "Home")">
+                <i class="fa fa-home"></i>
+                @Html.Label("", "Dashboard", new { @class = "pointer" })
+            </a>
+        </li>
+        <li>
+            <a href="@Url.Action("Index", currentController)">
+                @Html.Label(currentController, controllerName, new { @class = "pointer" })
+            </a>
+        </li>
+
+        @if (currentAction != "Index")
+        {
+            <li>
+                <a href="@Url.Action(currentAction, currentController)">
+                    @Html.Label(currentAction, actionName, new { @class = "active pointer" })
+                </a>
+            </li>
+        }
+    </ul>
+}

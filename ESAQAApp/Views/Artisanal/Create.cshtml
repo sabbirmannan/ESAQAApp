@@ -1,0 +1,1734 @@
+﻿@using Resources
+@using BAC007.Models
+@model BAC007.Models.MasterArtisanal
+
+@{
+    ViewBag.Title = "Artisanal | New Data Entry";
+}
+
+<section class="panel panel-default">
+    <div class="row wrapper">
+        <div class="col-sm-8 m-b-xs">
+            <h3 class="bold" style="margin: 0 !important;"><b>Artisanal Fisher</b> - Household Survey Instruments for Conducting Baseline Survey</h3>
+        </div>
+        <div class="col-sm-4">
+            <div class="btn-group pull-right right">
+                <a class="btn btn-default" href="@Url.Action("Index", "Artisanal")">
+                    <i class="fa fa-table"></i> @Resources.GoToList
+                </a>
+            </div>
+        </div>
+    </div>
+    <header class="panel-heading bg-light" style="padding: 10px 15px 28px;">
+        <ul class="nav nav-tabs pull-left">
+            <li class="active">
+                <a href="#Master" data-toggle="tab"><i class="fa fa-pencil"></i> Master</a>
+            </li>
+            <li class="">
+                <a href="#TabTwo" data-toggle="tab"><i class="fa fa-pencil"></i> Data</a>
+            </li>
+        </ul>
+    </header>
+    <div class="panel-body">
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="Master">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            Household Survey Instruments for Conducting Baseline Survey
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <input id="MasterDataId" type="hidden" value="" />
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-2">
+                                        <div class="checkbox m-l-xs m-r-xs fa-2x">
+                                            <label>
+                                                <input id="chkProjectArea" style="width: 25px; height: 25px;" type="checkbox" value="PA">
+                                                <span style="padding-left: 15px;"> Project Area </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-2">
+                                        <div class="checkbox m-l-xs m-r-xs fa-2x">
+                                            <label>
+                                                <input id="chkControlArea" style="width: 25px; height: 25px;" type="checkbox" value="CA">
+                                                <span style="padding-left: 15px;"> Control Area </span>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                    <script type="text/javascript">
+                                        $(document).ready(function () {
+                                            $("#chkProjectArea").change(function () {
+                                                if ($(this).is(':checked')) {
+                                                    $("#chkControlArea").prop('checked', false);
+                                                }
+                                            });
+
+                                            $("#chkControlArea").change(function () {
+                                                if ($(this).is(':checked')) {
+                                                    $("#chkProjectArea").prop('checked', false);
+                                                }
+                                            });
+                                        });
+                                    </script>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <hr style="margin-top: 0px !important;" />
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.CaseNo, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.CaseNo, new { htmlAttributes = new { @class = "form-control text-center" } })
+                                        @Html.ValidationMessageFor(model => model.CaseNo, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-group col-md-6 pull-right">
+                                        @Html.LabelFor(model => model.FormDate, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.FormDate, new { htmlAttributes = new { @class = "form-control datepicker-input text-center" } })
+                                        @Html.ValidationMessageFor(model => model.FormDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.NameOfRespondent, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.NameOfRespondent, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NameOfRespondent, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-group col-md-6 pull-right">
+                                        @Html.LabelFor(model => model.RespondentSignature, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.RespondentSignature, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                                        @Html.ValidationMessageFor(model => model.RespondentSignature, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.MobileNo, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.MobileNo, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @maxlength = "11", } })
+                                        @Html.ValidationMessageFor(model => model.MobileNo, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.NameOfInterviewee, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.NameOfInterviewee, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.NameOfInterviewee, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-group col-md-6 pull-right">
+                                        @Html.LabelFor(model => model.IntervieweeSignature, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.IntervieweeSignature, new { htmlAttributes = new { @class = "form-control", @disabled = "disabled" } })
+                                        @Html.ValidationMessageFor(model => model.IntervieweeSignature, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <hr />
+                                    <div class="form-group col-md-6">
+                                        <button id="btnSaveMasterInfo" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                        <button id="btnClearMasterInfo" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="TabTwo">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div id="FormHeading" class="panel-heading">
+                            Form Heading
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6" style="padding-left: 0 !important;">
+                                        @Html.Label("Choose a Form", htmlAttributes: new { @class = "control-label" })
+                                        <select id="ArtisanalForm" name="ArtisanalForm" class="form-control">
+                                            @{ List<TableInfo> _tiList = ViewBag.TableInfo;
+
+                                                <option value=""></option>
+                                                if (_tiList.Count > 0)
+                                                {
+                                                    foreach (TableInfo ti in _tiList)
+                                                    {
+                                                        <option value="@ti.TableInfoId" data-row-id="@ti.TableInfoId" data-table-title="@ti.TableTitle"
+                                                                data-lookup-table="@ti.LookupTableName" data-save-table="@ti.DataSaveTableName"
+                                                                data-individual="@ti.IsIndividualTable" data-response="@ti.IsResponseCols"
+                                                                data-fiscal-year-flat="@ti.IsFiscalYearFlat"
+                                                                data-fiscal-year-two-cols="@ti.IsFiscalYearTwoCols">
+                                                            @ti.TableTitle
+                                                        </option>
+                                                    }
+                                                }
+                                            }
+                                        </select>
+                                    </div>
+
+                                    <script type="text/javascript">
+                                        $(document).ready(function () {
+											$("#ArtisanalForm").change(function () {
+												$(".div-table").hide();
+
+                                                var this_val = $(this).val();
+
+												var data_row_id = $("#ArtisanalForm option:selected").attr('data-row-id');
+                                                var table_title = $("#ArtisanalForm option:selected").attr('data-table-title');
+                                                var lookup_table = $("#ArtisanalForm option:selected").attr('data-lookup-table');
+                                                var save_table = $("#ArtisanalForm option:selected").attr('data-save-table');
+                                                var individual = $("#ArtisanalForm option:selected").attr('data-individual');
+                                                var response = $("#ArtisanalForm option:selected").attr('data-response');
+                                                var fiscal_year_flat = $("#ArtisanalForm option:selected").attr('data-fiscal-year-flat');
+                                                var fiscal_year_two_cols = $("#ArtisanalForm option:selected").attr('data-fiscal-year-two-cols');
+
+												$("#FormHeading").text(table_title);
+
+                                                //console.log(this_val);
+                                                console.log('data-row-id: ' + data_row_id);
+                                                console.log('data-lookup-table: ' + lookup_table);
+                                                console.log('data-save-table: ' + save_table);
+                                                console.log('data-individual: ' + individual);
+                                                console.log('data-response: ' + response);
+                                                console.log('data-fiscal-year-flat: ' + fiscal_year_flat);
+                                                console.log('data-fiscal-year-two-cols: ' + fiscal_year_two_cols);
+
+                                                $("#hdnTableInfoId").val(this_val);
+                                                $("#hdnLookupTableName").val(lookup_table);
+                                                $("#hdnDataSaveTableName").val(save_table);
+
+                                                //#region Response
+                                                if (response == 'True') {
+                                                    $("#tableResponse").show();
+                                                    $("#ddlParameterOptionsResponse, #txtResponseValue").val('');
+                                                    $("#tbodyTableResponse").html('');
+
+                                                    PopulateParameterDdl(this_val, lookup_table, 'ddlParameterOptionsResponse');
+                                                    GetReponseDataTable();
+                                                } else {
+                                                    $("#tableResponse").hide();
+                                                    $("#ddlParameterOptionsResponse, #txtResponseValue").val('');
+                                                    $("#tbodyTableResponse").html('');
+                                                }
+                                                //#endregion
+
+                                                //#region Fiscal Year Flat
+                                                if (fiscal_year_flat == 'True') {
+                                                    $("#tableFiscalYearFlat").show();
+                                                    $("#ddlParameterOptionsFYF, #txtFyValue_1, #txtFyValue_2, #txtFyValue_3, #txtFyValue_4").val('');
+                                                    $("#tbodyTableFiscalYearFlat").html('');
+
+                                                    PopulateParameterDdl(this_val, lookup_table, 'ddlParameterOptionsFYF');
+                                                    GetFiscalYearFlatTable();
+                                                } else {
+                                                    $("#tableFiscalYearFlat").hide();
+                                                    $("#ddlParameterOptionsFYF, #txtFyValue_1, #txtFyValue_2, #txtFyValue_3, #txtFyValue_4").val('');
+                                                    $("#tbodyTableFiscalYearFlat").html('');
+                                                }
+                                                //#endregion
+
+                                                //#region Fiscal Year Two Cols
+                                                if (fiscal_year_two_cols == 'True') {
+                                                    $("#tableFiscalYearTwoCols").show();
+                                                    $("#ddlParameterOptionsFYTC, #FyValue_1_Qty, #FyValue_1_Value, #FyValue_2_Qty, #FyValue_2_Value, #FyValue_3_Qty, #FyValue_3_Value, #FyValue_4_Qty, #FyValue_4_Value").val('');
+                                                    $("#tbodyTableFiscalYearTwoCols").html('');
+
+                                                    PopulateParameterDdl(this_val, lookup_table, 'ddlParameterOptionsFYTC');
+                                                    GetFiscalYearTwoColsTable();
+                                                } else {
+                                                    $("#tableFiscalYearTwoCols").hide();
+                                                    $("#ddlParameterOptionsFYTC, #FyValue_1_Qty, #FyValue_1_Value, #FyValue_2_Qty, #FyValue_2_Value, #FyValue_3_Qty, #FyValue_3_Value, #FyValue_4_Qty, #FyValue_4_Value").val('');
+                                                    $("#tbodyTableFiscalYearTwoCols").html('');
+                                                }
+                                                //#endregion
+
+                                                //#region Individual
+                                                if (individual == 'True') {
+                                                    if (data_row_id == 2 || data_row_id == 39) {
+                                                        $("#tableDemographicFeaturesFamily").show();
+                                                        $("#MemberName, #RelationWithHHHId, #MemberAge, #GenderId, #ReligionId, #EducationId, #OccupationId").val('');
+                                                        $("#tbodyTableDemoFeaturesFamily").html('');
+
+                                                        GetDemoFeaturesFamilyTable();
+                                                    }
+
+                                                    if (data_row_id == 4 || data_row_id == 41) {
+                                                        $("#tableOwnershipOfHouse").show();
+                                                        $("#ParticularsOfHouseId, #TypeOfHouseId, #AreaInSquareFeet, #BuiltYear, #PresentMarketValue").val('');
+                                                        $("#tbodyTableOwnershipOfHouse").html('');
+
+                                                        PopulateParameterDdl(this_val, lookup_table, 'ParticularsOfHouseId');
+                                                        GetOwnershipOfHouseTable();
+                                                    }
+
+                                                    if (data_row_id == 12 || data_row_id == 48) {
+                                                        $("#tableExtentOfCreditReceived").show();
+                                                        $("#ddlParameterOptionsECR, #LookupDataId, #TotalCreditReceived, #YearReceived, #UsedForDataId, #AmountRepaid, #ConstraintFacedDataId").val('');
+                                                        $("#tbodyTableExtentOfCreditReceived").html('');
+
+                                                        PopulateParameterDdl(this_val, lookup_table, 'ddlParameterOptionsECR');
+                                                        GetExtentOfCreditReceivedTable();
+                                                    }
+
+                                                    if (data_row_id == 20 || data_row_id == 56) {
+                                                        $("#tableInfoCommonDiseases").show();
+                                                        $("#ddlParameterOptionsICD, #WhoSuffered, #DaysSuffered, #TreatedByDataId").val('');
+                                                        $("#tbodyTableInfoCommonDiseases").html('');
+
+                                                        PopulateParameterDdl(this_val, lookup_table, 'ddlParameterOptionsICD');
+                                                        GetInfoCommonDiseasesTable();
+													}
+
+                                                    if (data_row_id == 34) {
+                                                        $("#tableTargetedBeneficiaries").show();
+                                                        $("#ddlParameterOptionsFrequency, #DateBorrowed, #AmountBorrowed, #UsedForDataId, #AmountRefunded, #AmountDue").val('');
+                                                        $("#tbodyTableTargetedBeneficiaries").html('');
+
+                                                        PopulateParameterDdl(this_val, lookup_table, 'ddlParameterOptionsFrequency');
+                                                        GetTargetedBeneficiariesTable();
+                                                    }
+                                                }
+                                                //#endregion
+                                            });
+                                        });
+
+                                        function PopulateParameterDdl(id, table_name, ddl_id) {
+                                            var url = '@Url.Action("PopulateParameterDdl", "Artisanal")';
+                                            jQuery.ajax({
+                                                type: "POST",
+                                                url: url,
+                                                data: { id: id, table_name: table_name },
+                                                dataType: "json",
+                                                success: function (data, status, jqXHR) {
+                                                    if (data.length > 0) {
+                                                        //console.log(data);
+                                                        var options = '';
+
+                                                        $.each(data, function (i, item) {
+                                                            options += '<option value="' + item.Value + '">' + item.Text + '</option>';
+                                                        });
+
+                                                        $("#" + ddl_id).html(options);
+                                                    }
+                                                }, error: function (jqXhr, exception) {
+                                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                                                    Notification('Error', errorMsg, 'danger');
+                                                }
+                                            });
+                                        }
+                                    </script>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <input id="hdnTableInfoId" type="hidden" />
+                                    <input id="hdnLookupTableName" type="hidden" />
+                                    <input id="hdnDataSaveTableName" type="hidden" />
+
+                                    <div id="tableResponse" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Description of the Parameters</th>
+                                                    <th class="text-center">Response</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <select id="ddlParameterOptionsResponse" class="form-control" style="width: 100%;"></select>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="txtResponseValue" type="text" class="form-control" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveResponse" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearResponse" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableResponse"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+                                            $(document).ready(function () {
+                                                $("#btnSaveResponse").click(function () {
+                                                    var MasterDataId = $("#MasterDataId").val();
+                                                    var res_option = $("#ddlParameterOptionsResponse option:selected").val();
+                                                    var res_value = $("#txtResponseValue").val();
+
+                                                    var form_id = $("#hdnTableInfoId").val();
+                                                    var lookup_table = $("#hdnLookupTableName").val();
+                                                    var save_table = $("#hdnDataSaveTableName").val();
+
+                                                    if (MasterDataId == '' && MasterDataId != 0) {
+                                                        Notification('Required', 'Please enter master info first!!', 'danger');
+                                                        return;
+                                                    }
+
+                                                    if (res_option == '') {
+                                                        Notification('Required', 'Please select an option!', 'danger');
+                                                        $("#ddlParameterOptionsResponse").focus();
+                                                        return;
+                                                    }
+
+                                                    if (res_value == '') {
+                                                        Notification('Required', 'Please enter response!', 'danger');
+                                                        $("#txtResponseValue").focus();
+                                                        return;
+                                                    }
+
+                                                    var res_data = {
+                                                        "MasterDataId": MasterDataId,
+                                                        "LookupDataId": res_option,
+                                                        "DataValue": res_value
+                                                    };
+
+                                                    var url = '@Url.Action("SaveReponseDataTable", "Artisanal")';
+                                                    $.ajax({
+                                                        type: "POST",
+                                                        url: url,
+                                                        data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+                                                        contentType: "application/json; charset=utf-8",
+                                                        dataType: "json",
+                                                        success: function (data) {
+                                                            if (data.status == 'success') {
+                                                                Notification('Success', data.message, 'success');
+                                                                $("#ddlParameterOptionsResponse, #txtResponseValue").val('');
+
+                                                                GetReponseDataTable();
+                                                                $("#ddlParameterOptionsResponse").focus();
+                                                            } else {
+                                                                if (data.exception != "") {
+                                                                    Notification('Error', data.exception, 'danger');
+                                                                }
+                                                            }
+                                                        }, error: function (jqXhr, exception) {
+                                                            var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                                                            Notification('Error', errorMsg, 'danger');
+                                                        }
+                                                    });
+                                                });
+
+                                                $("#btnClearResponse").click(function () {
+                                                    $("#ddlParameterOptionsResponse, #txtResponseValue").val('');
+                                                });
+                                            });
+
+                                            function GetReponseDataTable() {
+                                                var MasterDataId = $("#MasterDataId").val();
+                                                var form_id = $("#hdnTableInfoId").val();
+                                                var lookup_table = $("#hdnLookupTableName").val();
+                                                var save_table = $("#hdnDataSaveTableName").val();
+
+                                                var url = '@Url.Action("GetReponseDataTable", "Artisanal")';
+                                                jQuery.ajax({
+                                                    type: "GET",
+                                                    url: url,
+                                                    data: { table_name: save_table, lookup_table: lookup_table, master_id: MasterDataId},
+                                                    dataType: "json",
+                                                    success: function (data, status, jqXHR) {
+                                                        if (data.length > 0) {
+                                                            //console.log(data);
+                                                            var rows = '';
+
+                                                            var count = 0;
+                                                            $.each(data, function (i, item) {
+                                                                ++count;
+
+                                                                rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.ItemName + '</td><td>' + item.DataValue + '</td><td class="text-center"><button onclick="javascript:DeleteResponseDataInfo(' + item.RowId + ', \'' + save_table + '\'); GetReponseDataTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+                                                            });
+
+                                                            $("#tbodyTableResponse").html(rows);
+                                                        } else {
+                                                            $("#tbodyTableResponse").html('<tr><td colspan="4" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+                                                        }
+                                                    }, error: function (jqXHR, exception) {
+                                                        var errorMsg = AjaxErrorHandle(jqXHR, exception);
+                                                        $("#tbodyTableResponse").html('<tr><td colspan="4" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+                                                    }
+                                                });
+                                            }
+
+                                            function DeleteResponseDataInfo(row_id, table_name) {
+                                                var url = '@Url.Action("DeleteResponseDataInfo", "Artisanal")';
+                                                jQuery.ajax({
+                                                    type: "POST",
+                                                    url: url,
+                                                    data: { row_id: row_id, table_name: table_name },
+                                                    dataType: "json",
+                                                    success: function (data, status, jqXHR) {
+                                                        if (data.status == 'success') {
+                                                            Notification('Success', data.message, 'success');
+                                                            GetReponseDataTable();
+                                                        } else {
+                                                            if (data.exception != "") {
+                                                                Notification('Error', data.exception, 'danger');
+                                                            }
+                                                        }
+                                                    }, error: function (jqXhr, exception) {
+                                                        var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                                                        Notification('Error', errorMsg, 'danger');
+                                                    }
+                                                });
+                                            }
+                                        </script>
+                                    </div>
+
+                                    <div id="tableFiscalYearFlat" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Description of the Parameters</th>
+                                                    <th class="text-center">2017-18</th>
+                                                    <th class="text-center">2018-19</th>
+                                                    <th class="text-center">2019-20</th>
+                                                    <th class="text-center">2020-21</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <select id="ddlParameterOptionsFYF" class="form-control" style="width: 100%;"></select>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="txtFyValue_1" type="text" class="form-control" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="txtFyValue_2" type="text" class="form-control" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="txtFyValue_3" type="text" class="form-control" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="txtFyValue_4" type="text" class="form-control" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveFiscalYearFlat" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearFiscalYearFlat" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableFiscalYearFlat"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+		                                    $(document).ready(function () {
+			                                    $("#btnSaveFiscalYearFlat").click(function () {
+				                                    var MasterDataId = $("#MasterDataId").val();
+                                                    var res_option = $("#ddlParameterOptionsFYF option:selected").val();
+				                                    var fy_value_1 = $("#txtFyValue_1").val();
+				                                    var fy_value_2 = $("#txtFyValue_2").val();
+				                                    var fy_value_3 = $("#txtFyValue_3").val();
+				                                    var fy_value_4 = $("#txtFyValue_4").val();
+
+				                                    var form_id = $("#hdnTableInfoId").val();
+				                                    var lookup_table = $("#hdnLookupTableName").val();
+				                                    var save_table = $("#hdnDataSaveTableName").val();
+
+				                                    if (MasterDataId == '' && MasterDataId != 0) {
+					                                    Notification('Required', 'Please enter master info first!!', 'danger');
+					                                    return;
+				                                    }
+
+				                                    if (res_option == '') {
+					                                    Notification('Required', 'Please select an option!', 'danger');
+                                                        $("#ddlParameterOptionsFYF").focus();
+					                                    return;
+				                                    }
+
+				                                    var res_data = {
+					                                    "MasterDataId": MasterDataId,
+					                                    "LookupDataId": res_option,
+					                                    "FyValue_1": fy_value_1,
+					                                    "FyValue_2": fy_value_2,
+					                                    "FyValue_3": fy_value_3,
+					                                    "FyValue_4": fy_value_4
+				                                    };
+
+				                                    var url = '@Url.Action("SaveFiscalYearFlatTable", "Artisanal")';
+				                                    $.ajax({
+					                                    type: "POST",
+					                                    url: url,
+					                                    data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+					                                    contentType: "application/json; charset=utf-8",
+					                                    dataType: "json",
+					                                    success: function (data) {
+						                                    if (data.status == 'success') {
+							                                    Notification('Success', data.message, 'success');
+                                                                $("#ddlParameterOptionsFYF, #txtFyValue_1, #txtFyValue_2, #txtFyValue_3, #txtFyValue_4").val('');
+
+							                                    GetFiscalYearFlatTable();
+                                                                $("#ddlParameterOptionsFYF").focus();
+						                                    } else {
+							                                    if (data.exception != "") {
+								                                    Notification('Error', data.exception, 'danger');
+							                                    }
+						                                    }
+					                                    }, error: function (jqXhr, exception) {
+						                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+						                                    Notification('Error', errorMsg, 'danger');
+					                                    }
+				                                    });
+			                                    });
+
+			                                    $("#btnClearFiscalYearFlat").click(function () {
+                                                    $("#ddlParameterOptionsFYF, #txtFyValue_1, #txtFyValue_2, #txtFyValue_3, #txtFyValue_4").val('');
+			                                    });
+		                                    });
+
+		                                    function GetFiscalYearFlatTable() {
+			                                    var MasterDataId = $("#MasterDataId").val();
+			                                    var form_id = $("#hdnTableInfoId").val();
+			                                    var lookup_table = $("#hdnLookupTableName").val();
+			                                    var save_table = $("#hdnDataSaveTableName").val();
+
+			                                    var url = '@Url.Action("GetFiscalYearFlatTable", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type: "GET",
+				                                    url: url,
+                                                    data: { table_name: save_table, lookup_table: lookup_table, master_id: MasterDataId},
+				                                    dataType: "json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.length > 0) {
+						                                    //console.log(data);
+						                                    var rows = '';
+
+						                                    var count = 0;
+						                                    $.each(data, function (i, item) {
+							                                    ++count;
+
+							                                    rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.ItemName + '</td><td>' + item.FyValue_1 + '</td><td>' + item.FyValue_2 + '</td><td>' + item.FyValue_3 + '</td><td>' + item.FyValue_4 + '</td><td class="text-center"><button onclick="javascript:DeleteFiscalYearFlatInfo(' + item.RowId + ', \'' + save_table + '\'); GetFiscalYearFlatTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+						                                    });
+
+						                                    $("#tbodyTableFiscalYearFlat").html(rows);
+					                                    } else {
+						                                    $("#tbodyTableFiscalYearFlat").html('<tr><td colspan="7" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+					                                    }
+				                                    }, error: function (jqXHR, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXHR, exception);
+					                                    $("#tbodyTableFiscalYearFlat").html('<tr><td colspan="7" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+				                                    }
+			                                    });
+		                                    }
+
+		                                    function DeleteFiscalYearFlatInfo(row_id, table_name) {
+			                                    var url = '@Url.Action("DeleteFiscalYearFlatInfo", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type: "POST",
+				                                    url: url,
+				                                    data: { row_id: row_id, table_name: table_name },
+				                                    dataType: "json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.status == 'success') {
+						                                    Notification('Success', data.message, 'success');
+						                                    GetFiscalYearFlatTable();
+					                                    } else {
+						                                    if (data.exception != "") {
+							                                    Notification('Error', data.exception, 'danger');
+						                                    }
+					                                    }
+				                                    }, error: function (jqXhr, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+					                                    Notification('Error', errorMsg, 'danger');
+				                                    }
+			                                    });
+		                                    }
+                                        </script>
+                                    </div>
+
+                                    <div id="tableFiscalYearTwoCols" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center" rowspan="2">#</th>
+                                                    <th class="text-center" rowspan="2">Description of the Parameters</th>
+                                                    <th class="text-center" colspan="2">2017-18</th>
+                                                    <th class="text-center" colspan="2">2018-19</th>
+                                                    <th class="text-center" colspan="2">2019-20</th>
+                                                    <th class="text-center" colspan="2">2020-21</th>
+                                                    <th class="text-center" rowspan="2">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Value</th>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Value</th>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Value</th>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Value</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <select id="ddlParameterOptionsFYTC" class="form-control" style="width: 100%;"></select>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_1_Qty" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_1_Value" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_2_Qty" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_2_Value" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_3_Qty" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_3_Value" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_4_Qty" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="FyValue_4_Value" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveFiscalYearTwoCols" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearFiscalYearTwoCols" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableFiscalYearTwoCols"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+		                                    $(document).ready(function () {
+			                                    $("#btnSaveFiscalYearTwoCols").click(function () {
+				                                    var MasterDataId = $("#MasterDataId").val();
+				                                    var res_option = $("#ddlParameterOptionsFYTC option:selected").val();
+				                                    var fy_qty_1 = $("#FyValue_1_Qty").val();
+				                                    var fy_value_1 = $("#FyValue_1_Value").val();
+				                                    var fy_qty_2 = $("#FyValue_2_Qty").val();
+				                                    var fy_value_2 = $("#FyValue_2_Value").val();
+				                                    var fy_qty_3 = $("#FyValue_3_Qty").val();
+				                                    var fy_value_3 = $("#FyValue_3_Value").val();
+				                                    var fy_qty_4 = $("#FyValue_4_Qty").val();
+				                                    var fy_value_4 = $("#FyValue_4_Value").val();
+
+				                                    var form_id = $("#hdnTableInfoId").val();
+				                                    var lookup_table = $("#hdnLookupTableName").val();
+				                                    var save_table = $("#hdnDataSaveTableName").val();
+
+				                                    if (MasterDataId == '' && MasterDataId != 0) {
+					                                    Notification('Required', 'Please enter master info first!', 'danger');
+					                                    return;
+				                                    }
+
+				                                    if (res_option == '') {
+					                                    Notification('Required', 'Please select an option!', 'danger');
+					                                    $("#ddlParameterOptionsFYTC").focus();
+					                                    return;
+				                                    }
+
+				                                    var res_data = {
+					                                    "MasterDataId": MasterDataId,
+					                                    "LookupDataId": res_option,
+					                                    "FyValue_1_Qty": fy_qty_1,
+					                                    "FyValue_1_Value": fy_value_1,
+					                                    "FyValue_2_Qty": fy_qty_2,
+					                                    "FyValue_2_Value": fy_value_2,
+					                                    "FyValue_3_Qty": fy_qty_3,
+					                                    "FyValue_3_Value": fy_value_3,
+					                                    "FyValue_4_Qty": fy_qty_4,
+					                                    "FyValue_4_Value": fy_value_4
+				                                    };
+
+				                                    var url = '@Url.Action("SaveFiscalYearTwoColsTable", "Artisanal")';
+				                                    $.ajax({
+					                                    type: "POST",
+					                                    url: url,
+					                                    data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+					                                    contentType: "application/json; charset=utf-8",
+					                                    dataType: "json",
+					                                    success: function (data) {
+						                                    if (data.status == 'success') {
+							                                    Notification('Success', data.message, 'success');
+							                                    $("#ddlParameterOptionsFYTC, #FyValue_1_Qty, #FyValue_1_Value, #FyValue_2_Qty, #FyValue_2_Value, #FyValue_3_Qty, #FyValue_3_Value, #FyValue_4_Qty, #FyValue_4_Value").val('');
+
+							                                    GetFiscalYearTwoColsTable();
+							                                    $("#ddlParameterOptionsFYTC").focus();
+						                                    } else {
+							                                    if (data.exception != "") {
+								                                    Notification('Error', data.exception, 'danger');
+							                                    }
+						                                    }
+					                                    }, error: function (jqXhr, exception) {
+						                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+						                                    Notification('Error', errorMsg, 'danger');
+					                                    }
+				                                    });
+			                                    });
+
+			                                    $("#btnClearFiscalYearTwoCols").click(function () {
+				                                    $("#ddlParameterOptionsFYTC, #FyValue_1_Qty, #FyValue_1_Value, #FyValue_2_Qty, #FyValue_2_Value, #FyValue_3_Qty, #FyValue_3_Value, #FyValue_4_Qty, #FyValue_4_Value").val('');
+			                                    });
+		                                    });
+
+		                                    function GetFiscalYearTwoColsTable() {
+			                                    var MasterDataId = $("#MasterDataId").val();
+			                                    var form_id = $("#hdnTableInfoId").val();
+			                                    var lookup_table = $("#hdnLookupTableName").val();
+			                                    var save_table = $("#hdnDataSaveTableName").val();
+
+			                                    var url = '@Url.Action("GetFiscalYearTwoColsTable", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type: "GET",
+				                                    url: url,
+                                                    data: { table_name: save_table, lookup_table: lookup_table, master_id: MasterDataId},
+				                                    dataType: "json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.length > 0) {
+						                                    //console.log(data);
+						                                    var rows = '';
+
+						                                    var count = 0;
+						                                    $.each(data, function (i, item) {
+							                                    ++count;
+
+							                                    rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.ItemName + '</td><td>' + item.FyValue_1_Qty + '</td><td>' + item.FyValue_1_Value + '</td><td>' + item.FyValue_2_Qty + '</td><td>' + item.FyValue_2_Value + '</td><td>' + item.FyValue_3_Qty + '</td><td>' + item.FyValue_3_Value + '</td><td>' + item.FyValue_4_Qty + '</td><td>' + item.FyValue_4_Value + '</td><td class="text-center"><button onclick="javascript:DeleteFiscalYearTwoColsInfo(' + item.RowId + ', \'' + save_table + '\'); GetFiscalYearTwoColsTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+						                                    });
+
+						                                    $("#tbodyTableFiscalYearTwoCols").html(rows);
+					                                    } else {
+						                                    $("#tbodyTableFiscalYearTwoCols").html('<tr><td colspan="11" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+					                                    }
+				                                    }, error: function (jqXHR, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXHR, exception);
+					                                    $("#tbodyTableFiscalYearTwoCols").html('<tr><td colspan="11" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+				                                    }
+			                                    });
+		                                    }
+
+		                                    function DeleteFiscalYearTwoColsInfo(row_id, table_name) {
+			                                    var url = '@Url.Action("DeleteFiscalYearTwoColsInfo", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type: "POST",
+				                                    url: url,
+				                                    data: { row_id: row_id, table_name: table_name },
+				                                    dataType: "json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.status == 'success') {
+						                                    Notification('Success', data.message, 'success');
+						                                    GetFiscalYearTwoColsTable();
+					                                    } else {
+						                                    if (data.exception != "") {
+							                                    Notification('Error', data.exception, 'danger');
+						                                    }
+					                                    }
+				                                    }, error: function (jqXhr, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+					                                    Notification('Error', errorMsg, 'danger');
+				                                    }
+			                                    });
+		                                    }
+                                        </script>
+                                    </div>
+
+                                    <div id="tableDemographicFeaturesFamily" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Name</th>
+                                                    <th class="text-center">Relation with HHH</th>
+                                                    <th class="text-center">Age (Years)</th>
+                                                    <th class="text-center">Sex</th>
+                                                    <th class="text-center">Religion</th>
+                                                    <th class="text-center">Education</th>
+                                                    <th class="text-center">Occupation</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <input id="MemberName" type="text" class="form-control" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("RelationWithHHHId", new SelectList(ViewBag.RelationWithHHHId, "RelationWithHHHId", "RelationWithHHHName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="MemberAge" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("GenderId", new SelectList(ViewBag.GenderId, "GenderId", "GenderName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("ReligionId", new SelectList(ViewBag.ReligionId, "ReligionId", "ReligionName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("EducationId", new SelectList(ViewBag.EducationId, "EducationId", "EducationName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("OccupationId", new SelectList(ViewBag.OccupationId, "OccupationId", "OccupationName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveDemographicFeaturesFamily" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearDemographicFeaturesFamily" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableDemoFeaturesFamily"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+		                                    $(document).ready(function () {
+			                                    $("#btnSaveDemographicFeaturesFamily").click(function () {
+				                                    var MasterDataId = $("#MasterDataId").val();
+
+				                                    var MemberName = $("#MemberName").val();
+				                                    var RelationWithHHHId = $("#RelationWithHHHId option:selected").val();
+				                                    var MemberAge = $("#MemberAge").val();
+				                                    var GenderId = $("#GenderId option:selected").val();
+				                                    var ReligionId = $("#ReligionId option:selected").val();
+				                                    var EducationId = $("#EducationId option:selected").val();
+				                                    var OccupationId = $("#OccupationId option:selected").val();
+
+				                                    var form_id = $("#hdnTableInfoId").val();
+				                                    var lookup_table = $("#hdnLookupTableName").val();
+				                                    var save_table = $("#hdnDataSaveTableName").val();
+
+				                                    if (MasterDataId == '' && MasterDataId != 0) {
+					                                    Notification('Required', 'Please enter master info first!', 'danger');
+					                                    return;
+				                                    }
+
+				                                    if (MemberName == '') {
+					                                    Notification('Required', 'Please enter member name!', 'danger');
+					                                    $("#MemberName").focus();
+					                                    return;
+				                                    }
+
+				                                    var res_data = {
+					                                    "MasterDataId": MasterDataId,
+					                                    "MemberName": MemberName,
+					                                    "RelationWithHHHId": RelationWithHHHId,
+					                                    "Age": MemberAge,
+					                                    "GenderId": GenderId,
+					                                    "ReligionId": ReligionId,
+					                                    "EducationId": EducationId,
+					                                    "OccupationId": OccupationId
+				                                    };
+
+				                                    var url = '@Url.Action("SaveDemoFeaturesFamilyTable", "Artisanal")';
+				                                    $.ajax({
+					                                    type:"POST",
+					                                    url: url,
+					                                    data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+					                                    contentType:"application/json; charset=utf-8",
+					                                    dataType:"json",
+					                                    success: function (data) {
+						                                    if (data.status == 'success') {
+							                                    Notification('Success', data.message, 'success');
+							                                    $("#MemberName, #RelationWithHHHId, #MemberAge, #GenderId, #ReligionId, #EducationId, #OccupationId").val('');
+
+							                                    GetDemoFeaturesFamilyTable();
+							                                    $("#MemberName").focus();
+						                                    } else {
+							                                    if (data.exception !="") {
+								                                    Notification('Error', data.exception, 'danger');
+							                                    }
+						                                    }
+					                                    }, error: function (jqXhr, exception) {
+						                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+						                                    Notification('Error', errorMsg, 'danger');
+					                                    }
+				                                    });
+			                                    });
+
+			                                    $("#btnClearDemographicFeaturesFamily").click(function () {
+				                                    $("#MemberName, #RelationWithHHHId, #MemberAge, #GenderId, #ReligionId, #EducationId, #OccupationId").val('');
+			                                    });
+		                                    });
+
+		                                    function GetDemoFeaturesFamilyTable() {
+			                                    var MasterDataId = $("#MasterDataId").val();
+			                                    var form_id = $("#hdnTableInfoId").val();
+			                                    var lookup_table = $("#hdnLookupTableName").val();
+                                                var save_table = $("#hdnDataSaveTableName").val();
+                                                console.log(MasterDataId);
+			                                    var url = '@Url.Action("GetDemoFeaturesFamilyTable", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"GET",
+				                                    url: url,
+                                                    data: { master_id: MasterDataId},
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.length > 0) {
+						                                    console.log(data);
+						                                    var rows = '';
+						                                    var count = 0;
+
+						                                    $.each(data, function (i, item) {
+							                                    ++count;
+
+                                                                rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.MemberName + '</td><td>' + item.RelationWithHHHName + '</td><td>' + item.Age + '</td><td>' + item.GenderName + '</td><td>' + item.ReligionName + '</td><td>' + item.EducationName + '</td><td>' + item.OccupationName + '</td><td class="text-center"><button onclick="javascript:DeleteDemoFeaturesFamilyInfo(' + item.RowId + ', \'' + save_table + '\'); GetDemoFeaturesFamilyTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+						                                    });
+
+						                                    $("#tbodyTableDemoFeaturesFamily").html(rows);
+					                                    } else {
+						                                    $("#tbodyTableDemoFeaturesFamily").html('<tr><td colspan="9" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+					                                    }
+				                                    }, error: function (jqXHR, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXHR, exception);
+					                                    $("#tbodyTableDemoFeaturesFamily").html('<tr><td colspan="9" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+				                                    }
+			                                    });
+		                                    }
+
+		                                    function DeleteDemoFeaturesFamilyInfo(row_id, table_name) {
+			                                    var url = '@Url.Action("DeleteDemoFeaturesFamilyInfo", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"POST",
+				                                    url: url,
+				                                    data: { row_id: row_id, table_name: table_name },
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.status == 'success') {
+						                                    Notification('Success', data.message, 'success');
+						                                    GetDemoFeaturesFamilyTable();
+					                                    } else {
+						                                    if (data.exception !="") {
+							                                    Notification('Error', data.exception, 'danger');
+						                                    }
+					                                    }
+				                                    }, error: function (jqXhr, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+					                                    Notification('Error', errorMsg, 'danger');
+				                                    }
+			                                    });
+		                                    }
+                                        </script>
+                                    </div>
+
+                                    <div id="tableOwnershipOfHouse" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Particulars of House</th>
+                                                    <th class="text-center">Type of House</th>
+                                                    <th class="text-center">Area (square feet)</th>
+                                                    <th class="text-center">Year Built</th>
+                                                    <th class="text-center">Present market value (Taka)</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <select id="ParticularsOfHouseId" class="form-control" style="width: 100%;"></select>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("TypeOfHouseId", new SelectList(ViewBag.TypeOfHouseId, "TypeOfHouseId", "TypeOfHouseName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="AreaInSquareFeet" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="BuiltYear" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="PresentMarketValue" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveOwnershipOfHouse" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearOwnershipOfHouse" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableOwnershipOfHouse"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+		                                    $(document).ready(function () {
+			                                    $("#btnSaveOwnershipOfHouse").click(function () {
+				                                    var MasterDataId = $("#MasterDataId").val();
+
+				                                    var ParticularsOfHouseId = $("#ParticularsOfHouseId option:selected").val();
+				                                    var TypeOfHouseId = $("#TypeOfHouseId option:selected").val();
+				                                    var AreaInSquareFeet = $("#AreaInSquareFeet").val();
+				                                    var BuiltYear = $("#BuiltYear").val();
+				                                    var PresentMarketValue = $("#PresentMarketValue").val();
+
+				                                    var form_id = $("#hdnTableInfoId").val();
+				                                    var lookup_table = $("#hdnLookupTableName").val();
+				                                    var save_table = $("#hdnDataSaveTableName").val();
+
+				                                    if (MasterDataId == '' && MasterDataId != 0) {
+					                                    Notification('Required', 'Please enter master info first!', 'danger');
+					                                    return;
+				                                    }
+
+				                                    if (ParticularsOfHouseId == '') {
+					                                    Notification('Required', 'Please select an option!', 'danger');
+					                                    $("#ParticularsOfHouseId").focus();
+					                                    return;
+				                                    }
+
+				                                    var res_data = {
+					                                    "MasterDataId": MasterDataId,
+					                                    "ParticularsOfHouseId": ParticularsOfHouseId,
+					                                    "TypeOfHouseId": TypeOfHouseId,
+					                                    "AreaInSquareFeet": AreaInSquareFeet,
+					                                    "BuiltYear": BuiltYear,
+					                                    "PresentMarketValue": PresentMarketValue
+				                                    };
+
+				                                    var url = '@Url.Action("SaveOwnershipOfHouseTable", "Artisanal")';
+				                                    $.ajax({
+					                                    type:"POST",
+					                                    url: url,
+					                                    data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+					                                    contentType:"application/json; charset=utf-8",
+					                                    dataType:"json",
+					                                    success: function (data) {
+						                                    if (data.status == 'success') {
+							                                    Notification('Success', data.message, 'success');
+							                                    $("#ParticularsOfHouseId, #TypeOfHouseId, #AreaInSquareFeet, #BuiltYear, #PresentMarketValue").val('');
+
+							                                    GetOwnershipOfHouseTable();
+							                                    $("#ParticularsOfHouseId").focus();
+						                                    } else {
+							                                    if (data.exception !="") {
+								                                    Notification('Error', data.exception, 'danger');
+							                                    }
+						                                    }
+					                                    }, error: function (jqXhr, exception) {
+						                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+						                                    Notification('Error', errorMsg, 'danger');
+					                                    }
+				                                    });
+			                                    });
+
+			                                    $("#btnClearOwnershipOfHouse").click(function () {
+				                                    $("#ParticularsOfHouseId, #TypeOfHouseId, #AreaInSquareFeet, #BuiltYear, #PresentMarketValue").val('');
+			                                    });
+		                                    });
+
+		                                    function GetOwnershipOfHouseTable() {
+			                                    var MasterDataId = $("#MasterDataId").val();
+			                                    var form_id = $("#hdnTableInfoId").val();
+			                                    var lookup_table = $("#hdnLookupTableName").val();
+			                                    var save_table = $("#hdnDataSaveTableName").val();
+
+			                                    var url = '@Url.Action("GetOwnershipOfHouseTable", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"GET",
+				                                    url: url,
+                                                    data: { master_id: MasterDataId},
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.length > 0) {
+						                                    //console.log(data);
+						                                    var rows = '';
+						                                    var count = 0;
+
+						                                    $.each(data, function (i, item) {
+							                                    ++count;
+
+							                                    rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.ItemName + '</td><td>' + item.TypeOfHouseName + '</td><td>' + item.AreaInSquareFeet + '</td><td>' + item.BuiltYear + '</td><td>' + item.PresentMarketValue + '</td><td class="text-center"><button onclick="javascript:DeleteOwnershipOfHouseInfo(' + item.RowId + ', \'' + save_table + '\'); GetOwnershipOfHouseTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+						                                    });
+
+						                                    $("#tbodyTableOwnershipOfHouse").html(rows);
+					                                    } else {
+						                                    $("#tbodyTableOwnershipOfHouse").html('<tr><td colspan="7" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+					                                    }
+				                                    }, error: function (jqXHR, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXHR, exception);
+					                                    $("#tbodyTableOwnershipOfHouse").html('<tr><td colspan="7" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+				                                    }
+			                                    });
+		                                    }
+
+		                                    function DeleteOwnershipOfHouseInfo(row_id, table_name) {
+			                                    var url = '@Url.Action("DeleteOwnershipOfHouseInfo", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"POST",
+				                                    url: url,
+				                                    data: { row_id: row_id, table_name: table_name },
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.status == 'success') {
+						                                    Notification('Success', data.message, 'success');
+						                                    GetOwnershipOfHouseTable();
+					                                    } else {
+						                                    if (data.exception !="") {
+							                                    Notification('Error', data.exception, 'danger');
+						                                    }
+					                                    }
+				                                    }, error: function (jqXhr, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+					                                    Notification('Error', errorMsg, 'danger');
+				                                    }
+			                                    });
+		                                    }
+                                        </script>
+                                    </div>
+
+                                    <div id="tableExtentOfCreditReceived" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Source of Credit</th>
+                                                    <th class="text-center">Credit Received Amount (Taka)</th>
+                                                    <th class="text-center">Year Received</th>
+                                                    <th class="text-center">Used For</th>
+                                                    <th class="text-center">Amount Repaid (Taka)</th>
+                                                    <th class="text-center">Constraint Faced</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <select id="ddlParameterOptionsECR" class="form-control" style="width: 100%;"></select>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="TotalCreditReceived" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="YearReceived" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("UsedForDataId", new SelectList(ViewBag.UsedForDataId, "DataId", "ItemName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="AmountRepaid" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("ConstraintFacedDataId", new SelectList(ViewBag.ConstraintFacedDataId, "DataId", "ItemName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveExtentOfCreditReceived" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearExtentOfCreditReceived" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableExtentOfCreditReceived"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+		                                    $(document).ready(function () {
+			                                    $("#btnSaveExtentOfCreditReceived").click(function () {
+				                                    var MasterDataId = $("#MasterDataId").val();
+
+				                                    var LookupDataId = $("#ddlParameterOptionsECR option:selected").val();
+				                                    var TotalCreditReceived = $("#TotalCreditReceived").val();
+				                                    var YearReceived = $("#YearReceived").val();
+				                                    var UsedForDataId = $("#UsedForDataId option:selected").val();
+				                                    var AmountRepaid = $("#AmountRepaid").val();
+				                                    var ConstraintFacedDataId = $("#ConstraintFacedDataId option:selected").val();
+
+				                                    var form_id = $("#hdnTableInfoId").val();
+				                                    var lookup_table = $("#hdnLookupTableName").val();
+				                                    var save_table = $("#hdnDataSaveTableName").val();
+
+				                                    if (MasterDataId == '' && MasterDataId != 0) {
+					                                    Notification('Required', 'Please enter master info first!', 'danger');
+					                                    return;
+				                                    }
+
+				                                    if (LookupDataId == '') {
+					                                    Notification('Required', 'Please select an option!', 'danger');
+					                                    $("#ddlParameterOptionsECR").focus();
+					                                    return;
+				                                    }
+
+				                                    var res_data = {
+					                                    "MasterDataId": MasterDataId,
+					                                    "LookupDataId": LookupDataId,
+					                                    "TotalCreditReceived": TotalCreditReceived,
+					                                    "YearReceived": YearReceived,
+					                                    "UsedForDataId": UsedForDataId,
+					                                    "AmountRepaid": AmountRepaid,
+					                                    "ConstraintFacedDataId": ConstraintFacedDataId
+				                                    };
+
+				                                    var url = '@Url.Action("SaveExtentOfCreditReceivedTable", "Artisanal")';
+				                                    $.ajax({
+					                                    type:"POST",
+					                                    url: url,
+					                                    data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+					                                    contentType:"application/json; charset=utf-8",
+					                                    dataType:"json",
+					                                    success: function (data) {
+						                                    if (data.status == 'success') {
+							                                    Notification('Success', data.message, 'success');
+                                                                $("#ddlParameterOptionsECR, #LookupDataId, #TotalCreditReceived, #YearReceived, #UsedForDataId, #AmountRepaid, #ConstraintFacedDataId").val('');
+
+							                                    GetExtentOfCreditReceivedTable();
+							                                    $("#LookupDataId").focus();
+						                                    } else {
+							                                    if (data.exception !="") {
+								                                    Notification('Error', data.exception, 'danger');
+							                                    }
+						                                    }
+					                                    }, error: function (jqXhr, exception) {
+						                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+						                                    Notification('Error', errorMsg, 'danger');
+					                                    }
+				                                    });
+			                                    });
+
+			                                    $("#btnClearExtentOfCreditReceived").click(function () {
+                                                    $("#ddlParameterOptionsECR, #LookupDataId, #TotalCreditReceived, #YearReceived, #UsedForDataId, #AmountRepaid, #ConstraintFacedDataId").val('');
+			                                    });
+		                                    });
+
+		                                    function GetExtentOfCreditReceivedTable() {
+			                                    var MasterDataId = $("#MasterDataId").val();
+			                                    var form_id = $("#hdnTableInfoId").val();
+			                                    var lookup_table = $("#hdnLookupTableName").val();
+			                                    var save_table = $("#hdnDataSaveTableName").val();
+
+			                                    var url = '@Url.Action("GetExtentOfCreditReceivedTable", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"GET",
+				                                    url: url,
+                                                    data: { master_id: MasterDataId},
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.length > 0) {
+						                                    //console.log(data);
+						                                    var rows = '';
+						                                    var count = 0;
+
+						                                    $.each(data, function (i, item) {
+							                                    ++count;
+
+							                                    rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.ItemName + '</td><td>' + item.TotalCreditReceived + '</td><td>' + item.YearReceived + '</td><td>' + item.ExtentUsedForItemName + '</td><td>' + item.AmountRepaid + '</td><td>' + item.ConstraintFaceItemName + '</td><td class="text-center"><button onclick="javascript:DeleteExtentOfCreditReceivedInfo(' + item.RowId + ', \'' + save_table + '\'); GetExtentOfCreditReceivedTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+						                                    });
+
+						                                    $("#tbodyTableExtentOfCreditReceived").html(rows);
+					                                    } else {
+						                                    $("#tbodyTableExtentOfCreditReceived").html('<tr><td colspan="8" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+					                                    }
+				                                    }, error: function (jqXHR, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXHR, exception);
+					                                    $("#tbodyTableExtentOfCreditReceived").html('<tr><td colspan="8" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+				                                    }
+			                                    });
+		                                    }
+
+		                                    function DeleteExtentOfCreditReceivedInfo(row_id, table_name) {
+			                                    var url = '@Url.Action("DeleteExtentOfCreditReceivedInfo","Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"POST",
+				                                    url: url,
+				                                    data: { row_id: row_id, table_name: table_name },
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.status == 'success') {
+						                                    Notification('Success', data.message, 'success');
+						                                    GetExtentOfCreditReceivedTable();
+					                                    } else {
+						                                    if (data.exception !="") {
+							                                    Notification('Error', data.exception, 'danger');
+						                                    }
+					                                    }
+				                                    }, error: function (jqXhr, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+					                                    Notification('Error', errorMsg, 'danger');
+				                                    }
+			                                    });
+		                                    }
+                                        </script>
+                                    </div>
+
+                                    <div id="tableInfoCommonDiseases" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Disease</th>
+                                                    <th class="text-center">Who Suffered</th>
+                                                    <th class="text-center">Days Suffered</th>
+                                                    <th class="text-center">Treated by*</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <select id="ddlParameterOptionsICD" class="form-control" style="width: 100%;"></select>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="WhoSuffered" type="text" class="form-control" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="DaysSuffered" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("TreatedByDataId", new SelectList(ViewBag.TreatedByDataId, "TreatedById", "TreatedByName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveInfoCommonDiseases" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearInfoCommonDiseases" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableInfoCommonDiseases"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+		                                    $(document).ready(function () {
+			                                    $("#btnSaveInfoCommonDiseases").click(function () {
+				                                    var MasterDataId = $("#MasterDataId").val();
+
+				                                    var LookupDataId = $("#ddlParameterOptionsICD option:selected").val();
+				                                    var WhoSuffered = $("#WhoSuffered").val();
+				                                    var DaysSuffered = $("#DaysSuffered").val();
+				                                    var TreatedByDataId = $("#TreatedByDataId option:selected").val();
+
+				                                    var form_id = $("#hdnTableInfoId").val();
+				                                    var lookup_table = $("#hdnLookupTableName").val();
+				                                    var save_table = $("#hdnDataSaveTableName").val();
+
+				                                    if (MasterDataId == '' && MasterDataId != 0) {
+					                                    Notification('Required', 'Please enter master info first!', 'danger');
+					                                    return;
+				                                    }
+
+				                                    if (LookupDataId == '') {
+					                                    Notification('Required', 'Please select an option!', 'danger');
+					                                    $("#ddlParameterOptionsICD").focus();
+					                                    return;
+				                                    }
+
+				                                    var res_data = {
+					                                    "MasterDataId": MasterDataId,
+					                                    "LookupDataId": LookupDataId,
+					                                    "WhoSuffered": WhoSuffered,
+					                                    "DaysSuffered": DaysSuffered,
+					                                    "TreatedByDataId": TreatedByDataId
+				                                    };
+
+				                                    var url = '@Url.Action("SaveInfoCommonDiseasesTable", "Artisanal")';
+				                                    $.ajax({
+					                                    type:"POST",
+					                                    url: url,
+					                                    data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+					                                    contentType:"application/json; charset=utf-8",
+					                                    dataType:"json",
+					                                    success: function (data) {
+						                                    if (data.status == 'success') {
+							                                    Notification('Success', data.message, 'success');
+							                                    $("#ddlParameterOptionsICD, #WhoSuffered, #DaysSuffered, #TreatedByDataId").val('');
+
+							                                    GetInfoCommonDiseasesTable();
+							                                    $("#ddlParameterOptionsICD").focus();
+						                                    } else {
+							                                    if (data.exception !="") {
+								                                    Notification('Error', data.exception, 'danger');
+							                                    }
+						                                    }
+					                                    }, error: function (jqXhr, exception) {
+						                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+						                                    Notification('Error', errorMsg, 'danger');
+					                                    }
+				                                    });
+			                                    });
+
+			                                    $("#btnClearInfoCommonDiseases").click(function () {
+				                                    $("#ddlParameterOptionsICD, #WhoSuffered, #DaysSuffered, #TreatedByDataId").val('');
+			                                    });
+		                                    });
+
+		                                    function GetInfoCommonDiseasesTable() {
+			                                    var MasterDataId = $("#MasterDataId").val();
+			                                    var form_id = $("#hdnTableInfoId").val();
+			                                    var lookup_table = $("#hdnLookupTableName").val();
+			                                    var save_table = $("#hdnDataSaveTableName").val();
+
+			                                    var url = '@Url.Action("GetInfoCommonDiseasesTable", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"GET",
+				                                    url: url,
+                                                    data: { master_id: MasterDataId, lookup_table: lookup_table, save_table: save_table },
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.length > 0) {
+						                                    console.log(data);
+						                                    var rows = '';
+						                                    var count = 0;
+
+						                                    $.each(data, function (i, item) {
+							                                    ++count;
+
+							                                    rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.ItemName + '</td><td>' + item.WhoSuffered + '</td><td>' + item.DaysSuffered + '</td><td>' + item.TreatedByName + '</td><td class="text-center"><button onclick="javascript:DeleteInfoCommonDiseasesInfo(' + item.RowId + ', \'' + save_table + '\'); GetInfoCommonDiseasesTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+						                                    });
+
+						                                    $("#tbodyTableInfoCommonDiseases").html(rows);
+					                                    } else {
+						                                    $("#tbodyTableInfoCommonDiseases").html('<tr><td colspan="6" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+					                                    }
+				                                    }, error: function (jqXHR, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXHR, exception);
+					                                    $("#tbodyTableInfoCommonDiseases").html('<tr><td colspan="6" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+				                                    }
+			                                    });
+		                                    }
+
+		                                    function DeleteInfoCommonDiseasesInfo(row_id, table_name) {
+			                                    var url = '@Url.Action("DeleteInfoCommonDiseasesInfo", "Artisanal")';
+			                                    jQuery.ajax({
+				                                    type:"POST",
+				                                    url: url,
+				                                    data: { row_id: row_id, table_name: table_name },
+				                                    dataType:"json",
+				                                    success: function (data, status, jqXHR) {
+					                                    if (data.status == 'success') {
+						                                    Notification('Success', data.message, 'success');
+						                                    GetInfoCommonDiseasesTable();
+					                                    } else {
+						                                    if (data.exception !="") {
+							                                    Notification('Error', data.exception, 'danger');
+						                                    }
+					                                    }
+				                                    }, error: function (jqXhr, exception) {
+					                                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+					                                    Notification('Error', errorMsg, 'danger');
+				                                    }
+			                                    });
+		                                    }
+                                        </script>
+                                    </div>
+
+                                    <div id="tableTargetedBeneficiaries" style="display: none;" class="div-table">
+                                        <table class="table table-bordered table-condensed table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">Frequency</th>
+                                                    <th class="text-center">Date Borrowed</th>
+                                                    <th class="text-center">Amount Borrowed (Tk)</th>
+                                                    <th class="text-center">Used For</th>
+                                                    <th class="text-center">Amount Refunded (Tk)</th>
+                                                    <th class="text-center">Amount Due (Tk)</th>
+                                                    <th class="text-center">Action</th>
+                                                </tr>
+                                                <tr>
+                                                    <th class="text-center" colspan="2">
+                                                        <select id="ddlParameterOptionsFrequency" class="form-control" style="width: 100%;"></select>
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="DateBorrowed" type="text" class="form-control datepicker-input" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="AmountBorrowed" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        @Html.DropDownList("UsedForDataId", new SelectList(ViewBag.UsedForDataId, "DataId", "ItemName"), string.Empty, new { @class = "form-control" })
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="AmountRefunded" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <input id="AmountDue" type="number" class="form-control text-right" />
+                                                    </th>
+                                                    <th class="text-center">
+                                                        <button id="btnSaveTargetedBeneficiaries" type="button" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                                        <button id="btnClearTargetedBeneficiaries" type="button" class="btn btn-danger"><i class="fa fa-times"></i> Clear</button>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tbodyTableTargetedBeneficiaries"></tbody>
+                                        </table>
+
+                                        <script type="text/javascript">
+											$(document).ready(function () {
+												$("#btnSaveTargetedBeneficiaries").click(function () {
+													var MasterDataId = $("#MasterDataId").val();
+
+													var LookupDataId = $("#ddlParameterOptionsFrequency option:selected").val();
+													var DateBorrowed = $("#DateBorrowed").val();
+													var AmountBorrowed = $("#AmountBorrowed").val();
+													var UsedForDataId = $("#UsedForDataId option:selected").val();
+													var AmountRefunded = $("#AmountRefunded").val();
+													var AmountDue = $("#AmountDue").val();
+
+													var form_id = $("#hdnTableInfoId").val();
+													var lookup_table = $("#hdnLookupTableName").val();
+													var save_table = $("#hdnDataSaveTableName").val();
+
+													if (MasterDataId == '' && MasterDataId != 0) {
+														Notification('Required', 'Please enter master info first!', 'danger');
+														return;
+													}
+
+													if (LookupDataId == '') {
+														Notification('Required', 'Please select an option!', 'danger');
+														$("#ddlParameterOptionsFrequency").focus();
+														return;
+													}
+
+													var res_data = {
+														"MasterDataId": MasterDataId,
+														"LookupDataId": LookupDataId,
+														"DateBorrowed": DateBorrowed,
+														"AmountBorrowed": AmountBorrowed,
+														"UsedForDataId": UsedForDataId,
+														"AmountRefunded": AmountRefunded,
+														"AmountDue": AmountDue
+													};
+
+													var url = '@Url.Action("SaveTargetedBeneficiariesTable", "Artisanal")';
+													$.ajax({
+														type:"POST",
+														url: url,
+														data: JSON.stringify({ table_name: save_table, reponse_data: res_data }),
+														contentType:"application/json; charset=utf-8",
+														dataType:"json",
+														success: function (data) {
+															if (data.status == 'success') {
+																Notification('Success', data.message, 'success');
+																$("#ddlParameterOptionsFrequency, #DateBorrowed, #AmountBorrowed, #UsedForDataId, #AmountRefunded, #AmountDue").val('');
+
+																GetTargetedBeneficiariesTable();
+																$("#ddlParameterOptionsFrequency").focus();
+															} else {
+																if (data.exception !="") {
+																	Notification('Error', data.exception, 'danger');
+																}
+															}
+														}, error: function (jqXhr, exception) {
+															var errorMsg = AjaxErrorHandle(jqXhr, exception);
+															Notification('Error', errorMsg, 'danger');
+														}
+													});
+												});
+
+												$("#btnClearTargetedBeneficiaries").click(function () {
+													$("#ddlParameterOptionsFrequency, #DateBorrowed, #AmountBorrowed, #UsedForDataId, #AmountRefunded, #AmountDue").val('');
+												});
+											});
+
+											function GetTargetedBeneficiariesTable() {
+												var MasterDataId = $("#MasterDataId").val();
+												var form_id = $("#hdnTableInfoId").val();
+												var lookup_table = $("#hdnLookupTableName").val();
+												var save_table = $("#hdnDataSaveTableName").val();
+
+												var url = '@Url.Action("GetTargetedBeneficiariesTable", "Artisanal")';
+												jQuery.ajax({
+													type:"GET",
+													url: url,
+													data: { master_id: MasterDataId},
+													dataType:"json",
+													success: function (data, status, jqXHR) {
+														if (data.length > 0) {
+															//console.log(data);
+															var rows = '';
+															var count = 0;
+
+															$.each(data, function (i, item) {
+																++count;
+
+																rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.ItemName + '</td><td>' + item.DateBorrowed + '</td><td>' + item.AmountBorrowed + '</td><td>' + item.UsedForItemName + '</td><td>' + item.AmountRefunded + '</td><td>' + item.AmountDue + '</td><td class="text-center"><button onclick="javascript:DeleteTargetedBeneficiariesInfo(' + item.RowId + ', \'' + save_table + '\'); GetTargetedBeneficiariesTable();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+															});
+
+															$("#tbodyTableTargetedBeneficiaries").html(rows);
+														} else {
+															$("#tbodyTableTargetedBeneficiaries").html('<tr><td colspan="8" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+														}
+													}, error: function (jqXHR, exception) {
+														var errorMsg = AjaxErrorHandle(jqXHR, exception);
+														$("#tbodyTableTargetedBeneficiaries").html('<tr><td colspan="8" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+													}
+												});
+											}
+
+											function DeleteTargetedBeneficiariesInfo(row_id, table_name) {
+												var url = '@Url.Action("DeleteTargetedBeneficiariesInfo", "Artisanal")';
+												jQuery.ajax({
+													type:"POST",
+													url: url,
+													data: { row_id: row_id, table_name: table_name },
+													dataType:"json",
+													success: function (data, status, jqXHR) {
+														if (data.status == 'success') {
+															Notification('Success', data.message, 'success');
+															GetTargetedBeneficiariesTable();
+														} else {
+															if (data.exception !="") {
+																Notification('Error', data.exception, 'danger');
+															}
+														}
+													}, error: function (jqXhr, exception) {
+														var errorMsg = AjaxErrorHandle(jqXhr, exception);
+														Notification('Error', errorMsg, 'danger');
+													}
+												});
+											}
+                                        </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#btnSaveMasterInfo").on('click', function () {
+            var MasterDataId = $("#MasterDataId").val();
+            var IsProjectArea = $("#chkProjectArea").is(':checked') ? 1 : 0;
+            var IsControlArea = $("#chkControlArea").is(':checked') ? 1 : 0;
+
+            if (IsProjectArea == 0 && IsControlArea == 0) {
+                Notification('Required', 'Please select an area!', 'danger');
+                return false;
+            }
+
+            var master = {
+                "MasterDataId": MasterDataId,
+                "IsProjectArea": IsProjectArea,
+                "IsControlArea": IsControlArea,
+                "CaseNo": $('#CaseNo').val(),
+                "FormDate": $('#FormDate').val(),
+                "NameOfRespondent": $('#NameOfRespondent').val(),
+                "RespondentSignature": $('#RespondentSignature').val(),
+                "MobileNo": $('#MobileNo').val(),
+                "NameOfInterviewee": $('#NameOfInterviewee').val(),
+                "IntervieweeSignature": $('#IntervieweeSignature').val()
+            };
+
+            console.log(JSON.stringify(master));
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("SaveMaster", "Artisanal")',
+                data: JSON.stringify(master),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                processData: true,
+                success: function (data) {
+                    $('#MasterDataId').val(data.id);
+
+                    if (data.status == 'success') {
+                        Notification('Success', data.message, 'success');
+                    } else {
+                        if (data.exception != "") {
+                            Notification('Error', data.exception, 'danger');
+                        }
+                    }
+                }, error: function (jqXhr, exception) {
+                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                    Notification('Error', errorMsg, 'danger');
+                }
+            });
+        });
+    });
+</script>

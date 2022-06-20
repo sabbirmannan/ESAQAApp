@@ -1,0 +1,1242 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="About" xml:space="preserve">
+    <value>সম্বন্ধে</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>ক্রিয়া</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>নতুন যোগ করুন</value>
+  </data>
+  <data name="AddNewDataCollection" xml:space="preserve">
+    <value>নতুন তথ্যসংগ্রহ যোগ করুন </value>
+  </data>
+  <data name="AddNewRiver" xml:space="preserve">
+    <value>নতুন নদী যোগ করুন </value>
+  </data>
+  <data name="AddNewStrategicLocation" xml:space="preserve">
+    <value>নতুন মনিটরিং স্টেশন যোগ করুন</value>
+  </data>
+  <data name="AddNewWaterQualityCategory" xml:space="preserve">
+    <value>পানির মানের জন্য নতুন বিভাগ যোগ করুন</value>
+  </data>
+  <data name="AddNewWaterQualityParameter" xml:space="preserve">
+    <value>পানির মানের জন্য নতুন মানদণ্ড যোগ করুন</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>ঠিকানা</value>
+  </data>
+  <data name="AnalyzeData" xml:space="preserve">
+    <value>তথ্য বিশ্লেষণ</value>
+  </data>
+  <data name="AnyHabitatNearSampleLocation3_1" xml:space="preserve">
+    <value>নমুনা সংগ্রহস্থলের  কাছাকাছি কোনো আবাস আছে কি?</value>
+  </data>
+  <data name="AnyProblemFacedByPeople13_2" xml:space="preserve">
+    <value>নিম্ন মানের পানির জন্য মানুষ/পর্যটকদের কোন সমস্যা হয় কি? </value>
+  </data>
+  <data name="AnySignificantEnvInterest1_1" xml:space="preserve">
+    <value>নমুনা সংগ্রহস্থলের কাছাকাছি কি পরিবেশগত তাৎপর্যপুর্ণ কিছু রয়েছে?</value>
+  </data>
+  <data name="Apply" xml:space="preserve">
+    <value>প্রয়োগ করা</value>
+  </data>
+  <data name="Apr" xml:space="preserve">
+    <value>এপ্রি</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteThis" xml:space="preserve">
+    <value>আপনি কি নিশ্চিতভাবে এটি মুছে ফেলতে চান?</value>
+  </data>
+  <data name="Aug" xml:space="preserve">
+    <value>আগ</value>
+  </data>
+  <data name="BengaliStandardID" xml:space="preserve">
+    <value>বাংলা প্রামাণ্য আইডি</value>
+  </data>
+  <data name="Biography" xml:space="preserve">
+    <value>জীবনী</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>বাতিল</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>বিভাগ</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>বিভাগের নাম</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>পাসওয়ার্ড বদলান</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>নির্বাচন করুন</value>
+  </data>
+  <data name="ChooseAnExcelFile" xml:space="preserve">
+    <value>একটি এক্সেল ফাইল নির্বাচন করুন</value>
+  </data>
+  <data name="ChooseLanguage" xml:space="preserve">
+    <value>ভাষা</value>
+  </data>
+  <data name="CollectionDate" xml:space="preserve">
+    <value>সংগ্রহের তারিখ</value>
+  </data>
+  <data name="CollectionMonth" xml:space="preserve">
+    <value>সংগ্রহের মাস</value>
+  </data>
+  <data name="CompletionDate" xml:space="preserve">
+    <value>সমাপ্তির দিন</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>নতুন পাসওয়ার্ড নিশ্চিত করুন</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>পাসওয়ার্ড নিশ্চিত করুন</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>যোগাযোগ</value>
+  </data>
+  <data name="ContactNumber" xml:space="preserve">
+    <value>যোগাযোগের নাম্বার</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>তৈরী করুন</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>তৈরী করেছেন</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>তৈরীর তারিখ</value>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>নির্বাচনের মানদণ্ড</value>
+  </data>
+  <data name="CSVExport" xml:space="preserve">
+    <value>CSV তে এক্সপোর্ট করুন   </value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>বর্তমান পাসওয়ার্ড</value>
+  </data>
+  <data name="CurrentUseOfWater15_1" xml:space="preserve">
+    <value>পানির বর্তমান ব্যবহার কি কি?</value>
+  </data>
+  <data name="CustomID" xml:space="preserve">
+    <value>কাস্টম আইডি</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>ড্যাশবোর্ড</value>
+  </data>
+  <data name="DashboardSetup" xml:space="preserve">
+    <value>ড্যাশবোর্ড সেট আপ</value>
+  </data>
+  <data name="DataAnalysis" xml:space="preserve">
+    <value>তথ্য বিশ্লেষণ</value>
+  </data>
+  <data name="DataEntry" xml:space="preserve">
+    <value>ডাটা এন্ট্রি</value>
+  </data>
+  <data name="DataExplore" xml:space="preserve">
+    <value>নমুনা ফলাফল</value>
+  </data>
+  <data name="DataExplorer" xml:space="preserve">
+    <value>নমুনা ফলাফল</value>
+  </data>
+  <data name="DateOfTesting" xml:space="preserve">
+    <value>টেস্টিং তারিখ </value>
+  </data>
+  <data name="Dec" xml:space="preserve">
+    <value>ডিসে</value>
+  </data>
+  <data name="Degree" xml:space="preserve">
+    <value>ডিগ্রী</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>মুছে ফেলুন</value>
+  </data>
+  <data name="DeletedBy" xml:space="preserve">
+    <value>মুছেছেন</value>
+  </data>
+  <data name="DeletedDate" xml:space="preserve">
+    <value>মোছার তারিখ</value>
+  </data>
+  <data name="DeleteSelected" xml:space="preserve">
+    <value>নির্বাচিত অংশ মুছুন</value>
+  </data>
+  <data name="DepthOfWater" xml:space="preserve">
+    <value>পানির গভীরতা</value>
+  </data>
+  <data name="DescOfCurrentUse15_2" xml:space="preserve">
+    <value>ব্যবহারের সংক্ষিপ্ত বিবরণ</value>
+  </data>
+  <data name="DescOfDependency4_2" xml:space="preserve">
+    <value>সংক্ষেপে নির্ভরতা বর্ণনা করুন</value>
+  </data>
+  <data name="DescOfEnvSignificance1_3" xml:space="preserve">
+    <value>সামাজিক বনায়ন, কমিউনিটি পার্ক, সংযুক্ত লেক বা সম্প্রদায় জলাশয়ে, নদী নির্ভরশীল কৃষিজমি, স্কুল / কলেজ, হাসপাতাল, প্রান্তিক কৃষিজমি, পৌর কৃষিজমি ইত্যাদির  পরিবেশগত তাত্পর্যের সংক্ষিপ্ত বিবরণ দিন। </value>
+  </data>
+  <data name="DescOfHowDwellersUse11_2" xml:space="preserve">
+    <value>যদি তারা বিভিন্ন উপায়ে নদীর পানি ব্যবহার করেন, তার উপর একটি সংক্ষিপ্ত টীকা দিন </value>
+  </data>
+  <data name="DescOfImpactPollutedWater2_2" xml:space="preserve">
+    <value>জায়গাটিতে দূষিত পানি এর প্রভাব বর্ণনা করুন:</value>
+  </data>
+  <data name="DescOfImpactUsesWater3_6" xml:space="preserve">
+    <value>সংক্ষেপে পানি ব্যবহারের প্রভাব সম্পর্কে বর্ণনা দিন </value>
+  </data>
+  <data name="DescOfPrevUse14_2" xml:space="preserve">
+    <value>ব্যবহারের সংক্ষিপ্ত বিবরণ</value>
+  </data>
+  <data name="DescOfProblem13_3" xml:space="preserve">
+    <value>যেসব সমস্যার সম্মুখীন হয় তার সংক্ষিপ্ত বিবরণ </value>
+  </data>
+  <data name="DescTheTypeOfPollutantsSpot7_3" xml:space="preserve">
+    <value>অকুস্থলে থেকে  কি ধরণের দূষক আসছে তার সংক্ষিপ্ত বর্ণনা</value>
+  </data>
+  <data name="DescWateManage8_3" xml:space="preserve">
+    <value>উৎপন্ন বর্জ্য ব্যাবস্থাপনার পদ্ধতি কি?</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>উপাধি</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>বিস্তারিত</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>বিস্তারিত</value>
+  </data>
+  <data name="DetailsOfSelectedRiver" xml:space="preserve">
+    <value>নির্বাচিত নদীর বিস্তারিত বিবরণ </value>
+  </data>
+  <data name="DetailsOfWaterQualityCategory" xml:space="preserve">
+    <value>পানির মানের বিভাগের বিবরণ</value>
+  </data>
+  <data name="DetailsOfWaterQualityParameter" xml:space="preserve">
+    <value>পানির মানের মানদণ্ডের বিবরণ</value>
+  </data>
+  <data name="DistanceBetIndustryAndHabitat9" xml:space="preserve">
+    <value>শিল্প / অঞ্চল এবং নিকটতম আবাসস্থলের মধ্যে দূরত্ব  </value>
+  </data>
+  <data name="DistrictName" xml:space="preserve">
+    <value>জেলা </value>
+  </data>
+  <data name="DivisionName" xml:space="preserve">
+    <value>বিভাগ</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>সম্পাদনা</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>ই-মেইল</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>লিপিবদ্ধ</value>
+  </data>
+  <data name="ExcelExport" xml:space="preserve">
+    <value>এক্সেলে এক্সপোর্ট</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>এক্সপোর্ট</value>
+  </data>
+  <data name="Feb" xml:space="preserve">
+    <value>ফেব্রু</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>প্রথম নাম</value>
+  </data>
+  <data name="FlowDirectionOfRiver10" xml:space="preserve">
+    <value>বাসস্থানের সাপেক্ষে নদীর প্রবাহ দিক কি?</value>
+  </data>
+  <data name="FlowDirectionOfRiver1_0" xml:space="preserve">
+    <value>বাসস্থানের সাপেক্ষে নদীর প্রবাহ দিক কি?</value>
+  </data>
+  <data name="FormType" xml:space="preserve">
+    <value>ফর্মের ধরণ </value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>নমুনা পয়েন্ট</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>যান</value>
+  </data>
+  <data name="GoToIndex" xml:space="preserve">
+    <value>ইনডেক্স</value>
+  </data>
+  <data name="GoToList" xml:space="preserve">
+    <value>তালিকা</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>ক্রম </value>
+  </data>
+  <data name="GraphicalView" xml:space="preserve">
+    <value>চিত্রানুগ দৃশ্য</value>
+  </data>
+  <data name="GraphReport" xml:space="preserve">
+    <value>গ্রাফ প্রতিবেদন</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>গ্রুপ</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>হোম</value>
+  </data>
+  <data name="HowDwellersUseRiverWater11_1" xml:space="preserve">
+    <value>অধিবাসীরা কিভাবে নদীর  পানি ব্যবহার করেন?</value>
+  </data>
+  <data name="HydrologicalInfo" xml:space="preserve">
+    <value>হাইড্রোলজিক্যাল তথ্য</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>ইমপোর্ট</value>
+  </data>
+  <data name="ImportDataFromExcel" xml:space="preserve">
+    <value>এক্সেল থেকে ডেটা ইমপোর্ট করুন</value>
+  </data>
+  <data name="ImportStrategicLocation" xml:space="preserve">
+    <value>মনিটরিং স্টেশন ইমপোর্ট করুন</value>
+  </data>
+  <data name="InactiveSelected" xml:space="preserve">
+    <value>নিষ্ক্রিয়</value>
+  </data>
+  <data name="InformationCollectionfromSamplingSite" xml:space="preserve">
+    <value>নমুনা সাইট থেকে তথ্য সংগ্রহ</value>
+  </data>
+  <data name="Interviewer" xml:space="preserve">
+    <value>সাক্ষাতকার গ্রহনকারি</value>
+  </data>
+  <data name="InterviewerInformation" xml:space="preserve">
+    <value>সাক্ষাতকার গ্রহনকারির তথ্য</value>
+  </data>
+  <data name="InterviewerName" xml:space="preserve">
+    <value>সাক্ষাতকার গ্রহনকারির নাম</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>সক্রিয় আছে?</value>
+  </data>
+  <data name="IsAnyPlantForRiverWaterTreatment6" xml:space="preserve">
+    <value>নদী জলের উপর ভিত্তি করে কোন জল শোধন কারখানা আছে কি? </value>
+  </data>
+  <data name="IsAnyPollutionSpot7_1" xml:space="preserve">
+    <value>এলাকার কাছাকাছি কোনো দুষণের জায়গা আছে কি?</value>
+  </data>
+  <data name="IsDelete" xml:space="preserve">
+    <value>মুছে ফেলা হয়েছে?</value>
+  </data>
+  <data name="IsSolelyDependencyOnWater4_1" xml:space="preserve">
+    <value>জীবিকা অর্জনের জন্য শুধুমাত্র নদীর উপর নির্ভরশীল কোন জনগোষ্ঠী আছে কি?</value>
+  </data>
+  <data name="IsThereAnyArcheologicalPlace2_1" xml:space="preserve">
+    <value>কোন প্রত্নতাত্ত্বিক বা ঐতিহাসিকভাবে গুরুত্বপূর্ণ স্থান আছে কি? </value>
+  </data>
+  <data name="IsThereAnyCommunicationSite13_1" xml:space="preserve">
+    <value>স্থানটি কি কোন জল যোগাযোগ ও পরিবহন রুটের কাছাকাছি অবস্থিত?</value>
+  </data>
+  <data name="IsThereAnyDenseZone8_1" xml:space="preserve">
+    <value>স্থানটি কি কোন ঘন শিল্পাঞ্চলের কাছে অবস্থিত? </value>
+  </data>
+  <data name="IsThereAnyWasteDrain12_1" xml:space="preserve">
+    <value>সাইটের কাছাকাছি কোন বর্জ্য নিষ্কাশন নালী আছে কি?</value>
+  </data>
+  <data name="IsUsedForIrrigation5" xml:space="preserve">
+    <value>সেচের কাজে কি এই পানি ব্যাবহৃত হয়? </value>
+  </data>
+  <data name="Jan" xml:space="preserve">
+    <value>জানু</value>
+  </data>
+  <data name="Jul" xml:space="preserve">
+    <value>জুল</value>
+  </data>
+  <data name="Jun" xml:space="preserve">
+    <value>জুন</value>
+  </data>
+  <data name="LabCode" xml:space="preserve">
+    <value>ল্যাব কোড</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>নামের শেষাংশ</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>অক্ষাংশ</value>
+  </data>
+  <data name="LatitudeDMS" xml:space="preserve">
+    <value>অক্ষাংশ ডি° মি' সে"</value>
+  </data>
+  <data name="LatLong" xml:space="preserve">
+    <value>অক্ষাংশ-দ্রাঘিমাংশ</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>তালিকা</value>
+  </data>
+  <data name="Locality" xml:space="preserve">
+    <value>বসতি</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>প্রশাসনিক অবস্থান</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>লগ অফ</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>লগ ইন</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>দ্রাঘিমাংশ</value>
+  </data>
+  <data name="LongitudeDMS" xml:space="preserve">
+    <value>দ্রাঘিমাংশ ডি° মি' সে"</value>
+  </data>
+  <data name="MapBrowse" xml:space="preserve">
+    <value>ম্যাপে অনুসন্ধান</value>
+  </data>
+  <data name="Mar" xml:space="preserve">
+    <value>মার্চ</value>
+  </data>
+  <data name="Master" xml:space="preserve">
+    <value>প্রধান</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>সর্বোচ্চ</value>
+  </data>
+  <data name="Maximum" xml:space="preserve">
+    <value>সর্বোচ্চ</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>মে</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>বার্তা</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>সর্বনিম্ন</value>
+  </data>
+  <data name="Minimum" xml:space="preserve">
+    <value>সর্বনিম্ন</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>মিনিট</value>
+  </data>
+  <data name="NameOfRiver" xml:space="preserve">
+    <value>নদীর নাম</value>
+  </data>
+  <data name="NearbyPolutionSource3_3" xml:space="preserve">
+    <value>নিকটবর্তী দুষণের উৎস কি?</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>নতুন পাসওয়ার্ড</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>পরবর্তী</value>
+  </data>
+  <data name="Nov" xml:space="preserve">
+    <value>নভে</value>
+  </data>
+  <data name="Occupation" xml:space="preserve">
+    <value>পেশা</value>
+  </data>
+  <data name="Oct" xml:space="preserve">
+    <value>অক্টো</value>
+  </data>
+  <data name="OrganizeData" xml:space="preserve">
+    <value>তথ্য বিন্যাস</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>অন্যান্য</value>
+  </data>
+  <data name="ParameterCategory" xml:space="preserve">
+    <value>প্যারামিটারের বিভাগ</value>
+  </data>
+  <data name="ParameterName" xml:space="preserve">
+    <value>মানদণ্ড</value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>প্যারামিটার</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>পাসওয়ার্ড</value>
+  </data>
+  <data name="PDFExport" xml:space="preserve">
+    <value>PDF এ এক্সপোর্ট  </value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>অনুমতিসমূহ</value>
+  </data>
+  <data name="PNGExport" xml:space="preserve">
+    <value>PNG এ এক্সপোর্ট  </value>
+  </data>
+  <data name="PopulationStatus3_2" xml:space="preserve">
+    <value>আবাসস্থলের জনসংখ্যা কত? </value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>আগে</value>
+  </data>
+  <data name="PrevUseOfWater14_1" xml:space="preserve">
+    <value>পানির পূর্ববর্তী ব্যবহার কি ছিল?</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>প্রিন্ট</value>
+  </data>
+  <data name="Privileges" xml:space="preserve">
+    <value>বিশেষ অধিকার</value>
+  </data>
+  <data name="Purpose" xml:space="preserve">
+    <value>উদ্দেশ্য</value>
+  </data>
+  <data name="PurposeOfSample" xml:space="preserve">
+    <value>নমুনার উদ্দেশ্য</value>
+  </data>
+  <data name="ReceivingDateTimeAtLab" xml:space="preserve">
+    <value>ল্যাব এ প্রাপ্তির তারিখ</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>নিবন্ধন</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>মন্তব্য</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>আমাকে মনে কর?</value>
+  </data>
+  <data name="ReportsGeneration" xml:space="preserve">
+    <value>প্রতিবেদন তৈরি</value>
+  </data>
+  <data name="Responder" xml:space="preserve">
+    <value>উত্তরদাতা</value>
+  </data>
+  <data name="ResponderInformation" xml:space="preserve">
+    <value>উত্তরদাতার তথ্য</value>
+  </data>
+  <data name="ResponderName" xml:space="preserve">
+    <value>উত্তারদাতা</value>
+  </data>
+  <data name="ResponsibleName" xml:space="preserve">
+    <value>দায়িত্বপ্রাপ্তের নাম</value>
+  </data>
+  <data name="ResponsiblePersonInformation" xml:space="preserve">
+    <value>দায়িত্বপ্রাপ্ত ব্যক্তির তথ্য</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>ফলাফল</value>
+  </data>
+  <data name="River" xml:space="preserve">
+    <value>নদী</value>
+  </data>
+  <data name="RiverFlowCondition" xml:space="preserve">
+    <value>নদীর প্রবাহ অবস্থা</value>
+  </data>
+  <data name="Rivers" xml:space="preserve">
+    <value>নদীর তালিকা</value>
+  </data>
+  <data name="RiverName" xml:space="preserve">
+    <value>নদী</value>
+  </data>
+  <data name="RiverNameInBangla" xml:space="preserve">
+    <value>বাংলায় নাম</value>
+  </data>
+  <data name="RiverStandardID" xml:space="preserve">
+    <value>নদীর আদর্শ আইডি</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>ভূমিকা</value>
+  </data>
+  <data name="RonY" xml:space="preserve">
+    <value>রনি</value>
+  </data>
+  <data name="SampleCollectionDateTime" xml:space="preserve">
+    <value>নমুনা সংগ্রহের তারিখ</value>
+  </data>
+  <data name="SampleReceivedBy" xml:space="preserve">
+    <value>নমুনা গ্রহণকারী</value>
+  </data>
+  <data name="SampleResult" xml:space="preserve">
+    <value>নমুনা ফলাফল</value>
+  </data>
+  <data name="SamplingLocation" xml:space="preserve">
+    <value>স্যাম্পলিং অবস্থান</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>সংরক্ষণ করুন</value>
+  </data>
+  <data name="SaveImportData" xml:space="preserve">
+    <value>ইমপোর্ট ডেটা সংরক্ষণ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>অনুসন্ধান</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>সেকেন্ড</value>
+  </data>
+  <data name="SelectAnAction" xml:space="preserve">
+    <value>ক্রিয়া নির্বাচন</value>
+  </data>
+  <data name="SelectAnOption" xml:space="preserve">
+    <value>বেছে নিন...</value>
+  </data>
+  <data name="Sep" xml:space="preserve">
+    <value>সেপ্টে</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>ক্রমিক</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>সেট পাসওয়ার্ড</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>সেটিংস</value>
+  </data>
+  <data name="Signature" xml:space="preserve">
+    <value>স্বাক্ষর</value>
+  </data>
+  <data name="SignaturePath" xml:space="preserve">
+    <value>স্বাক্ষর</value>
+  </data>
+  <data name="Sl" xml:space="preserve">
+    <value>নং</value>
+  </data>
+  <data name="SourceDesc3_4" xml:space="preserve">
+    <value>সংক্ষেপে উৎস বর্ণনা</value>
+  </data>
+  <data name="Spatial" xml:space="preserve">
+    <value>স্পাসিয়াল</value>
+  </data>
+  <data name="StandardGrade" xml:space="preserve">
+    <value>মান গ্রেড</value>
+  </data>
+  <data name="StandardRange" xml:space="preserve">
+    <value>মানের পরিসীমা</value>
+  </data>
+  <data name="StrategicLocationName" xml:space="preserve">
+    <value>মনিটরিং স্টেশনের নাম</value>
+  </data>
+  <data name="StrategicLocations" xml:space="preserve">
+    <value>মনিটরিং স্টেশন</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>সংরক্ষণ করুন</value>
+  </data>
+  <data name="SurveyDate" xml:space="preserve">
+    <value>সার্ভে তারিখ</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>প্রতীক</value>
+  </data>
+  <data name="Tabular" xml:space="preserve">
+    <value>ট্যাবুলার</value>
+  </data>
+  <data name="TabularView" xml:space="preserve">
+    <value>ট্যাবুলার দৃশ্য</value>
+  </data>
+  <data name="TestingDate" xml:space="preserve">
+    <value>পরীক্ষার তারিখ</value>
+  </data>
+  <data name="Timer" xml:space="preserve">
+    <value>সময় নির্ণায়ক</value>
+  </data>
+  <data name="TypeOfDrainageOutfall12_2" xml:space="preserve">
+    <value>নিষ্কাশন প্রকারের ধরন কি?</value>
+  </data>
+  <data name="TypeOfEnvSignificance1_2" xml:space="preserve">
+    <value>যদি হ্যাঁ, পরিবেশগত গুরুত্ব কি?</value>
+  </data>
+  <data name="TypeOfIndustry8_2" xml:space="preserve">
+    <value>শিল্প ধরনের কি?</value>
+  </data>
+  <data name="TypeOfSample" xml:space="preserve">
+    <value>নমুনার প্রকার</value>
+  </data>
+  <data name="TypeOfThePollution7_2" xml:space="preserve">
+    <value>যদি হ্যাঁ, দূষণের ধরন কি?</value>
+  </data>
+  <data name="TypeOfWasteDischarge8_4" xml:space="preserve">
+    <value>শিল্প বর্জ্য কি ধরনের বর্জ্য?</value>
+  </data>
+  <data name="UnionName" xml:space="preserve">
+    <value>ইউনিয়ন</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>হিসাবের মান</value>
+  </data>
+  <data name="UpazillaName" xml:space="preserve">
+    <value>উপজেলা</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>হালনাগাদ করুন</value>
+  </data>
+  <data name="UpdatedBy" xml:space="preserve">
+    <value>আপডেট হয়েছে</value>
+  </data>
+  <data name="UpdatedDate" xml:space="preserve">
+    <value>আপডেট তারিখ</value>
+  </data>
+  <data name="UpdateRiver" xml:space="preserve">
+    <value>নদী আপডেট</value>
+  </data>
+  <data name="UpdateRiverInformation" xml:space="preserve">
+    <value>নদী সংক্রান্ত তথ্য আপডেট করুন</value>
+  </data>
+  <data name="UpdateStrategicLocation" xml:space="preserve">
+    <value>মনিটরিং স্টেশন আপডেট করুন</value>
+  </data>
+  <data name="UpdateWaterQualityCategory" xml:space="preserve">
+    <value>ওয়াটার কোয়ালিটির শ্রেণী হালনাগাদ</value>
+  </data>
+  <data name="UpdateWaterQualityParameter" xml:space="preserve">
+    <value>ওয়াটার কোয়ালিটির মানদণ্ড হালনাগাদ</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>ব্যবহারকারীর নাম</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>ব্যবহারকারী</value>
+  </data>
+  <data name="UsesOfWater3_5" xml:space="preserve">
+    <value>পানির ব্যবহার কি কি?</value>
+  </data>
+  <data name="Village" xml:space="preserve">
+    <value>গ্রাম</value>
+  </data>
+  <data name="WaterQualityParameterCategories" xml:space="preserve">
+    <value>ওয়াটার কোয়ালিটি প্যারামিটারের শ্রেণী</value>
+  </data>
+  <data name="WaterQualityParameters" xml:space="preserve">
+    <value>ওয়াটার কোয়ালিটির মানদণ্ড</value>
+  </data>
+  <data name="WeatherCondition" xml:space="preserve">
+    <value>আবহাওয়ার অবস্থা</value>
+  </data>
+  <data name="WordExport" xml:space="preserve">
+    <value>ওয়ার্ড এ এক্সপোর্ট</value>
+  </data>
+  <data name="YouAreLoggedInAs" xml:space="preserve">
+    <value>আপনার লগ ইন আইডি হচ্ছেঃ</value>
+  </data>
+  <data name="YoudonothavealocalusernamepasswordforthissiteAddalocalaccountsoyoucanloginwithoutanexternallogin" xml:space="preserve">
+    <value>আপনি একটি স্থানীয় ব্যবহারকারীর নাম / এই সাইটের জন্য পাসওয়ার্ড না. তাই আপনি একটি বহিস্থিত লগইন ছাড়া লগ-ইন করতে একটি স্থানীয় অ্যাকাউন্ট যোগ করুন.</value>
+  </data>
+  <data name="IsMonitoring" xml:space="preserve">
+    <value>রুটিন পর্যবেক্ষণ?</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>ঘন্টা</value>
+  </data>
+  <data name="DrinkingWater" xml:space="preserve">
+    <value>খাওয়ার পানি</value>
+  </data>
+  <data name="GroundWater" xml:space="preserve">
+    <value>ভূগর্ভস্থ পানি</value>
+  </data>
+  <data name="NonRoutineMonitoring" xml:space="preserve">
+    <value>অনিয়মিত পর্যবেক্ষণ</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>প্রতিবেদন</value>
+  </data>
+  <data name="RoutineMonitoring" xml:space="preserve">
+    <value>নিয়মিত পর্যবেক্ষণ</value>
+  </data>
+  <data name="SampleLocation" xml:space="preserve">
+    <value>নমুনাস্থল</value>
+  </data>
+  <data name="PreviewReport" xml:space="preserve">
+    <value>প্রিভিউ রিপোর্ট</value>
+  </data>
+  <data name="RoutineMonitoringReports" xml:space="preserve">
+    <value>নিয়মিত পর্যবেক্ষণ রিপোর্ট</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>বিকল্প</value>
+  </data>
+  <data name="NonRoutineMonitoringReport" xml:space="preserve">
+    <value>অনিয়মিত পর্যবেক্ষণ রিপোর্ট</value>
+  </data>
+  <data name="DrinkingWaterMonitoringReports" xml:space="preserve">
+    <value>পানির জল পর্যবেক্ষণ রিপোর্ট</value>
+  </data>
+  <data name="GroundWaterMonitoringReports" xml:space="preserve">
+    <value>ভূগর্ভস্থ পানি মনিটরিং রিপোর্ট</value>
+  </data>
+  <data name="StrategicLocationsReports" xml:space="preserve">
+    <value>মনিটরিং স্টেশন রিপোর্ট</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>অ্যাডমিন</value>
+  </data>
+  <data name="AgreeTheTermsAndPolicy" xml:space="preserve">
+    <value>শর্তাবলী এবং নীতি সম্মত</value>
+  </data>
+  <data name="AllDrinkingWaterMonitoring" xml:space="preserve">
+    <value>সব পানীয় জল নিরীক্ষণ</value>
+  </data>
+  <data name="AllGroundWaterMonitoring" xml:space="preserve">
+    <value>সমস্ত গ্রাউন্ড ওয়াটার মনিটরিং</value>
+  </data>
+  <data name="AllNonRoutineMonitoring" xml:space="preserve">
+    <value>সব অনিয়মিত পর্যবেক্ষণ প্রতিবেদন</value>
+  </data>
+  <data name="AllRoutineMonitoring" xml:space="preserve">
+    <value>সব নিয়মিত পর্যবেক্ষণ প্রতিবেদন</value>
+  </data>
+  <data name="AllStrategicLocations" xml:space="preserve">
+    <value>সব মনিটরিং স্টেশন</value>
+  </data>
+  <data name="AlreadyHaveAnAccount" xml:space="preserve">
+    <value>ইতিমধ্যে একটি সদস্যপদ আছে?</value>
+  </data>
+  <data name="CreateAnAccount" xml:space="preserve">
+    <value>একটি অ্যাকাউন্ট তৈরি করুন</value>
+  </data>
+  <data name="DataCollection" xml:space="preserve">
+    <value>তথ্য সংগ্রহ</value>
+  </data>
+  <data name="DepartmentOfEnvironment" xml:space="preserve">
+    <value>পরিবেশ অধিদপ্তর (ডি.ও.ই)</value>
+  </data>
+  <data name="DetailRiver" xml:space="preserve">
+    <value>বিস্তারিত নদী</value>
+  </data>
+  <data name="DoNotHaveAnAccount" xml:space="preserve">
+    <value>আপনার কি একাউন্ট আছে?</value>
+  </data>
+  <data name="EndingDate" xml:space="preserve">
+    <value>শেষ তারিখ</value>
+  </data>
+  <data name="entiredata" xml:space="preserve">
+    <value>সম্পূর্ণ তথ্য</value>
+  </data>
+  <data name="Forgotpassword" xml:space="preserve">
+    <value>পাসওয়ার্ড ভুলে গেছেন?</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>সাহায্য</value>
+  </data>
+  <data name="In1977EnvironmentPollutionControlBoardwith16membersheadedbyaMemberofthePlanningCommissionandEnvironmentPollutionControlCellheadedbyaDirectorwithstaffcomplementof26wasestablishedThiswasfollowedin1977bytheestablishmentoftheEnvironmentPollutionControlProjectin1985bytheestablishmentoftheDepartmentPollutionControlandfinallyin1989bytherestructuredandrenamedtheDepartmentofEnvironment" xml:space="preserve">
+    <value>১৯৭৭ সালে পরিকল্পনা কমিশনের একজন সদস্য এবং পরিবেশ দূষণ নিয়ন্ত্রণ কেন্দ্রের নেতৃত্বে ১৬ জন সদস্যের পরিবেশ দূষণ নিয়ন্ত্রণ বোর্ড ২৬-এর কর্মী সম্পত্তির পরিচালক ও পরিচালকের নেতৃত্বে গঠিত হয়। ১৯৭৭ সালে পরিবেশ দূষণ নিয়ন্ত্রণ প্রকল্প প্রতিষ্ঠার মাধ্যমে ১৯৮৫ সালে বিভাগের দূষণ নিয়ন্ত্রণ প্রতিষ্ঠা এবং পরিশেষে, ১৯৮৯ সালে পুনর্নির্মাণের মাধ্যমে এবং পরিবেশ বিভাগের নাম পরিবর্তন করা হয়।</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>স্তরসমূহ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>লগইন</value>
+  </data>
+  <data name="MainObjective" xml:space="preserve">
+    <value>প্রধান উদ্দেশ্য</value>
+  </data>
+  <data name="MajorRivers" xml:space="preserve">
+    <value>প্রধান নদী</value>
+  </data>
+  <data name="MajorRiversOfBangladesh" xml:space="preserve">
+    <value>বাংলাদেশের প্রধান নদী</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>ম্যাপ</value>
+  </data>
+  <data name="nonroutinemonitored" xml:space="preserve">
+    <value>অনিয়মিত পর্যবেক্ষণ</value>
+  </data>
+  <data name="placeholder_password" xml:space="preserve">
+    <value>পাসওয়ার্ড</value>
+  </data>
+  <data name="placeholder_userid" xml:space="preserve">
+    <value>ব্যবহারকারী</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>প্রোফাইল</value>
+  </data>
+  <data name="routinemonitored" xml:space="preserve">
+    <value>নিয়মিত পর্যবেক্ষণ</value>
+  </data>
+  <data name="Signin" xml:space="preserve">
+    <value>প্রবেশ কর</value>
+  </data>
+  <data name="Signup" xml:space="preserve">
+    <value>নিবন্ধন করুন</value>
+  </data>
+  <data name="StartingDate" xml:space="preserve">
+    <value>শুরু তারিখ</value>
+  </data>
+  <data name="ThemainobjectiveistodevelopawebbasedwaterqualitymonitoringsystemandnetworkforwholeofBangladeshformonitoringofwaterqualityfordifferentsectoraluseTheuserfriendlygeospatialdatabaseandwaterqualitymonitoringtoolscouldbeamilestoneinestablishingtheeGovernancecapacityoftheDoEtocontributeinthemandateofDigitalBangladesh" xml:space="preserve">
+    <value>প্রধান উদ্দেশ্য বিভিন্ন ক্ষেত্রের ব্যবহারের জন্য জলমানের নিরীক্ষণের জন্য সমগ্র বাংলাদেশের জন্য একটি ওয়েব ভিত্তিক জলের মান নিয়ন্ত্রণ ব্যবস্থা এবং নেটওয়ার্ক বিকাশ করা। ডিজিটাল বাংলাদেশ গঠনে অবদান রাখার জন্য ব্যবহারকারী-বন্ধুত্বপূর্ণ জিও-স্পেসিয়াল ডেটাবেস এবং ওয়াটার কোয়ালিটি মনিটরিং টুলগুলি ডোই'র ই-গভর্নেন্স সক্ষমতা প্রতিষ্ঠার একটি মাইলফলক হতে পারে।</value>
+  </data>
+  <data name="ThewaterqualityofmajortenriversBurigangaShitalakhyaTuragDhaleswariPadmaMeghnaJamunaTeestaKarnaphuliHaldaRupsaandMoyuriinBangladeshdeterioratingrapidlyduetopollutionfromindustrialandmunicipalwastesourcesTheoverallqualityofriverwaterturnsalarmingparticularlyduringthedryseasonInrainyseasonthewaterpollutionshappensmainlybyurbanflashfloodingandintensifieswithotherpointandnonpointpollutionsources" xml:space="preserve">
+    <value>শিল্প ও পৌর বর্জ্য উত্স থেকে দূষণের ফলে বাংলাদেশের দশটি প্রধান নদী (বুড়িগঙ্গা, শীতলক্ষ্যা, তুরাগ, ধলেশ্বরী, পদ্মা, মেঘনা, যমুনা, তিস্তা, কর্ণফুলী, হালদা, রূপসা ও ময়ূরি) এর পানির গুণমান দ্রুত কমেছে। বিশেষ করে শুষ্ক মৌসুমে নদী জলের গুণমান বিপজ্জনক হয়ে উঠছে। বর্ষাকালে জল দূষণগুলি মূলত শহুরে ফ্লাশ বন্যা দ্বারা এবং অন্যান্য বিন্দু এবং অ-বিন্দু দূষণ উৎসের সাথে প্রবল।</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>ব্যবহারকারী</value>
+  </data>
+  <data name="WaterQualityMonitoringSystem" xml:space="preserve">
+    <value>ওয়াটার কোয়ালিটি মনিটরিং সিস্টেম</value>
+  </data>
+  <data name="WaterSourceName" xml:space="preserve">
+    <value>পানির উৎস (নদী)</value>
+  </data>
+  <data name="WelcomeToWaterQualityMonitoringSystem" xml:space="preserve">
+    <value>ওয়াটার কোয়ালিটি মনিটরিং সিস্টেমে স্বাগতম</value>
+  </data>
+  <data name="wqms" xml:space="preserve">
+    <value>ও.কো.ম.সি</value>
+  </data>
+  <data name="Individual" xml:space="preserve">
+    <value>স্বতন্ত্র</value>
+  </data>
+  <data name="ShowLabel" xml:space="preserve">
+    <value>লেবেল দেখান</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>সরঞ্জামসমূহ</value>
+  </data>
+  <data name="DrawLayer" xml:space="preserve">
+    <value>স্তর আঁকুন</value>
+  </data>
+  <data name="HotSpot" xml:space="preserve">
+    <value>হটস্পট</value>
+  </data>
+  <data name="WaterMonitoringReports" xml:space="preserve">
+    <value>জল মনিটরিং রিপোর্ট</value>
+  </data>
+  <data name="AtAGlance" xml:space="preserve">
+    <value>এক পলকে</value>
+  </data>
+  <data name="Graphical" xml:space="preserve">
+    <value>গ্রাফিকাল</value>
+  </data>
+  <data name="TimeSeries" xml:space="preserve">
+    <value>সময় সিরিজ</value>
+  </data>
+  <data name="TimeSeriesReport" xml:space="preserve">
+    <value>সময় সিরিজ রিপোর্ট</value>
+  </data>
+  <data name="GraphicalWithTabular" xml:space="preserve">
+    <value>ট্যাবুলার সঙ্গে গ্রাফিকাল</value>
+  </data>
+  <data name="AmmoniaFree" xml:space="preserve">
+    <value>এ্যামোনিয়া (ফ্রি)</value>
+  </data>
+  <data name="AmmoniaN" xml:space="preserve">
+    <value>এ্যামোনিয়া-এন</value>
+  </data>
+  <data name="Arsenic" xml:space="preserve">
+    <value>আর্সেনিক</value>
+  </data>
+  <data name="BiologicalOxygenDemand" xml:space="preserve">
+    <value>ডিসল্ব্ড অক্সিজেন ডিমান্ড</value>
+  </data>
+  <data name="Cadmium" xml:space="preserve">
+    <value>ক্যাডমিয়াম</value>
+  </data>
+  <data name="CalciumHardness" xml:space="preserve">
+    <value>ক্যালসিয়াম হার্ডনেস</value>
+  </data>
+  <data name="ChemicalOxygenDemand" xml:space="preserve">
+    <value>কেমিক্যাল অক্সিজেন ডিমান্ড</value>
+  </data>
+  <data name="Chloride" xml:space="preserve">
+    <value>ক্লোরাইড</value>
+  </data>
+  <data name="Chromium" xml:space="preserve">
+    <value>ক্রোমিয়াম</value>
+  </data>
+  <data name="DissolvedOxygen" xml:space="preserve">
+    <value>ডিসল্ব্ড অক্সিজেন</value>
+  </data>
+  <data name="ElectricConductivity" xml:space="preserve">
+    <value>ইলেক্ট্রিক কন্ডাক্টিভিটি</value>
+  </data>
+  <data name="FecalColiform" xml:space="preserve">
+    <value>ফেইক্যাল কলিফর্ম</value>
+  </data>
+  <data name="GovOfPepoleRepublicOfBangladesh" xml:space="preserve">
+    <value>পরিবেশ, বন ও জলবায়ু পরিবর্তন মন্ত্রণালয়</value>
+  </data>
+  <data name="GraphicalAndTabularView" xml:space="preserve">
+    <value>গ্রাফিকাল এবং ট্যাবুলার ভিউ</value>
+  </data>
+  <data name="inmeter" xml:space="preserve">
+    <value>মিটারে</value>
+  </data>
+  <data name="Iron" xml:space="preserve">
+    <value>আয়রণ</value>
+  </data>
+  <data name="Lead" xml:space="preserve">
+    <value>লেড</value>
+  </data>
+  <data name="NitrateN" xml:space="preserve">
+    <value>নাইট্রেট-এন</value>
+  </data>
+  <data name="NitriteN" xml:space="preserve">
+    <value>নাইট্রাইট-এন</value>
+  </data>
+  <data name="OtherMetal" xml:space="preserve">
+    <value>আদার মেটাল</value>
+  </data>
+  <data name="OtherNonMetal" xml:space="preserve">
+    <value>আদার নন-মেটাল</value>
+  </data>
+  <data name="PAlkalinity" xml:space="preserve">
+    <value>পি. আ্যলক্যালিনিটি</value>
+  </data>
+  <data name="pHAtField" xml:space="preserve">
+    <value>মাঠ পর্যায়ের pH</value>
+  </data>
+  <data name="pHAtLab" xml:space="preserve">
+    <value>ল্যাব পর্যায়ের pH </value>
+  </data>
+  <data name="PhosphateN" xml:space="preserve">
+    <value>ফসফেট-এন</value>
+  </data>
+  <data name="ReportDate" xml:space="preserve">
+    <value>প্রতিবেদন তারিখ</value>
+  </data>
+  <data name="ResidualChlorine" xml:space="preserve">
+    <value>রেসিডুয়াল ক্লোরিন</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>নির্বাচন করুন</value>
+  </data>
+  <data name="SettleableSolid" xml:space="preserve">
+    <value>সেটেল্যাবল সলিড</value>
+  </data>
+  <data name="Sulphate" xml:space="preserve">
+    <value>সালফেট</value>
+  </data>
+  <data name="SuspendedSolid" xml:space="preserve">
+    <value>সাস্পেনডেড সলিড</value>
+  </data>
+  <data name="TemperatureAtField" xml:space="preserve">
+    <value>মাঠ পর্যায়ের তাপমাত্রা</value>
+  </data>
+  <data name="TemperatureAtLab" xml:space="preserve">
+    <value>ল্যাব পর্যায়ের তাপমাত্রা</value>
+  </data>
+  <data name="TotalAlkalinity" xml:space="preserve">
+    <value>টোটাল আ্যলক্যালিনিটি</value>
+  </data>
+  <data name="TotalColiform" xml:space="preserve">
+    <value>টোটাল কলিফর্ম</value>
+  </data>
+  <data name="TotalDissolvedSolid" xml:space="preserve">
+    <value>টোটাল ডিসল্ব্ড সলিড</value>
+  </data>
+  <data name="TotalDissolvedVolatileSolid" xml:space="preserve">
+    <value>টোটাল ডিসল্ব্ড ভোলাটাইল সলিড</value>
+  </data>
+  <data name="TotalHardness" xml:space="preserve">
+    <value>টোটাল হার্ডনেস</value>
+  </data>
+  <data name="TotalKjeldahlNitrogen" xml:space="preserve">
+    <value>টোটাল জেলডাল নাইট্রোজেন</value>
+  </data>
+  <data name="TotalSolid" xml:space="preserve">
+    <value>টোটাল সলিড</value>
+  </data>
+  <data name="TotalViableBacteriaCount" xml:space="preserve">
+    <value>টোটাল ভাই্যাবল ব্যাক্টেরিয়া কাউন্ট</value>
+  </data>
+  <data name="Turbidity" xml:space="preserve">
+    <value>টারবিডিটি</value>
+  </data>
+  <data name="WaterQualityMonitoringSystemText" xml:space="preserve">
+    <value>ওয়াটার কোয়ালিটি মনিটরিং সিস্টেম</value>
+  </data>
+  <data name="ParametersWithMultiple" xml:space="preserve">
+    <value>প্যারামিটার (একাধিক নির্বাচন করুন)</value>
+  </data>
+  <data name="SelectLayer" xml:space="preserve">
+    <value>স্তর নির্বাচন করুন</value>
+  </data>
+  <data name="MainRivers" xml:space="preserve">
+    <value>প্রধান নদী</value>
+  </data>
+  <data name="InBengali" xml:space="preserve">
+    <value>বাংলায়</value>
+  </data>
+  <data name="InEnglish" xml:space="preserve">
+    <value>ইংরেজীতে</value>
+  </data>
+  <data name="LocationForPlaceholder" xml:space="preserve">
+    <value>অবস্থান</value>
+  </data>
+  <data name="UploadPhoto" xml:space="preserve">
+    <value>ছবি আপলোড</value>
+  </data>
+  <data name="DateOfESTD" xml:space="preserve">
+    <value>ESTD তারিখ</value>
+  </data>
+  <data name="PolutionSource" xml:space="preserve">
+    <value>দূষণ উৎস</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>অবস্থা</value>
+  </data>
+  <data name="UseOfWater" xml:space="preserve">
+    <value>জলের ব্যাবহার</value>
+  </data>
+  <data name="JLNo" xml:space="preserve">
+    <value>জেএল নং</value>
+  </data>
+  <data name="SLID" xml:space="preserve">
+    <value>এসএল আইডি</value>
+  </data>
+  <data name="SampleResultCount" xml:space="preserve">
+    <value>নমুনা ফলাফল</value>
+  </data>
+  <data name="ViewOnMap" xml:space="preserve">
+    <value>মানচিত্রে দেখুন</value>
+  </data>
+  <data name="MinistryOfEnvironmentForests" xml:space="preserve">
+    <value>পরিবেশ, বন ও জলবায়ু পরিবর্তন মন্ত্রণালয়</value>
+  </data>
+  <data name="EQS" xml:space="preserve">
+    <value>E.Q.S</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>মাস</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>বছর</value>
+  </data>
+  <data name="ShortFormName" xml:space="preserve">
+    <value>Short Form</value>
+  </data>
+  <data name="FromYear" xml:space="preserve">
+    <value>সূচনা বছর</value>
+  </data>
+  <data name="ToYear" xml:space="preserve">
+    <value>সর্বশেষ বছর</value>
+  </data>
+  <data name="TimeSeriesGraphicalView" xml:space="preserve">
+    <value>Time series graphical view</value>
+  </data>
+  <data name="old" xml:space="preserve">
+    <value>পুরাতন</value>
+  </data>
+  <data name="red" xml:space="preserve">
+    <value>লাল</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>যোগাযোগ করুন</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>প্রধান</value>
+  </data>
+  <data name="UserManual" xml:space="preserve">
+    <value>ব্যবহার বিধি</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>সেটআপ</value>
+  </data>
+</root>

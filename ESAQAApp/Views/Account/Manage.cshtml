@@ -1,0 +1,15 @@
+﻿@using BAC007.Models;
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = "Manage Account";
+}
+
+@if (ViewBag.HasLocalPassword)
+{
+    @Html.Partial("_ChangePasswordPartial")
+}
+else
+{
+    @Html.Partial("_SetPasswordPartial")
+}

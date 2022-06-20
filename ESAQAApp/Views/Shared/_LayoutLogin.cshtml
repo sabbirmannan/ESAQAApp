@@ -1,0 +1,41 @@
+﻿@using Resources;
+<!DOCTYPE html>
+<html lang="en" class="bg-dark">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <meta name="description" content="cegis, wqms, water, quality, monitoring, system, water quality monitoring system, center for environmental and geographical information services, web app, web application" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+
+    @Styles.Render("~/bundles/css")
+
+    <!-- App Scripts Start -->
+    @Scripts.Render("~/bundles/app")
+    @Scripts.Render("~/bundles/plugin")
+    @RenderSection("scripts", required: false)
+    <!-- App Scripts End -->
+</head>
+<body class="">
+    <section id="content" class="m-t-lg wrapper-md animated fadeInUp">
+        <div class="container aside-xxl">
+            <a class="navbar-brand block" href="/" style="text-align: center;">
+                BAC007
+            </a>
+            @RenderBody()
+        </div>
+    </section>
+    <!-- footer -->
+    <footer id="footer">
+        <div class="text-center padder">
+            <p>
+                <small>
+                    CEGIS<br>
+                    &copy; 2016 - @DateTime.Now.Year.ToString()
+                </small>
+            </p>
+        </div>
+    </footer>
+    <!-- / footer -->
+</body>
+</html>

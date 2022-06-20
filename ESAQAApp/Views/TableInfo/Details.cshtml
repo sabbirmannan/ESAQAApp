@@ -1,0 +1,89 @@
+﻿@model BAC007.Models.TableInfo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>TableInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FormOrder)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.FormOrder)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TableTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TableTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LookupTableName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LookupTableName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataSaveTableName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataSaveTableName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsIndividualTable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsIndividualTable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsResponseCols)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsResponseCols)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFiscalYearFlat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFiscalYearFlat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFiscalYearTwoCols)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFiscalYearTwoCols)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TableInfoId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

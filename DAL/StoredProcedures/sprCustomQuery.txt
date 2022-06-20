@@ -1,0 +1,21 @@
+﻿USE [CEGIS-DOE018-DB]
+GO
+
+/****** Object:  StoredProcedure [dbo].[sprCustomQuery]    Script Date: 20 Sep 2016 11:52:42 PM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[sprCustomQuery]
+	@code VARCHAR(MAX)
+AS
+BEGIN
+	SET NOCOUNT ON;
+	SET DATEFORMAT dmy
+	EXEC(@code)
+END
+
+
+GO

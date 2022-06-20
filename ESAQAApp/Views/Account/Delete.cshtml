@@ -1,0 +1,78 @@
+﻿@using Resources
+@model BAC007.Models.EditUserViewModel
+
+@{
+    ViewBag.Title = "Delete User";
+}
+
+<div class="col-sm-12">
+    <section class="panel panel-default">
+        <header class="panel-heading">
+            <span class="text-danger">
+                <i class="fa fa-times"></i> @Resources.AreYouSureYouWantToDeleteThis
+            </span>
+            <div class="m-b-xs pull-right" style="margin-top: -7px">
+                <div class="btn-group hidden-xs">
+                    <a class="btn btn-default" href="@Url.Action("Index", "Account")">
+                        <i class="fa fa-list"></i> @Resources.GoToList
+                    </a>
+                    @*<a class="btn btn-default" href="@Url.Action("Index", "WaterQualityParam")">
+                        <i class="fa fa-dashboard"></i> @Resources.GoToIndex
+                    </a>*@
+                </div>
+            </div>
+        </header>
+        <div class="panel-body">
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.UserName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.UserName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.FirstName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.LastName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.LastName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+
+                <dt>
+
+                </dt>
+
+                <dd>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+                        <div class="form-actions no-color">
+                            <input type="submit" value="@Resources.Delete" class="btn btn-sm btn-danger" />
+                            <a class="btn btn-sm btn-warning" href="@Url.Action("Index", "Account")">
+                                <i class="fa fa-list"></i> @Resources.Cancel
+                            </a>
+                        </div>
+                    }
+                </dd>
+            </dl>
+        </div>
+    </section>
+</div>

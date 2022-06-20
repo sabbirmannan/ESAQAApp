@@ -1,0 +1,554 @@
+﻿@using Resources;
+@Styles.Render("~/leaflet/styles")
+<style type="text/css">
+    .maplabel {
+        font-weight: 500;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: -1em;
+        font-size: x-small;
+    }
+
+        .maplabel div {
+            position: relative;
+            left: -20%;
+            text-shadow: 1px 1px 12px rgba(255,255,255,0.99);
+        }
+</style>
+<div class="row">
+    <div class="col-md-12">
+        @*<div class="col-md-3">
+                <section class="panel panel-default">
+                    <header class="panel-heading bg-light">
+                        @Resources.Layers
+                    </header>
+                    <div class="panel-body">
+                        <div class="checkbox">
+                            <label class="checkbox-custom">
+                                <input id="divLayer" type="checkbox" value="1" checked>
+                                <i class="fa fa-fw fa-square-o">
+                                </i>
+                                @Resources.DivisionName
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-custom">
+                                <input id="distLayer" type="checkbox" value="2">
+                                <i class="fa fa-fw fa-square-o">
+                                </i>
+                                @Resources.DistrictName
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-custom">
+                                <input id="riverLayer" type="checkbox" value="3" checked>
+                                <i class="fa fa-fw fa-square-o">
+                                </i>
+                                @Resources.MajorRivers
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-custom">
+                                <input id="detailRiverLayer" type="checkbox" value="4">
+                                <i class="fa fa-fw fa-square-o">
+                                </i>
+                                @Resources.DetailRiver
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-custom">
+                                <input id="strategiclocationCegisLayer" type="checkbox" value="5" checked>
+                                <i class="fa fa-fw fa-square-o">
+                                </i>
+                                @Resources.StrategicLocations
+                            </label>
+                        </div>
+                        <div class="checkbox">
+                            <label class="checkbox-custom">
+                                <input id="strategiclocationDoELayer" type="checkbox" value="6">
+                                <i class="fa fa-fw fa-square-o">
+                                </i>
+                                @Resources.StrategicLocations (DoE)
+                            </label>
+                        </div>
+                    </div>
+                </section>
+            </div>*@
+        <div id="MapViewer">
+            <section class="panel panel-info">
+                <header class="panel-heading bg-light">
+                    @Resources.StrategicLocations
+                </header>
+                <div class="panel-body">
+                    <div id="map" style="height: 440px;"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    @Scripts.Render("~/leaflet/js")
+    <script type="text/javascript">
+        var blankUrl = '/Content/images/blank.png',
+            osmUrl = 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+            baseUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw',
+            googleUrl = 'http://www.google.cn/maps/vt?lyrs=s@189&gl=cn&x={x}&y={y}&z={z}',
+            mapAttrib = '&copy; <a href="http://www.cegisbd.com/">CEGIS</a>',
+            map = new L.Map('map', { center: new L.LatLng(23.78035, 90.41664), zoomControl: false, zoom: 6.5 }),
+            drawnItems = L.featureGroup().addTo(map);
+
+        map.addControl(L.control.search());
+
+        var blank = L.tileLayer(blankUrl, { minZoom: 0, maxZoom: 25, attribution: mapAttrib }),
+            openstreet = L.tileLayer(osmUrl, { minZoom: 0, maxZoom: 25, attribution: mapAttrib }),
+            grayscale = L.tileLayer(baseUrl, { minZoom: 0, maxZoom: 25, id: 'mapbox.light', attribution: mapAttrib }),
+            streets = L.tileLayer(baseUrl, { minZoom: 0, maxZoom: 25, id: 'mapbox.streets', attribution: mapAttrib }),
+            google = L.tileLayer(googleUrl, { minZoom: 0, maxZoom: 25, attribution: mapAttrib });
+
+        //adding controls in map :: start
+        L.control.pan().addTo(map);
+        L.control.zoom().addTo(map);
+
+        //map fit to 100%
+        var mapfit = L.control({ position: "topright" });
+        mapfit.onAdd = function (map) {
+            var div = L.DomUtil.createWithID("div", "mapfit", "info map-fit");
+            div.innerHTML = '<i class="fa fa-arrows-alt"></i>';
+            return div;
+        }
+        mapfit.addTo(map);
+
+        L.control.scale().addTo(map);
+
+        L.control.layers(
+            {
+                'None': blank,
+                "Open Street": openstreet,
+                "Grayscale": grayscale,
+                "Streets": streets,
+                "Google": google
+            },
+            {
+                'Draw Layer': drawnItems
+            },
+            {
+                position: 'topright',
+                collapsed: true
+            }).addTo(map);
+
+        map.addControl(new L.Control.Draw({
+            edit: {
+                featureGroup: drawnItems,
+                poly: {
+                    allowIntersection: false
+                }
+            },
+            draw: {
+                polygon: {
+                    allowIntersection: false,
+                    showArea: true
+                }
+            }
+        }));
+
+        map.on(L.Draw.Event.CREATED, function (event) {
+            var layer = event.layer;
+            drawnItems.addLayer(layer);
+        });
+        //end
+
+        //map info show in popup
+        function popUp(feature, layer) {
+            var out = [];
+            if (feature.properties) {
+                for (key in feature.properties) {
+                    out.push(key + ": " + feature.properties[key]);
+                }
+                layer.bindPopup(out.join("<br />"));
+            }
+        }
+
+        function divPopUp(feature, layer) {
+            try {
+                var out = [];
+                if (feature.properties) {
+                    for (key in feature.properties) {
+                        out.push(key + ": " + feature.properties[key]);
+                    }
+                    layer.bindPopup(out.join("<br />"));
+                }
+
+                var bounds = layer.getBounds();
+                var center = bounds.getCenter();
+                var label = L.marker(center, {
+                    icon: L.divIcon({
+                        iconSize: null,
+                        className: 'maplabel',
+                        html: '<div>' + feature.properties.Name + '</div>'
+                    })
+                }).addTo(map);
+
+                console.log(feature.properties.Name);
+            } catch (err) {
+                console.log(err.message);
+            }
+        }
+
+        function distPopUp(feature, layer) {
+            try {
+                var out = [];
+                if (feature.properties) {
+                    for (key in feature.properties) {
+                        out.push(key + ": " + feature.properties[key]);
+                    }
+                    layer.bindPopup(out.join("<br />"));
+                }
+
+                var bounds = layer.getBounds();
+                var center = bounds.getCenter();
+                var label = L.marker(center, {
+                    icon: L.divIcon({
+                        iconSize: null,
+                        className: 'maplabel',
+                        html: '<div>' + feature.properties.District + '</div>'
+                    })
+                }).addTo(map);
+
+                //console.log(feature.properties.District);
+            } catch (err) {
+                console.log(err.message);
+            }
+        }
+
+        //// control that shows state info on hover :: start
+        //var info = L.control();
+
+        //info.onAdd = function (map) {
+        //    this._div = L.DomUtil.create('div', 'info');
+        //    this.update();
+        //    return this._div;
+        //};
+
+        //info.update = function (props) {
+        //    this._div.innerHTML = '<h4>BD Population: </h4>' + (props ? '<b>' + props.distname + '</b><br />' + props.male + ' people / mi<sup>2</sup>' : 'Hover over a state');
+        //};
+
+        //info.addTo(map);
+        //end
+
+        //adding X-Axis Y-Axis co-ordinate to map :: start
+        var xyAxis = L.control({ position: 'bottomleft' });
+
+        xyAxis.onAdd = function (map) {
+            this._div = L.DomUtil.createWithID('div', 'xyAxis', 'xy-position');
+            return this._div;
+        };
+
+        xyAxis.addTo(map);
+
+        function onMouseMove(e) {
+            document.getElementById('xyAxis').innerHTML = 'X-Axis: ' + e.latlng.lat.toFixed(8) + '<br>Y-Axis: ' + e.latlng.lng.toFixed(8);
+        }
+
+        map.on('mousemove', onMouseMove);
+        //end
+
+        function highlightFeature(e) {
+            var layer = e.target;
+
+            layer.setStyle({
+                weight: 2,
+                color: '#666',
+                dashArray: '',
+                fillOpacity: 0.8
+            });
+
+            if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+                layer.bringToFront();
+            }
+
+            //info.update(layer.feature.properties);
+        }
+
+        var div, dist, river, detailriver, slpoint, slpointold, marker, circle1, circle2, polygon;
+
+        function resetHighlight(e) {
+            dist.resetStyle(e.target);
+            //info.update();
+        }
+
+        var popup = L.popup();
+
+        function zoomToFeature(e) {
+            map.fitBounds(e.target.getBounds());
+            popup.setLatLng(e.latlng).setContent("You clicked the map at " + e.latlng.toString()).openOn(map);
+        }
+
+        //feature layer added here :: start
+        //div = new L.GeoJSON.AJAX(["/MapData/Shapes/DivisionWGS84.geojson"], { style: div_style, onEachFeature: divPopUp }).addTo(map);
+        dist = new L.GeoJSON.AJAX(["/MapData/Shapes/DistrictWGS84.geojson"], { style: dist_style, onEachFeature: distPopUp }).addTo(map);
+        river = new L.GeoJSON.AJAX(["/MapData/Shapes/MajorRiverWGS84.geojson"], { style: river_style, onEachFeature: popUp }).addTo(map);
+
+        slpoint = new L.GeoJSON.AJAX(["/MapData/Shapes/StrategicLocation13WGS84.geojson"], {
+            style: slpoint_style,
+            onEachFeature: popUp,
+            pointToLayer: function (feature, latlng) {
+                return L.marker(latlng, { icon: smallIcon });
+            }
+        }).addTo(map);
+        //end
+
+        ////drawing layer :: start
+        //marker = new L.marker([23.78035, 90.41664]).addTo(map)
+        //              .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+
+        //circle1 = new L.circle([23.78175, 90.41334], 50, {
+        //    color: 'red',
+        //    fillColor: '#f03',
+        //    fillOpacity: 0.5
+        //}).addTo(map).bindPopup("CEGIS");
+
+        //circle2 = new L.circle([23.78175, 90.41334], 80, {
+        //    color: 'red',
+        //    fillColor: '#f09',
+        //    fillOpacity: 0.5
+        //}).addTo(map).bindPopup("GIS");
+
+        //polygon = new L.polygon([
+        //    [23.78085, 90.42278],
+        //    [23.78074, 90.42552],
+        //    [23.78258, 90.42567]
+        //]).addTo(map).bindPopup("I am a polygon.");
+        ////end
+
+        //assigning css style to river layer
+        function river_style(feature) {
+            return {
+                fillColor: getRiverColor(feature.properties.type),
+                weight: 1,
+                opacity: 1,
+                color: 'blue',
+                //dashArray: '5',
+                fillOpacity: 0.5
+            };
+        }
+
+        //assigning css style to sl point layer
+        function slpoint_style(feature) {
+            return {
+                fillColor: 'red',//getRiverColor(feature.properties.type),
+                weight: 1,
+                opacity: 1,
+                color: 'red',
+                //dashArray: '5',
+                fillOpacity: 0.5
+            };
+        }
+
+        //assigning css style to layer
+        function div_style(feature) {
+            return {
+                fillColor: getColor(feature.properties.distcode),
+                weight: 1,
+                opacity: 1,
+                color: 'blue',
+                //dashArray: '5',
+                fillOpacity: 0.5
+            };
+        }
+
+        function dist_style(feature) {
+            return {
+                fillColor: getColor(feature.properties.distcode),
+                weight: 1,
+                opacity: 1,
+                color: 'green',
+                //dashArray: '5',
+                fillOpacity: 0.3
+            };
+        }
+
+        function getRiverColor(d) {
+            switch (d) {
+                case 'River': return '#7EF3F7';
+                case 'Char': return '#FD8D3C';
+                default: '#BD0026';
+            }
+        }
+
+        function getColor(d) {
+            return getRandomColor();
+        }
+
+        function getRandomColor() {
+            var letters = '0123456789ABCDEF';
+            var color = '#';
+            for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+
+            return color;
+        }
+
+        $("#riverLayer").change(function (event) {
+            event.preventDefault();
+
+            if ($(this).is(':checked')) {
+                if (map.hasLayer(river)) {
+                    map.removeLayer(river);
+                } else {
+                    map.addLayer(river);
+                }
+            } else {
+                map.removeLayer(river);
+            }
+        });
+
+        $("#distLayer").change(function (event) {
+            event.preventDefault();
+
+            if ($(this).is(':checked')) {
+                if (map.hasLayer(dist)) {
+                    map.removeLayer(dist);
+                } else {
+                    map.addLayer(dist);
+                }
+            } else {
+                map.removeLayer(dist);
+            }
+        });
+
+        $("#divLayer").change(function (event) {
+            event.preventDefault();
+
+            if ($(this).is(':checked')) {
+                if (map.hasLayer(div)) {
+                    map.removeLayer(div);
+                } else {
+                    map.addLayer(div);
+                }
+            } else {
+                map.removeLayer(div);
+            }
+        });
+
+        //$("#markerLayer").click(function (event) {
+        //    event.preventDefault();
+        //    if (map.hasLayer(marker)) {
+        //        $(this).removeClass('selected');
+        //        map.removeLayer(marker);
+        //    } else {
+        //        map.addLayer(marker);
+        //        $(this).addClass('selected');
+        //    }
+        //});
+
+        //$("#circle1Layer").click(function (event) {
+        //    event.preventDefault();
+        //    if (map.hasLayer(circle1)) {
+        //        $(this).removeClass('selected');
+        //        map.removeLayer(circle1);
+        //    } else {
+        //        map.addLayer(circle1);
+        //        $(this).addClass('selected');
+        //    }
+        //});
+
+        //$("#circle2Layer").click(function (event) {
+        //    event.preventDefault();
+        //    if (map.hasLayer(circle2)) {
+        //        $(this).removeClass('selected');
+        //        map.removeLayer(circle2);
+        //    } else {
+        //        map.addLayer(circle2);
+        //        $(this).addClass('selected');
+        //    }
+        //});
+
+        //$("#polygonLayer").click(function (event) {
+        //    event.preventDefault();
+        //    if (map.hasLayer(polygon)) {
+        //        $(this).removeClass('selected');
+        //        map.removeLayer(polygon);
+        //    } else {
+        //        map.addLayer(polygon);
+        //        $(this).addClass('selected');
+        //    }
+        //});
+
+        $("#strategiclocationCegisLayer").change(function (event) {
+            event.preventDefault();
+
+            if ($(this).is(':checked')) {
+                if (map.hasLayer(slpoint)) {
+                    map.removeLayer(slpoint);
+                } else {
+                    map.addLayer(slpoint);
+                }
+            } else {
+                map.removeLayer(slpoint);
+            }
+        });
+
+        var smallIcon = new L.Icon({
+            iconSize: [10, 17],
+            iconAnchor: [13, 27],
+            popupAnchor: [1, -24],
+            iconUrl: '/Content/images/green-10x17.png'
+        });
+
+        //var btn = L.functionButtons([{ content: 'Chittagong' }, { content: 'Reset Map' }]);
+        //btn.on('clicked', function (data) {
+        //    if (data.idx == 0) {
+        //        map.setView([22.514000, 91.845000], 13);
+        //    } else if (data.idx == 1) {
+        //        map.setView([23.78035, 90.41664], 6.5);
+        //    } else {
+        //        map.removeControl(btn);
+        //    }
+        //});
+        //map.addControl(btn);
+
+        L.easyPrint({
+            title: 'My awesome print button',
+            elementsToHide: 'ul'//'p, h2, .gitButton'
+        }).addTo(map);
+
+        ////export control
+        //map.addControl(L.exportControl({ codeid: 'nwrxs' }));
+
+        //north arrow add to map
+        var north = L.control({ position: "bottomright" });
+        north.onAdd = function (map) {
+            var div = L.DomUtil.create("div", "north-arrow");
+            div.innerHTML = '<i class="fa fa-arrow-circle-o-up fa-2x"></i>';
+            return div;
+        }
+        north.addTo(map);
+
+        $('input:checkbox.leaflet-control-layers-selector').prop('checked', false);
+        $(".leaflet-draw.leaflet-control").hide();
+
+        $('input:checkbox.leaflet-control-layers-selector').change(function (event) {
+            event.preventDefault();
+
+            if ($(this).is(':checked')) {
+                $(".leaflet-draw.leaflet-control").show();
+            } else {
+                $(".leaflet-draw.leaflet-control").hide();
+            }
+        });
+    </script>
+    <script type="text/javascript">
+        var width = $('.leaflet-control-layers-toggle').width();
+        var height = $('.leaflet-control-layers-toggle').height();
+        $('#mapfit').attr('style', 'width: ' + width + 'px; height: ' + height + 'px; font-size: 23px; cursor: pointer;');
+        $('#mapfit').attr('title', 'Reset map to 100% view.');
+
+        $("form").submit(function (e) {
+            e.preventDefault();
+        });
+
+        $('#mapfit').click(function () {
+            map.setView([23.78035, 90.41664], 6.5);
+        });
+    </script>
+</div>

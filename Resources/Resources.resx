@@ -1,0 +1,1248 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Apply" xml:space="preserve">
+    <value>Apply</value>
+  </data>
+  <data name="Biography" xml:space="preserve">
+    <value>Biography</value>
+  </data>
+  <data name="ChooseLanguage" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreatedBy" xml:space="preserve">
+    <value>Created By</value>
+  </data>
+  <data name="CreatedDate" xml:space="preserve">
+    <value>Created Date</value>
+  </data>
+  <data name="Delete" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="DeletedBy" xml:space="preserve">
+    <value>Deleted By</value>
+  </data>
+  <data name="DeletedDate" xml:space="preserve">
+    <value>Deleted Date</value>
+  </data>
+  <data name="DeleteSelected" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="FirstName" xml:space="preserve">
+    <value>First name</value>
+  </data>
+  <data name="IsActive" xml:space="preserve">
+    <value>Is Active</value>
+  </data>
+  <data name="IsDelete" xml:space="preserve">
+    <value>Is Delete</value>
+  </data>
+  <data name="LastName" xml:space="preserve">
+    <value>Last name</value>
+  </data>
+  <data name="LogOff" xml:space="preserve">
+    <value>Log off</value>
+  </data>
+  <data name="LogOn" xml:space="preserve">
+    <value>Log on</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>Messages</value>
+  </data>
+  <data name="ParameterName" xml:space="preserve">
+    <value>Parameter</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="Remarks" xml:space="preserve">
+    <value>Remarks</value>
+  </data>
+  <data name="SelectAnAction" xml:space="preserve">
+    <value>Select an Action</value>
+  </data>
+  <data name="StandardRange" xml:space="preserve">
+    <value>Standard Range</value>
+  </data>
+  <data name="Unit" xml:space="preserve">
+    <value>Unit</value>
+  </data>
+  <data name="UpdatedBy" xml:space="preserve">
+    <value>Updated By</value>
+  </data>
+  <data name="UpdatedDate" xml:space="preserve">
+    <value>Updated Date</value>
+  </data>
+  <data name="AddNew" xml:space="preserve">
+    <value>Add New</value>
+  </data>
+  <data name="AddNewWaterQualityParameter" xml:space="preserve">
+    <value>Add New Water Quality Parameter</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Go" xml:space="preserve">
+    <value>Go</value>
+  </data>
+  <data name="GoToIndex" xml:space="preserve">
+    <value>Go to Index</value>
+  </data>
+  <data name="GoToList" xml:space="preserve">
+    <value>Go To List</value>
+  </data>
+  <data name="Save" xml:space="preserve">
+    <value>Save</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="Submit" xml:space="preserve">
+    <value>Submit</value>
+  </data>
+  <data name="WaterQualityParameters" xml:space="preserve">
+    <value>Water Quality Parameters</value>
+  </data>
+  <data name="Details" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="Edit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="Action" xml:space="preserve">
+    <value>Action</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Update</value>
+  </data>
+  <data name="UpdateWaterQualityParameter" xml:space="preserve">
+    <value>Update Water Quality Parameter</value>
+  </data>
+  <data name="DetailsOfWaterQualityParameter" xml:space="preserve">
+    <value>Details of Water Quality Parameter</value>
+  </data>
+  <data name="AreYouSureYouWantToDeleteThis" xml:space="preserve">
+    <value>Are you sure you want to delete this?</value>
+  </data>
+  <data name="Print" xml:space="preserve">
+    <value>Print</value>
+  </data>
+  <data name="RonY" xml:space="preserve">
+    <value>RonY</value>
+  </data>
+  <data name="Symbol" xml:space="preserve">
+    <value>Symbol</value>
+  </data>
+  <data name="CategoryName" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="DetailsOfWaterQualityCategory" xml:space="preserve">
+    <value>Details of Water Quality Category</value>
+  </data>
+  <data name="WaterQualityParameterCategories" xml:space="preserve">
+    <value>Water Quality Parameter Categories</value>
+  </data>
+  <data name="AddNewWaterQualityCategory" xml:space="preserve">
+    <value>Add New Water Quality Category</value>
+  </data>
+  <data name="UpdateWaterQualityCategory" xml:space="preserve">
+    <value>Update Water Quality Category</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Category</value>
+  </data>
+  <data name="ChangePassword" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="ConfirmNewPassword" xml:space="preserve">
+    <value>Confirm New Password</value>
+  </data>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+  <data name="CurrentPassword" xml:space="preserve">
+    <value>Current Password</value>
+  </data>
+  <data name="NewPassword" xml:space="preserve">
+    <value>New Password</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+  <data name="RememberMe" xml:space="preserve">
+    <value>Remember Me?</value>
+  </data>
+  <data name="UserName" xml:space="preserve">
+    <value>User Name</value>
+  </data>
+  <data name="YouAreLoggedInAs" xml:space="preserve">
+    <value>You're logged in as:</value>
+  </data>
+  <data name="SetPassword" xml:space="preserve">
+    <value>Set Password</value>
+  </data>
+  <data name="YoudonothavealocalusernamepasswordforthissiteAddalocalaccountsoyoucanloginwithoutanexternallogin" xml:space="preserve">
+    <value>You do not have a local username/password for this site. Add a local account so you can log in without an external login.</value>
+  </data>
+  <data name="Groups" xml:space="preserve">
+    <value>Groups</value>
+  </data>
+  <data name="Permissions" xml:space="preserve">
+    <value>Permissions</value>
+  </data>
+  <data name="ExcelExport" xml:space="preserve">
+    <value>Export to Excel</value>
+  </data>
+  <data name="InactiveSelected" xml:space="preserve">
+    <value>Inactive</value>
+  </data>
+  <data name="PDFExport" xml:space="preserve">
+    <value>Export to PDF</value>
+  </data>
+  <data name="Location" xml:space="preserve">
+    <value>Administrative Location</value>
+  </data>
+  <data name="RiverName" xml:space="preserve">
+    <value>River Name</value>
+  </data>
+  <data name="RiverNameInBangla" xml:space="preserve">
+    <value>Bengali Name</value>
+  </data>
+  <data name="Rivers" xml:space="preserve">
+    <value>Rivers</value>
+  </data>
+  <data name="AddNewRiver" xml:space="preserve">
+    <value>Add a New River</value>
+  </data>
+  <data name="DetailsOfSelectedRiver" xml:space="preserve">
+    <value>Details about selected river</value>
+  </data>
+  <data name="UpdateRiver" xml:space="preserve">
+    <value>Update River Information</value>
+  </data>
+  <data name="CustomID" xml:space="preserve">
+    <value>Custom ID</value>
+  </data>
+  <data name="UpazillaName" xml:space="preserve">
+    <value>Upazilla</value>
+  </data>
+  <data name="SurveyDate" xml:space="preserve">
+    <value>Survey Date</value>
+  </data>
+  <data name="Latitude" xml:space="preserve">
+    <value>Latitude</value>
+  </data>
+  <data name="LatitudeDMS" xml:space="preserve">
+    <value>Latitude DD° M' SS.SS"</value>
+  </data>
+  <data name="Longitude" xml:space="preserve">
+    <value>Longitude</value>
+  </data>
+  <data name="LongitudeDMS" xml:space="preserve">
+    <value>Longitude DD° M' SS.SS"</value>
+  </data>
+  <data name="SamplingLocation" xml:space="preserve">
+    <value>Sampling Point</value>
+  </data>
+  <data name="Degree" xml:space="preserve">
+    <value>Degree</value>
+  </data>
+  <data name="Minute" xml:space="preserve">
+    <value>Minute</value>
+  </data>
+  <data name="Second" xml:space="preserve">
+    <value>Second</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>Next</value>
+  </data>
+  <data name="Prev" xml:space="preserve">
+    <value>Prev</value>
+  </data>
+  <data name="Address" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="ContactNumber" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Designation" xml:space="preserve">
+    <value>Designation</value>
+  </data>
+  <data name="InterviewerName" xml:space="preserve">
+    <value>Interviewer</value>
+  </data>
+  <data name="Occupation" xml:space="preserve">
+    <value>Occupation</value>
+  </data>
+  <data name="ResponderName" xml:space="preserve">
+    <value>Responder</value>
+  </data>
+  <data name="SignaturePath" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="InterviewerInformation" xml:space="preserve">
+    <value>Interviewer Information</value>
+  </data>
+  <data name="ResponderInformation" xml:space="preserve">
+    <value>Responder Information</value>
+  </data>
+  <data name="CollectionDate" xml:space="preserve">
+    <value>Collection Date</value>
+  </data>
+  <data name="Detail" xml:space="preserve">
+    <value>Detail</value>
+  </data>
+  <data name="Interviewer" xml:space="preserve">
+    <value>Interviewer</value>
+  </data>
+  <data name="Locality" xml:space="preserve">
+    <value>Locality</value>
+  </data>
+  <data name="Master" xml:space="preserve">
+    <value>Master</value>
+  </data>
+  <data name="Responder" xml:space="preserve">
+    <value>Responder</value>
+  </data>
+  <data name="ResponsibleName" xml:space="preserve">
+    <value>Responsible Name</value>
+  </data>
+  <data name="ResponsiblePersonInformation" xml:space="preserve">
+    <value>Responsible Person Information</value>
+  </data>
+  <data name="Result" xml:space="preserve">
+    <value>Result</value>
+  </data>
+  <data name="SampleResult" xml:space="preserve">
+    <value>Sample Result</value>
+  </data>
+  <data name="TestingDate" xml:space="preserve">
+    <value>Testing Date</value>
+  </data>
+  <data name="AnyHabitatNearSampleLocation3_1" xml:space="preserve">
+    <value>Is there any habitat near the sampling location?</value>
+  </data>
+  <data name="AnyProblemFacedByPeople13_2" xml:space="preserve">
+    <value>Any problem faced by the people/traveler for the poor quality of water?</value>
+  </data>
+  <data name="AnySignificantEnvInterest1_1" xml:space="preserve">
+    <value>Does the sampling location have any significance of environmental interest?</value>
+  </data>
+  <data name="CurrentUseOfWater15_1" xml:space="preserve">
+    <value>What are the current uses of water?</value>
+  </data>
+  <data name="DescOfCurrentUse15_2" xml:space="preserve">
+    <value>Brief description of usage?</value>
+  </data>
+  <data name="DescOfDependency4_2" xml:space="preserve">
+    <value>Briefly describe the dependency</value>
+  </data>
+  <data name="DescOfEnvSignificance1_3" xml:space="preserve">
+    <value>Brief description of environmental significance:  social forestry, community park, connected lakes or community water bodies, river dependent agricultural land, school/ college, hospital, fringe agricultural land, urban agricultural land.</value>
+  </data>
+  <data name="DescOfHowDwellersUse11_2" xml:space="preserve">
+    <value>If they use the river water in different ways, then give a brief note:</value>
+  </data>
+  <data name="DescOfImpactPollutedWater2_2" xml:space="preserve">
+    <value>Describe impacts of polluted water on the place:</value>
+  </data>
+  <data name="DescOfImpactUsesWater3_6" xml:space="preserve">
+    <value>Briefly describe the impact of water uses</value>
+  </data>
+  <data name="DescOfPrevUse14_2" xml:space="preserve">
+    <value>Brief description of usage</value>
+  </data>
+  <data name="DescOfProblem13_3" xml:space="preserve">
+    <value>Brief description of the problems faced</value>
+  </data>
+  <data name="DescTheTypeOfPollutantsSpot7_3" xml:space="preserve">
+    <value>Briefly describe the type of pollutants coming from the spot</value>
+  </data>
+  <data name="DescWateManage8_3" xml:space="preserve">
+    <value>How the generated waste managed?</value>
+  </data>
+  <data name="DistanceBetIndustryAndHabitat9" xml:space="preserve">
+    <value>Distance between industry/zone and nearest habitat</value>
+  </data>
+  <data name="FlowDirectionOfRiver1_0" xml:space="preserve">
+    <value>What is the flow direction of the river in respect to the habitat?</value>
+  </data>
+  <data name="HowDwellersUseRiverWater11_1" xml:space="preserve">
+    <value>How the dwellers make use of river water?</value>
+  </data>
+  <data name="IsAnyPlantForRiverWaterTreatment6" xml:space="preserve">
+    <value>Is there any water treatment plant based on river water?</value>
+  </data>
+  <data name="IsAnyPollutionSpot7_1" xml:space="preserve">
+    <value>Is there any pollution spot near the area?</value>
+  </data>
+  <data name="IsSolelyDependencyOnWater4_1" xml:space="preserve">
+    <value>Are there any people who are solely dependent on the river for livelihood?</value>
+  </data>
+  <data name="IsThereAnyCommunicationSite13_1" xml:space="preserve">
+    <value>Is the site located near any water communication and transport route?</value>
+  </data>
+  <data name="IsThereAnyDenseZone8_1" xml:space="preserve">
+    <value>Is the place near any industrial dense zone?</value>
+  </data>
+  <data name="IsThereAnyWasteDrain12_1" xml:space="preserve">
+    <value>Is there any waste drainage outlet near the site?</value>
+  </data>
+  <data name="IsUsedForIrrigation5" xml:space="preserve">
+    <value>Does the water used for irrigation purposes?</value>
+  </data>
+  <data name="NearbyPolutionSource3_3" xml:space="preserve">
+    <value>What is the nearby pollution sources?</value>
+  </data>
+  <data name="PopulationStatus3_2" xml:space="preserve">
+    <value>What is the population status of the habitat?</value>
+  </data>
+  <data name="PrevUseOfWater14_1" xml:space="preserve">
+    <value>What were the previous uses of the water?</value>
+  </data>
+  <data name="SourceDesc3_4" xml:space="preserve">
+    <value>Briefly describe of source</value>
+  </data>
+  <data name="TypeOfDrainageOutfall12_2" xml:space="preserve">
+    <value>What is the type of the drainage outfall?</value>
+  </data>
+  <data name="TypeOfEnvSignificance1_2" xml:space="preserve">
+    <value>What is the type of environmental significance?</value>
+  </data>
+  <data name="TypeOfIndustry8_2" xml:space="preserve">
+    <value>What is the type of the industry?</value>
+  </data>
+  <data name="TypeOfThePollution7_2" xml:space="preserve">
+    <value>What is the type of the pollution?</value>
+  </data>
+  <data name="TypeOfWasteDischarge8_4" xml:space="preserve">
+    <value>What type of waste does the industry discharge?</value>
+  </data>
+  <data name="UsesOfWater3_5" xml:space="preserve">
+    <value>What are the uses of the water?</value>
+  </data>
+  <data name="InformationCollectionfromSamplingSite" xml:space="preserve">
+    <value>Information Collection from Sampling Site</value>
+  </data>
+  <data name="SelectAnOption" xml:space="preserve">
+    <value>Select an option...</value>
+  </data>
+  <data name="FlowDirectionOfRiver10" xml:space="preserve">
+    <value>What is the flow direction of the river in respect to the habitat?</value>
+  </data>
+  <data name="IsThereAnyArcheologicalPlace2_1" xml:space="preserve">
+    <value>Is there any Archeological or Historically significant place?</value>
+  </data>
+  <data name="Signature" xml:space="preserve">
+    <value>Signature</value>
+  </data>
+  <data name="Serial" xml:space="preserve">
+    <value>Sl</value>
+  </data>
+  <data name="DataExplorer" xml:space="preserve">
+    <value>Sample Results</value>
+  </data>
+  <data name="AddNewDataCollection" xml:space="preserve">
+    <value>Add New Data Collection</value>
+  </data>
+  <data name="UpdateRiverInformation" xml:space="preserve">
+    <value>Update River Information</value>
+  </data>
+  <data name="AddNewStrategicLocation" xml:space="preserve">
+    <value>Add New Monitoring Station</value>
+  </data>
+  <data name="Criteria" xml:space="preserve">
+    <value>Selection Criteria</value>
+  </data>
+  <data name="DistrictName" xml:space="preserve">
+    <value>District</value>
+  </data>
+  <data name="DivisionName" xml:space="preserve">
+    <value>Division</value>
+  </data>
+  <data name="Purpose" xml:space="preserve">
+    <value>Purpose</value>
+  </data>
+  <data name="StrategicLocationName" xml:space="preserve">
+    <value>Monitoring Station</value>
+  </data>
+  <data name="UnionName" xml:space="preserve">
+    <value>Union</value>
+  </data>
+  <data name="LatLong" xml:space="preserve">
+    <value>Lat-Long</value>
+  </data>
+  <data name="StrategicLocations" xml:space="preserve">
+    <value>Monitoring Stations</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>Import</value>
+  </data>
+  <data name="ImportStrategicLocation" xml:space="preserve">
+    <value>Import Monitoring Station</value>
+  </data>
+  <data name="WordExport" xml:space="preserve">
+    <value>Export to Word</value>
+  </data>
+  <data name="CSVExport" xml:space="preserve">
+    <value>Export to CSV</value>
+  </data>
+  <data name="PNGExport" xml:space="preserve">
+    <value>Export to PNG</value>
+  </data>
+  <data name="UpdateStrategicLocation" xml:space="preserve">
+    <value>Update Monitoring Station</value>
+  </data>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AnalyzeData" xml:space="preserve">
+    <value>Analyze Data</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>Dashboard</value>
+  </data>
+  <data name="DataEntry" xml:space="preserve">
+    <value>Data Entry</value>
+  </data>
+  <data name="DataExplore" xml:space="preserve">
+    <value>Sample Results</value>
+  </data>
+  <data name="GraphReport" xml:space="preserve">
+    <value>Graph Report</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="List" xml:space="preserve">
+    <value>List</value>
+  </data>
+  <data name="MapBrowse" xml:space="preserve">
+    <value>Map Browse</value>
+  </data>
+  <data name="OrganizeData" xml:space="preserve">
+    <value>Organize Data</value>
+  </data>
+  <data name="ParameterCategory" xml:space="preserve">
+    <value>Parameter Category</value>
+  </data>
+  <data name="Parameters" xml:space="preserve">
+    <value>Parameters</value>
+  </data>
+  <data name="Privileges" xml:space="preserve">
+    <value>Privileges</value>
+  </data>
+  <data name="DataAnalysis" xml:space="preserve">
+    <value>Data Analysis (Query)</value>
+  </data>
+  <data name="River" xml:space="preserve">
+    <value>River</value>
+  </data>
+  <data name="Roles" xml:space="preserve">
+    <value>Roles</value>
+  </data>
+  <data name="Settings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="Spatial" xml:space="preserve">
+    <value>Spatial</value>
+  </data>
+  <data name="Tabular" xml:space="preserve">
+    <value>Tabular</value>
+  </data>
+  <data name="Timer" xml:space="preserve">
+    <value>Timer</value>
+  </data>
+  <data name="Entry" xml:space="preserve">
+    <value>Entry</value>
+  </data>
+  <data name="Gallery" xml:space="preserve">
+    <value>Sampling Points</value>
+  </data>
+  <data name="ReportsGeneration" xml:space="preserve">
+    <value>Reports Generation</value>
+  </data>
+  <data name="FormType" xml:space="preserve">
+    <value>Form Type</value>
+  </data>
+  <data name="Max" xml:space="preserve">
+    <value>Max</value>
+  </data>
+  <data name="Min" xml:space="preserve">
+    <value>Min</value>
+  </data>
+  <data name="Maximum" xml:space="preserve">
+    <value>Maximum</value>
+  </data>
+  <data name="Minimum" xml:space="preserve">
+    <value>Minimum</value>
+  </data>
+  <data name="Grade" xml:space="preserve">
+    <value>Grade</value>
+  </data>
+  <data name="StandardGrade" xml:space="preserve">
+    <value>Standard Grade</value>
+  </data>
+  <data name="Village" xml:space="preserve">
+    <value>Village</value>
+  </data>
+  <data name="CollectionMonth" xml:space="preserve">
+    <value>Collection Month</value>
+  </data>
+  <data name="Sl" xml:space="preserve">
+    <value>Sl</value>
+  </data>
+  <data name="RiverStandardID" xml:space="preserve">
+    <value>River Standard ID</value>
+  </data>
+  <data name="BengaliStandardID" xml:space="preserve">
+    <value>standard id</value>
+  </data>
+  <data name="ChooseAnExcelFile" xml:space="preserve">
+    <value>Choose an Excel File</value>
+  </data>
+  <data name="ImportDataFromExcel" xml:space="preserve">
+    <value>Import Data from Excel</value>
+  </data>
+  <data name="SaveImportData" xml:space="preserve">
+    <value>Save Import Data</value>
+  </data>
+  <data name="Choose" xml:space="preserve">
+    <value>Choose</value>
+  </data>
+  <data name="DashboardSetup" xml:space="preserve">
+    <value>Dashboard Setup</value>
+  </data>
+  <data name="DepthOfWater" xml:space="preserve">
+    <value>Depth of Water</value>
+  </data>
+  <data name="HydrologicalInfo" xml:space="preserve">
+    <value>Hydrological Information</value>
+  </data>
+  <data name="RiverFlowCondition" xml:space="preserve">
+    <value>River Flow Condition</value>
+  </data>
+  <data name="Other" xml:space="preserve">
+    <value>Other</value>
+  </data>
+  <data name="Apr" xml:space="preserve">
+    <value>Apr</value>
+  </data>
+  <data name="Aug" xml:space="preserve">
+    <value>Aug</value>
+  </data>
+  <data name="Dec" xml:space="preserve">
+    <value>Dec</value>
+  </data>
+  <data name="Feb" xml:space="preserve">
+    <value>Feb</value>
+  </data>
+  <data name="Jan" xml:space="preserve">
+    <value>Jan</value>
+  </data>
+  <data name="Jul" xml:space="preserve">
+    <value>Jul</value>
+  </data>
+  <data name="Jun" xml:space="preserve">
+    <value>Jun</value>
+  </data>
+  <data name="Mar" xml:space="preserve">
+    <value>Mar</value>
+  </data>
+  <data name="May" xml:space="preserve">
+    <value>May</value>
+  </data>
+  <data name="Nov" xml:space="preserve">
+    <value>Nov</value>
+  </data>
+  <data name="Oct" xml:space="preserve">
+    <value>Oct</value>
+  </data>
+  <data name="Sep" xml:space="preserve">
+    <value>Sep</value>
+  </data>
+  <data name="GraphicalView" xml:space="preserve">
+    <value>Graphical View of</value>
+  </data>
+  <data name="TabularView" xml:space="preserve">
+    <value>Tabular View</value>
+  </data>
+  <data name="NameOfRiver" xml:space="preserve">
+    <value>Name of River</value>
+  </data>
+  <data name="DateOfTesting" xml:space="preserve">
+    <value>Date of Testing</value>
+  </data>
+  <data name="CompletionDate" xml:space="preserve">
+    <value>Completion Date</value>
+  </data>
+  <data name="LabCode" xml:space="preserve">
+    <value>Lab Code</value>
+  </data>
+  <data name="PurposeOfSample" xml:space="preserve">
+    <value>Purpose of Sample</value>
+  </data>
+  <data name="ReceivingDateTimeAtLab" xml:space="preserve">
+    <value>Receiving Date at Lab</value>
+  </data>
+  <data name="SampleCollectionDateTime" xml:space="preserve">
+    <value>Sample Collection Date</value>
+  </data>
+  <data name="SampleReceivedBy" xml:space="preserve">
+    <value>Sample Received By</value>
+  </data>
+  <data name="TypeOfSample" xml:space="preserve">
+    <value>Type of Sample</value>
+  </data>
+  <data name="WeatherCondition" xml:space="preserve">
+    <value>Weather Condition</value>
+  </data>
+  <data name="PurposeOfSampleName" xml:space="preserve">
+    <value>Purpose of Sample Name</value>
+  </data>
+  <data name="WaterSourceName" xml:space="preserve">
+    <value>Water Source (River)</value>
+  </data>
+  <data name="AnalysisSheetOfWaterSample" xml:space="preserve">
+    <value>Analysis Sheet of Water Sample</value>
+  </data>
+  <data name="IsMonitoring" xml:space="preserve">
+    <value>Routine Monitoring?</value>
+  </data>
+  <data name="Hour" xml:space="preserve">
+    <value>Hour</value>
+  </data>
+  <data name="DrinkingWater" xml:space="preserve">
+    <value>Drinking Water</value>
+  </data>
+  <data name="GroundWater" xml:space="preserve">
+    <value>Ground Water</value>
+  </data>
+  <data name="NonRoutineMonitoring" xml:space="preserve">
+    <value>Non-Routine Monitoring</value>
+  </data>
+  <data name="Reports" xml:space="preserve">
+    <value>Reports</value>
+  </data>
+  <data name="RoutineMonitoring" xml:space="preserve">
+    <value>Routine Monitoring</value>
+  </data>
+  <data name="SampleLocation" xml:space="preserve">
+    <value>Sample Location</value>
+  </data>
+  <data name="PreviewReport" xml:space="preserve">
+    <value>Preview Report</value>
+  </data>
+  <data name="RoutineMonitoringReports" xml:space="preserve">
+    <value>Routine Monitoring Reports</value>
+  </data>
+  <data name="Options" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="NonRoutineMonitoringReport" xml:space="preserve">
+    <value>Non-Routine Monitoring Report</value>
+  </data>
+  <data name="DrinkingWaterMonitoringReports" xml:space="preserve">
+    <value>Drinking Water Monitoring Reports</value>
+  </data>
+  <data name="GroundWaterMonitoringReports" xml:space="preserve">
+    <value>Ground Water Monitoring Reports</value>
+  </data>
+  <data name="StrategicLocationsReports" xml:space="preserve">
+    <value>Monitoring Stations Reports</value>
+  </data>
+  <data name="Administration" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="AgreeTheTermsAndPolicy" xml:space="preserve">
+    <value>Agree the terms and policy</value>
+  </data>
+  <data name="AllDrinkingWaterMonitoring" xml:space="preserve">
+    <value>All Drinking Water Monitoring</value>
+  </data>
+  <data name="AllGroundWaterMonitoring" xml:space="preserve">
+    <value>All Ground Water Monitoring</value>
+  </data>
+  <data name="AllNonRoutineMonitoring" xml:space="preserve">
+    <value>All Non-Routine Monitoring</value>
+  </data>
+  <data name="AllRoutineMonitoring" xml:space="preserve">
+    <value>All Routine Monitoring</value>
+  </data>
+  <data name="AllStrategicLocations" xml:space="preserve">
+    <value>All Monitoring Stations</value>
+  </data>
+  <data name="AlreadyHaveAnAccount" xml:space="preserve">
+    <value>Already have an account?</value>
+  </data>
+  <data name="CreateAnAccount" xml:space="preserve">
+    <value>Create an Account</value>
+  </data>
+  <data name="DataCollection" xml:space="preserve">
+    <value>Data Collection</value>
+  </data>
+  <data name="DepartmentOfEnvironment" xml:space="preserve">
+    <value>Department of Environment (DoE)</value>
+  </data>
+  <data name="DetailRiver" xml:space="preserve">
+    <value>Detail River</value>
+  </data>
+  <data name="DoNotHaveAnAccount" xml:space="preserve">
+    <value>Do not have an account?</value>
+  </data>
+  <data name="EndingDate" xml:space="preserve">
+    <value>Ending Date</value>
+  </data>
+  <data name="entiredata" xml:space="preserve">
+    <value>entire data</value>
+  </data>
+  <data name="Forgotpassword" xml:space="preserve">
+    <value>Forgot password?</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Help</value>
+  </data>
+  <data name="In1977EnvironmentPollutionControlBoardwith16membersheadedbyaMemberofthePlanningCommissionandEnvironmentPollutionControlCellheadedbyaDirectorwithstaffcomplementof26wasestablishedThiswasfollowedin1977bytheestablishmentoftheEnvironmentPollutionControlProjectin1985bytheestablishmentoftheDepartmentPollutionControlandfinallyin1989bytherestructuredandrenamedtheDepartmentofEnvironment" xml:space="preserve">
+    <value>In 1977, Environment Pollution Control Board with 16 members headed by a Member of the Planning Commission and Environment Pollution Control Cell headed by a Director with staff complement of 26 was established. This was followed in 1977 by the establishment of the Environment Pollution Control Project, in 1985 by the establishment of the Department Pollution Control and finally, in 1989 by the restructured and renamed the Department of Environment.</value>
+  </data>
+  <data name="Layers" xml:space="preserve">
+    <value>Layers</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Log in</value>
+  </data>
+  <data name="MainObjective" xml:space="preserve">
+    <value>main objective</value>
+  </data>
+  <data name="MajorRivers" xml:space="preserve">
+    <value>Major Rivers</value>
+  </data>
+  <data name="MajorRiversOfBangladesh" xml:space="preserve">
+    <value>major rivers of bangladesh</value>
+  </data>
+  <data name="Map" xml:space="preserve">
+    <value>Map</value>
+  </data>
+  <data name="nonroutinemonitored" xml:space="preserve">
+    <value>non-routine monitored</value>
+  </data>
+  <data name="placeholder_password" xml:space="preserve">
+    <value>password</value>
+  </data>
+  <data name="placeholder_userid" xml:space="preserve">
+    <value>userid</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>Profile</value>
+  </data>
+  <data name="routinemonitored" xml:space="preserve">
+    <value>routine monitored</value>
+  </data>
+  <data name="Signin" xml:space="preserve">
+    <value>Sign in</value>
+  </data>
+  <data name="Signup" xml:space="preserve">
+    <value>Sign up</value>
+  </data>
+  <data name="StartingDate" xml:space="preserve">
+    <value>Starting Date</value>
+  </data>
+  <data name="ThemainobjectiveistodevelopawebbasedwaterqualitymonitoringsystemandnetworkforwholeofBangladeshformonitoringofwaterqualityfordifferentsectoraluseTheuserfriendlygeospatialdatabaseandwaterqualitymonitoringtoolscouldbeamilestoneinestablishingtheeGovernancecapacityoftheDoEtocontributeinthemandateofDigitalBangladesh" xml:space="preserve">
+    <value>The main objective is to develop a web-based water quality monitoring system and network for whole of Bangladesh for monitoring of water quality for different sectoral use. The user-friendly geo-spatial database and water quality monitoring tools could be a milestone in establishing the e-Governance capacity of the DoE to contribute in the mandate of Digital Bangladesh.</value>
+  </data>
+  <data name="ThewaterqualityofmajortenriversBurigangaShitalakhyaTuragDhaleswariPadmaMeghnaJamunaTeestaKarnaphuliHaldaRupsaandMoyuriinBangladeshdeterioratingrapidlyduetopollutionfromindustrialandmunicipalwastesourcesTheoverallqualityofriverwaterturnsalarmingparticularlyduringthedryseasonInrainyseasonthewaterpollutionshappensmainlybyurbanflashfloodingandintensifieswithotherpointandnonpointpollutionsources" xml:space="preserve">
+    <value>The water quality of major ten rivers (Buriganga, Shitalakhya, Turag, Dhaleswari, Padma, Meghna, Jamuna, Teesta, Karnaphuli, Halda, Rupsa and Moyuri) in Bangladesh deteriorating rapidly due to pollution from industrial and municipal waste sources. The overall quality of river water turns alarming particularly during the dry season. In rainy season the water pollutions happens mainly by urban flash flooding and intensifies with other point and non-point pollution sources.</value>
+  </data>
+  <data name="User" xml:space="preserve">
+    <value>User</value>
+  </data>
+  <data name="WaterQualityMonitoringSystem" xml:space="preserve">
+    <value>WQMS, DoE</value>
+  </data>
+  <data name="WelcomeToWaterQualityMonitoringSystem" xml:space="preserve">
+    <value>Welcome to Water Quality Monitoring System</value>
+  </data>
+  <data name="wqms" xml:space="preserve">
+    <value>wqms</value>
+  </data>
+  <data name="Individual" xml:space="preserve">
+    <value>Individual</value>
+  </data>
+  <data name="ShowLabel" xml:space="preserve">
+    <value>Show Label</value>
+  </data>
+  <data name="Tools" xml:space="preserve">
+    <value>Tools</value>
+  </data>
+  <data name="DrawLayer" xml:space="preserve">
+    <value>Draw Layer</value>
+  </data>
+  <data name="HotSpot" xml:space="preserve">
+    <value>Hot Spot</value>
+  </data>
+  <data name="WaterMonitoringReports" xml:space="preserve">
+    <value>Water Monitoring Reports</value>
+  </data>
+  <data name="AtAGlance" xml:space="preserve">
+    <value>At a Glance</value>
+  </data>
+  <data name="Graphical" xml:space="preserve">
+    <value>Graphical</value>
+  </data>
+  <data name="TimeSeries" xml:space="preserve">
+    <value>Time Series</value>
+  </data>
+  <data name="TimeSeriesReport" xml:space="preserve">
+    <value>Time Series Report</value>
+  </data>
+  <data name="GraphicalWithTabular" xml:space="preserve">
+    <value>Graphical with Tabular</value>
+  </data>
+  <data name="AmmoniaFree" xml:space="preserve">
+    <value>Ammonia (free)</value>
+  </data>
+  <data name="AmmoniaN" xml:space="preserve">
+    <value>Ammonia-N</value>
+  </data>
+  <data name="Arsenic" xml:space="preserve">
+    <value>Arsenic</value>
+  </data>
+  <data name="BiologicalOxygenDemand" xml:space="preserve">
+    <value>Biological Oxygen Demand</value>
+  </data>
+  <data name="Cadmium" xml:space="preserve">
+    <value>Cadmium</value>
+  </data>
+  <data name="CalciumHardness" xml:space="preserve">
+    <value>Calcium Hardness</value>
+  </data>
+  <data name="ChemicalOxygenDemand" xml:space="preserve">
+    <value>Chemical Oxygen Demand</value>
+  </data>
+  <data name="Chloride" xml:space="preserve">
+    <value>Chloride</value>
+  </data>
+  <data name="Chromium" xml:space="preserve">
+    <value>Chromium</value>
+  </data>
+  <data name="DissolvedOxygen" xml:space="preserve">
+    <value>Dissolved Oxygen</value>
+  </data>
+  <data name="ElectricConductivity" xml:space="preserve">
+    <value>Electric Conductivity</value>
+  </data>
+  <data name="FecalColiform" xml:space="preserve">
+    <value>Fecal Coliform</value>
+  </data>
+  <data name="GovOfPepoleRepublicOfBangladesh" xml:space="preserve">
+    <value>Ministry of Environment, Forest and Climate Change</value>
+  </data>
+  <data name="GraphicalAndTabularView" xml:space="preserve">
+    <value>Graphical and Tabular View</value>
+  </data>
+  <data name="inmeter" xml:space="preserve">
+    <value>in meter</value>
+  </data>
+  <data name="Iron" xml:space="preserve">
+    <value>Iron</value>
+  </data>
+  <data name="Lead" xml:space="preserve">
+    <value>Lead</value>
+  </data>
+  <data name="NitrateN" xml:space="preserve">
+    <value>Nitrate-N</value>
+  </data>
+  <data name="NitriteN" xml:space="preserve">
+    <value>Nitrite-N</value>
+  </data>
+  <data name="OtherMetal" xml:space="preserve">
+    <value>Other Metal</value>
+  </data>
+  <data name="OtherNonMetal" xml:space="preserve">
+    <value>Other Non-Metal</value>
+  </data>
+  <data name="PAlkalinity" xml:space="preserve">
+    <value>P. Alkalinity</value>
+  </data>
+  <data name="pHAtField" xml:space="preserve">
+    <value>pH at Field</value>
+  </data>
+  <data name="pHAtLab" xml:space="preserve">
+    <value>pH at Lab</value>
+  </data>
+  <data name="PhosphateN" xml:space="preserve">
+    <value>Phosphate-N</value>
+  </data>
+  <data name="ReportDate" xml:space="preserve">
+    <value>Report Date</value>
+  </data>
+  <data name="ResidualChlorine" xml:space="preserve">
+    <value>Residual Chlorine</value>
+  </data>
+  <data name="SelectOptions" xml:space="preserve">
+    <value>Select Options</value>
+  </data>
+  <data name="SettleableSolid" xml:space="preserve">
+    <value>Settleable Solid</value>
+  </data>
+  <data name="Sulphate" xml:space="preserve">
+    <value>Sulphate</value>
+  </data>
+  <data name="SuspendedSolid" xml:space="preserve">
+    <value>Suspended Solid</value>
+  </data>
+  <data name="TemperatureAtField" xml:space="preserve">
+    <value>Temperature at Field</value>
+  </data>
+  <data name="TemperatureAtLab" xml:space="preserve">
+    <value>Temperature at Lab</value>
+  </data>
+  <data name="TotalAlkalinity" xml:space="preserve">
+    <value>Total Alkalinity</value>
+  </data>
+  <data name="TotalColiform" xml:space="preserve">
+    <value>Total Coliform</value>
+  </data>
+  <data name="TotalDissolvedSolid" xml:space="preserve">
+    <value>Total Dissolved Solid</value>
+  </data>
+  <data name="TotalDissolvedVolatileSolid" xml:space="preserve">
+    <value>Total Dissolved Volatile Solid</value>
+  </data>
+  <data name="TotalHardness" xml:space="preserve">
+    <value>Total Hardness</value>
+  </data>
+  <data name="TotalKjeldahlNitrogen" xml:space="preserve">
+    <value>Total Kjeldahl Nitrogen</value>
+  </data>
+  <data name="TotalSolid" xml:space="preserve">
+    <value>Total Solid</value>
+  </data>
+  <data name="TotalViableBacteriaCount" xml:space="preserve">
+    <value>Total Viable Bacteria Count</value>
+  </data>
+  <data name="Turbidity" xml:space="preserve">
+    <value>Turbidity</value>
+  </data>
+  <data name="WaterQualityMonitoringSystemText" xml:space="preserve">
+    <value>WATER QUALITY MONITORING SYSTEM</value>
+  </data>
+  <data name="ParametersWithMultiple" xml:space="preserve">
+    <value>Parameters (Choose Multiple)</value>
+  </data>
+  <data name="SelectLayer" xml:space="preserve">
+    <value>Select Layer</value>
+  </data>
+  <data name="MainRivers" xml:space="preserve">
+    <value>Main Rivers</value>
+  </data>
+  <data name="InBengali" xml:space="preserve">
+    <value>in bengali</value>
+  </data>
+  <data name="InEnglish" xml:space="preserve">
+    <value>in english</value>
+  </data>
+  <data name="LocationForPlaceholder" xml:space="preserve">
+    <value>location</value>
+  </data>
+  <data name="UploadPhoto" xml:space="preserve">
+    <value>Upload Photo</value>
+  </data>
+  <data name="DateOfESTD" xml:space="preserve">
+    <value>Date of ESTD</value>
+  </data>
+  <data name="PolutionSource" xml:space="preserve">
+    <value>Polution Source</value>
+  </data>
+  <data name="Status" xml:space="preserve">
+    <value>Status</value>
+  </data>
+  <data name="UseOfWater" xml:space="preserve">
+    <value>Use of Water</value>
+  </data>
+  <data name="JLNo" xml:space="preserve">
+    <value>JL No</value>
+  </data>
+  <data name="SLID" xml:space="preserve">
+    <value>SL ID</value>
+  </data>
+  <data name="SampleResultCount" xml:space="preserve">
+    <value>Sample Result</value>
+  </data>
+  <data name="ViewOnMap" xml:space="preserve">
+    <value>View on Map</value>
+  </data>
+  <data name="MinistryOfEnvironmentForests" xml:space="preserve">
+    <value>Ministry of Environment, Forest and Climate Change</value>
+  </data>
+  <data name="EQS" xml:space="preserve">
+    <value>E.Q.S</value>
+  </data>
+  <data name="Month" xml:space="preserve">
+    <value>Month</value>
+  </data>
+  <data name="Year" xml:space="preserve">
+    <value>Year</value>
+  </data>
+  <data name="ShortFormName" xml:space="preserve">
+    <value>Short Form</value>
+  </data>
+  <data name="FromYear" xml:space="preserve">
+    <value>From Year</value>
+  </data>
+  <data name="ToYear" xml:space="preserve">
+    <value>To Year</value>
+  </data>
+  <data name="TimeSeriesGraphicalView" xml:space="preserve">
+    <value>Time series graphical view</value>
+  </data>
+  <data name="old" xml:space="preserve">
+    <value>old</value>
+  </data>
+  <data name="red" xml:space="preserve">
+    <value>red</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Main" xml:space="preserve">
+    <value>Main</value>
+  </data>
+  <data name="UserManual" xml:space="preserve">
+    <value>User Manual</value>
+  </data>
+  <data name="Setup" xml:space="preserve">
+    <value>Setup</value>
+  </data>
+</root>

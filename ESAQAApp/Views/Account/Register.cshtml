@@ -1,0 +1,68 @@
+﻿@using Resources;
+@model BAC007.Models.RegisterViewModel
+
+@{
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+    ViewBag.Title = Resources.Register;
+}
+<section class="panel panel-default m-t-lg bg-white">
+    <header class="panel-heading text-center">
+        <strong>
+            @Resources.Signup
+        </strong>
+    </header>
+    @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "panel-body wrapper-lg", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        @*@Html.ValidationSummary()*@
+        <div class="form-group">
+            @Html.LabelFor(m => m.UserName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.UserName, new { @class = "form-control input-lg", @placeholder = "eg. ross.nebula" })
+            @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+            @Html.PasswordFor(m => m.Password, new { @class = "form-control input-lg", @placeholder = "type a password" })
+            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.ConfirmPassword, new { @class = "control-label" })
+            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control input-lg", @placeholder = "type confirm password" })
+            @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control input-lg", @placeholder = "user first name" })
+            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control input-lg", @placeholder = "user last name" })
+            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control input-lg", @placeholder = "eg. example@example.com" })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox">
+                @Resources.AgreeTheTermsAndPolicy
+            </label>
+        </div>
+        <button type="submit" class="btn btn-default">
+            @Resources.Register
+        </button>
+        <div class="line line-dashed">
+        </div>
+        <p class="text-muted text-center">
+            <small>
+                @Resources.AlreadyHaveAnAccount
+            </small>
+        </p>
+        <a href="@Url.Action("Login", "Account")" class="btn btn-default btn-block">
+            @Resources.Signin
+        </a>
+    }
+</section>

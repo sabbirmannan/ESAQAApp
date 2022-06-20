@@ -1,0 +1,69 @@
+﻿@using Resources;
+
+@{
+    var culture = System.Threading.Thread.CurrentThread.CurrentUICulture.Name.ToLowerInvariant();
+}
+
+@helper selected(string c, string culture)
+{
+    if (c == culture)
+    {
+        @:checked="checked"
+    }
+}
+
+<div class="btn-group">
+    @using (Html.BeginForm("SetCulture", "Home", FormMethod.Post, new { id = "SetCultureForm" }))
+    {
+        <button type="button" class="btn btn-sm btn-dark btn-icon" title="Language" style="margin-right: -2px;"><i class="fa fa-globe"></i></button>
+        <div class="btn-group hidden-nav-xs">
+            <button type="button" class="btn btn-sm btn-primary dropdown-toggle" data-toggle="dropdown">
+                @Resources.ChooseLanguage
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu text-left">
+                <li>
+                    <a href="#">
+                        <label for="en-us">
+                            <input name="culture" id="en-us" value="en-us" type="radio" @selected("en-us", culture) /> English
+                        </label>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <label for="bn-bd">
+                            <input name="culture" id="bn-bd" value="bn-bd" type="radio" @selected("bn-bd", culture) /> বাংলা
+                        </label>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <input id="controller" name="controller" type="hidden" value="@ViewContext.RouteData.Values["controller"].ToString()" />
+        <input id="action" name="action" type="hidden" value="@ViewContext.RouteData.Values["action"].ToString()" />
+    }
+    <script type="text/javascript">
+        try {
+            $(document).ready(function () {
+                try {
+                    $("input[type='radio']").click(function () {
+                        //alert('hi');
+                        //$(this).parents("form").submit();
+                        try {
+                            $("#SetCultureForm").submit();
+                        } catch (err) {
+                            alert(err.message);
+                            Notification('Info', err.message, 'warning');
+                        }
+                    });
+                } catch (err) {
+                    alert(err.message);
+                    Notification('Info', err.message, 'warning');
+                }
+            });
+        } catch (err) {
+            alert(err.message);
+            Notification('Info', err.message, 'warning');
+        }
+    </script>
+</div>

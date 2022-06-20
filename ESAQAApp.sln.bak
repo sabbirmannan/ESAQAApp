@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32126.315
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ESAQAApp", "BAC007\ESAQAApp.csproj", "{2B6AE723-6E5E-4499-8380-5B78257E1701}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Resources", "Resources\Resources.csproj", "{251223E9-7F41-4F74-A853-CAC5C65FE675}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{5990C261-73A7-49DB-88BE-C46E84211EE9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2B6AE723-6E5E-4499-8380-5B78257E1701}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{2B6AE723-6E5E-4499-8380-5B78257E1701}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{2B6AE723-6E5E-4499-8380-5B78257E1701}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B6AE723-6E5E-4499-8380-5B78257E1701}.Release|Any CPU.Build.0 = Release|Any CPU
+		{251223E9-7F41-4F74-A853-CAC5C65FE675}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{251223E9-7F41-4F74-A853-CAC5C65FE675}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{251223E9-7F41-4F74-A853-CAC5C65FE675}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{251223E9-7F41-4F74-A853-CAC5C65FE675}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5990C261-73A7-49DB-88BE-C46E84211EE9}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{5990C261-73A7-49DB-88BE-C46E84211EE9}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{5990C261-73A7-49DB-88BE-C46E84211EE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5990C261-73A7-49DB-88BE-C46E84211EE9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9E841B3-B867-4DEA-933C-72F99A63E0A7}
+	EndGlobalSection
+EndGlobal

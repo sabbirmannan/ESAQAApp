@@ -1,0 +1,28 @@
+﻿@using Resources
+
+<div id="tablet-menu" class="navbar-header aside-md" data-toggle="tooltip" data-placement="bottom">
+    <a href="javascript:void(0);" class="navbar-brand visible-xs" style="margin: -3px 0px 0px 25px">
+        <span class="text-sm">
+            খানা জরিপ প্রশ্নপত্র (বেইজলাইন ২০১৯-২০২০)
+        </span>
+    </a>
+
+    <a href="javascript:void(0);" class="navbar-brand hidden-xs hidden-sm hidden-tablet">
+        <img src="~/Content/images/cegis.png" class="img-rounded" />
+        <span class="text-md" style="margin-top: -6px; margin-left: 5px; position: absolute;
+       font-family: 'Trebuchet MS', 'Segoe UI Historic'; font-size: 60%;"></span>
+</a>
+
+@{
+    if (Request.IsAuthenticated)
+    {
+        using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutFormIcon", @class = "navbar-left" }))
+        {
+            <a href="javascript:document.getElementById('logoutFormIcon').submit()" class="btn btn-link visible-xs"
+               data-toggle="dropdown" data-target=".nav-user" style="font-size: 120%;">
+                <i class="fa fa-cog"></i>
+            </a>
+        }
+    }
+}
+</div>

@@ -1,0 +1,126 @@
+﻿@using Resources
+@model IEnumerable<DOF003.Models.DOF003_SurveyMaster>
+
+@{
+    ViewBag.Title = "Entry Data List";
+}
+
+<section class="panel panel-default">
+    <header class="panel-heading text-center">
+        <b>New Town Project</b><br />
+        Rajdhani Unnoyon Kortripokkho (RAJUK)<br />
+        Inventory of Losses (IOL) of households living on the alignment of the project
+    </header>
+    <div class="row wrapper">
+        <div class="col-sm-8 m-b-xs">
+            <div class="btn-group">
+                <a class="btn btn-default" href="@Url.Action("Create", "DOF003_Survey")">
+                    <i class="fa fa-plus-square"></i> @Resources.AddNew
+                </a>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            @*<div class="input-group">
+                    <input type="text" class="input-sm form-control" placeholder="@Resources.Search">
+                    <span class="input-group-btn">
+                        <button class="btn btn-sm btn-default" type="button">
+                            @Resources.Go!
+                        </button>
+                    </span>
+                </div>*@
+        </div>
+    </div>
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped table-hover">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SurveyMasterID)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SurveyDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AffectedPerson)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PersonNid)
+                </th>
+                <th>
+                    জিপিএস কো-অর্ডিনেট
+                </th>                
+                <th>
+                    @Html.DisplayNameFor(model => model.HoldingNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.RoadNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SectorNo)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Union)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Upazila)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.District)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SurveyMasterID)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SurveyDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AffectedPerson)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PersonNid)
+                    </td>
+                    <td>
+                        Lat: @Html.DisplayFor(modelItem => item.Latitude)<br />
+                        Long: @Html.DisplayFor(modelItem => item.Longitude)
+                    </td>                   
+                    <td>
+                        @Html.DisplayFor(modelItem => item.HoldingNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.RoadNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SectorNo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Union)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Upazila)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.District)
+                    </td>                    
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.SurveyMasterID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.SurveyMasterID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.SurveyMasterID })
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>
+    <footer class="panel-footer">
+    </footer>
+</section>

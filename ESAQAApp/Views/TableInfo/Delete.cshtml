@@ -1,0 +1,88 @@
+﻿@model BAC007.Models.TableInfo
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>TableInfo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.FormTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TableTitle)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TableTitle)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LookupTableName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LookupTableName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataSaveTableName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataSaveTableName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsIndividualTable)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsIndividualTable)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsResponseCols)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsResponseCols)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFiscalYearFlat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFiscalYearFlat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsFiscalYearTwoCols)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsFiscalYearTwoCols)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

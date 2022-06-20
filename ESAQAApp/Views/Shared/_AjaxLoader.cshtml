@@ -1,0 +1,31 @@
+﻿
+<script type="text/javascript">
+    $(document).ready(function () {
+        document.getElementById('busy').style.display = 'none';
+    });
+
+    $(document).ajaxSend(function (evt, request, settings) {
+        console.log("Starting request at " + settings.url + ".");
+    });
+
+    $(document).ajaxStart(function () {
+        openModal();
+    }).on('ajaxStop ajaxSuccess ajaxComplete ajaxError', function () {
+        closeModal();
+    });
+
+    function openModal() {
+        document.getElementById('busy').style.display = 'block';
+        document.getElementById('fade').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('busy').style.display = 'none';
+        document.getElementById('fade').style.display = 'none';
+    }
+</script>
+
+<div id="fade"></div>
+<div id="busy">
+    <div class="loading">Loading&#8230;</div>
+</div>

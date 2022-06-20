@@ -1,0 +1,282 @@
+﻿@model BAC007.Models.Master
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Master</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CaseNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CaseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FormDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FormDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PlaceOfInterview)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PlaceOfInterview)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLatDeg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLatDeg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLatMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLatMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLatSec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLatSec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLatDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLatDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLongDeg)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLongDeg)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLongMin)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLongMin)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLongSec)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLongSec)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LocLongDecimal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LocLongDecimal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TypeOfRespondent)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TypeOfRespondent)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DivisionCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DivisionCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DistrictCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DistrictCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpazilaCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpazilaCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UnionCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UnionCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Village)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Village)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Para)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Para)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WordNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WordNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HouseNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HouseNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfInterviewer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfInterviewer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InterviewerSignature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InterviewerSignature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NameOfSupervisor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NameOfSupervisor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SupervisorSignature)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SupervisorSignature)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DataDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsActive)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsDelete)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsDelete)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdateBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdateBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UpdatedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UpdatedDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletedBy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletedBy)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DeletedDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DeletedDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MasterDataId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

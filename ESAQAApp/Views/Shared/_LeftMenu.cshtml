@@ -1,0 +1,127 @@
+﻿@using Resources;
+@using Microsoft.AspNet.Identity;
+
+<div id="nav-menu" class="slim-scroll" data-height="auto" data-disable-fade-out="true" data-distance="0" style="margin-top: 0px;"
+     data-size="5px" data-color="#333333">
+    <nav class="nav-primary hidden-xs">
+        <ul class="nav">
+            <li id="MainMenu-101" class="levelOne" onclick="javascript: SetMyOwnID($(this).attr('id'), 1);">
+                <a href="@Url.Action("Index", "Home")">
+                    <i class="fa fa-dashboard icon">
+                        <b class="bg-success"></b>
+                    </i>
+                    <span>@Resources.Home</span>
+                </a>
+            </li>
+
+            <li id="MainMenu-201" class="levelOne" onclick="javascript: SetMyOwnID($(this).attr('id'), 1);">
+                <a href="@Url.Action("Index", "BaseLine")">
+                    <i class="fa fa-indent icon">
+                        <b class="bg-primary"></b>
+                    </i>
+                    <span>Data Explorer</span>
+                </a>
+            </li>
+
+            <li id="MainMenu-301" class="levelOne" onclick="javascript: SetMyOwnID($(this).attr('id'), 1);">
+                <a href="@Url.Action("Create", "BaseLine")">
+                    <i class="fa fa-indent icon">
+                        <b class="bg-warning"></b>
+                    </i>
+                    <span>Data Entry</span>
+                </a>
+            </li>           
+
+            <li id="MainMenu-7" class="levelOne" onclick="javascript: SetMyOwnID($(this).attr('id'), 1);">
+                <a href="#privileges">
+                    <i class="fa fa-user icon">
+                        <b class="bg-info"></b>
+                    </i>
+                    <span class="pull-right">
+                        <i class="fa fa-angle-down text"></i>
+                        <i class="fa fa-angle-up text-active"></i>
+                    </span>
+                    <span>@Resources.User</span>
+                </a>
+                <ul class="nav lt">
+                    <li id="SubMenu-7.1" class="leveltwo" onclick="javascript: SetMyOwnID($(this).attr('id'), 2);">
+                        <a href="@Url.Action("Manage", "Account")"> <i class="fa fa-angle-right"></i> <span>@Resources.ChangePassword</span> </a>
+                    </li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li id="SubMenu-7.4" class="leveltwo" onclick="javascript: SetMyOwnID($(this).attr('id'), 2);">
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+
+                                <a href="javascript:document.getElementById('logoutForm').submit()">
+                                    <i class="fa fa-angle-right"></i> @Resources.LogOff
+                                </a>
+                            }
+                        </li>
+                    }
+                    else
+                    {
+                        <li id="SubMenu-7.4" class="leveltwo" onclick="javascript: SetMyOwnID($(this).attr('id'), 2);">
+                            <a href="@Url.Action("Login", "Account")"> <i class="fa fa-angle-right"></i> <span>@Resources.Login</span> </a>
+                        </li>
+
+                    }
+                </ul>
+            </li>
+
+            @if (User.Identity.GetUserName() == "rony" || User.Identity.GetUserName() == "admin")
+            {
+                <li id="MainMenu-9" class="levelOne" onclick="javascript: SetMyOwnID($(this).attr('id'), 1);">
+                    <a href="#privileges">
+                        <i class="fa fa-cogs icon">
+                            <b class="bg-danger"></b>
+                        </i>
+                        <span class="pull-right">
+                            <i class="fa fa-angle-down text"></i>
+                            <i class="fa fa-angle-up text-active"></i>
+                        </span>
+                        <span>@Resources.Administration</span>
+                    </a>
+                    <ul class="nav lt">
+                        <li id="SubMenu-9.1" class="leveltwo" onclick="javascript: SetMyOwnID($(this).attr('id'), 2);"> <a href="@Url.Action("Index", "Account")"> <i class="fa fa-angle-right"></i> <span>@Resources.Users</span> </a> </li>
+                        <li id="SubMenu-9.2" class="leveltwo" onclick="javascript: SetMyOwnID($(this).attr('id'), 2);"> <a href="@Url.Action("Index", "Groups")"> <i class="fa fa-angle-right"></i> <span>@Resources.Groups</span> </a> </li>
+                        <li id="SubMenu-9.3" class="leveltwo" onclick="javascript: SetMyOwnID($(this).attr('id'), 2);"> <a href="@Url.Action("Index", "Roles")"> <i class="fa fa-angle-right"></i> <span>@Resources.Roles</span> </a> </li>
+                    </ul>
+                </li>
+            }
+        </ul>
+    </nav>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var oneID = readCookie('levelOneID'),
+                twoID = readCookie('levelTwoID'),
+                threeID = readCookie('levelThreeID');
+
+            $(".levelOne, .levelTwo, .levelThree").removeClass('active');
+
+            if (oneID != '') {
+                $('li#' + oneID).addClass('active');
+            }
+
+            if (twoID != '') {
+                try {
+                    $('li#' + twoID).removeAttr('class');
+                    $('li#' + twoID).attr('class', 'levelTwo active');
+                } catch (e) {
+                    console.log(e.message);
+                }
+            }
+
+            if (threeID != '') {
+                try {
+                    $('li#' + threeID).removeAttr('class');
+                    $('li#' + threeID).attr('class', 'levelThree active');
+                } catch (e) {
+                    console.log(e.message);
+                }
+            }
+        });
+    </script>
+</div>

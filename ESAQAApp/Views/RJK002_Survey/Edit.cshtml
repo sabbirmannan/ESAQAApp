@@ -1,0 +1,1267 @@
+﻿@using Resources
+@using DOF003.Models
+@model DOF003.Models.DOF003_SurveyMaster
+
+@{
+    ViewBag.Title = "Update Entry";
+}
+
+<section class="panel panel-default">
+    <div class="row wrapper">
+        <div class="col-sm-8 m-b-xs">
+            <h3 class="bold" style="margin: 0 !important;">Inventory of Losses (IOL) of Households Living on the Alignment of the Project</h3>
+        </div>
+        <div class="col-sm-4">
+            <div class="btn-group pull-right right">
+                <a class="btn btn-default" href="@Url.Action("Index", "DOF003_Survey")">
+                    <i class="fa fa-table"></i> @Resources.GoToList
+                </a>
+            </div>
+        </div>
+    </div>
+    <header class="panel-heading bg-light" style="padding: 10px 15px 28px;">
+        <ul class="nav nav-tabs pull-left">
+            <li class="active">
+                <a href="#Master" data-toggle="tab"><i class="fa fa-pencil"></i> ক্ষতিগ্রস্থ ব্যক্তির পরিচয়</a>
+            </li>
+            <li class="">
+                <a href="#SampleResult" data-toggle="tab"><i class="fa fa-pencil"></i> খানা/ অন্যান্য পরিচিতি</a>
+            </li>
+            <li class="">
+                <a href="#HydrologicalInfo" data-toggle="tab"><i class="fa fa-pencil"></i> অবকাঠামোর তথ্য</a>
+            </li>
+            <li class="">
+                <a href="#UploadPhoto" data-toggle="tab"><i class="fa fa-pencil"></i> গাছপালা সংক্রান্ত তথ্য</a>
+            </li>
+            <li class="">
+                <a href="#LandInfo" data-toggle="tab"><i class="fa fa-pencil"></i> জমি সংক্রান্ত তথ্য</a>
+            </li>
+        </ul>
+    </header>
+    <div class="panel-body">
+        <div class="tab-content">
+            <div class="tab-pane fade active in" id="Master">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            ক্ষতিগ্রস্থ ব্যক্তির পরিচয়
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                @Html.HiddenFor(model => model.SurveyMasterID)
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-3">
+                                        @Html.LabelFor(model => model.SurveyDate, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.SurveyDate, new { htmlAttributes = new { @class = "form-control datepicker-input text-center" } })
+                                        @Html.ValidationMessageFor(model => model.SurveyDate, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.AffectedPerson, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.AffectedPerson, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.AffectedPerson, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-group col-md-4 pull-right">
+                                        @Html.LabelFor(model => model.DateOfBirth, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.DateOfBirth, new { htmlAttributes = new { @class = "form-control datepicker-input text-center" } })
+                                        @Html.ValidationMessageFor(model => model.DateOfBirth, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.GuardianName, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.GuardianName, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.GuardianName, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.Mobile, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Mobile, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @maxlength = "11", } })
+                                        @Html.ValidationMessageFor(model => model.Mobile, "", new { @class = "text-danger" })
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.Profession, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.Profession, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.Profession, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        @Html.LabelFor(model => model.PersonNid, htmlAttributes: new { @class = "control-label" })
+                                        @Html.EditorFor(model => model.PersonNid, new { htmlAttributes = new { @type = "number", @min = "0", @maxlength = "17", @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.PersonNid, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-6">
+                                        <fieldset>
+                                            <legend style="font-size: 100%;">ক্ষতিগ্রস্থ অবকাঠামোর জিপিএস কো-অর্ডিনেট (অক্ষাংশ-Latitude)</legend>
+
+                                            <div class="col-md-12" style="padding: 0 0 0 0;">
+                                                <div class="col-md-4" style="padding-left: 0;">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon bold">Deg</span>
+                                                        <input id="tab1LatDeg" type="number" onblur="CalcLatLongToDD(1, 1)" class="form-control text-right" min="0" max="2" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon bold">Min</span>
+                                                        <input id="tab1LatMin" type="number" onblur="CalcLatLongToDD(1, 1)" class="form-control text-right" min="0" max="2" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4" style="padding-right: 0;">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon bold">Sec</span>
+                                                        <input id="tab1LatSec" type="number" onblur="CalcLatLongToDD(1, 1)" class="form-control text-right" min="0" max="5" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <div class="input-group m-b">
+                                            <span class="input-group-addon bold">Decimal Point</span>
+                                            @Html.EditorFor(model => model.Latitude, new { htmlAttributes = new { @type = "number", @min = "0", @class = "form-control text-right" } })
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group col-md-6">
+                                        <fieldset>
+                                            <legend style="font-size: 100%;">ক্ষতিগ্রস্থ অবকাঠামোর জিপিএস কো-অর্ডিনেট (দ্রাঘিমাংশ-Longitude)</legend>
+
+                                            <div class="col-md-12" style="padding: 0 0 0 0;">
+                                                <div class="col-md-4" style="padding-left: 0;">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon bold">Deg</span>
+                                                        <input id="tab1LongDeg" type="number" onblur="CalcLatLongToDD(1, 2)" class="form-control text-right" min="0" max="2" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon bold">Min</span>
+                                                        <input id="tab1LongMin" type="number" onblur="CalcLatLongToDD(1, 2)" class="form-control text-right" min="0" max="2" />
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4" style="padding-right: 0;">
+                                                    <div class="input-group m-b">
+                                                        <span class="input-group-addon bold">Sec</span>
+                                                        <input id="tab1LongSec" type="number" onblur="CalcLatLongToDD(1, 2)" class="form-control text-right" min="0" max="5" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </fieldset>
+
+                                        <div class="input-group m-b">
+                                            <span class="input-group-addon bold">Decimal Point</span>
+                                            @Html.EditorFor(model => model.Longitude, new { htmlAttributes = new { @type = "number", @min = "0", @class = "form-control text-right" } })
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <hr />
+                                    <div class="form-group col-md-6">
+                                        <button id="btnSaveVictimInfo" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                        <button id="btnClearVictimInfo" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="SampleResult">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            খানা/ অন্যান্য পরিচিতি
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <legend style="margin-left: 15px;">ক্ষতিগ্রস্ত ব্যক্তি  ঠিকানা (বর্তমান)</legend>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.HoldingNo, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.HoldingNo, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.HoldingNo, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.RoadNo, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.RoadNo, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.RoadNo, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.SectorNo, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.SectorNo, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.SectorNo, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.Union, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Union, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Union, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.Upazila, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.Upazila, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Upazila, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.District, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.District, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.District, "", new { @class = "text-danger" })
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <legend>ক্ষতিগ্রস্ত স্থাপনার/ মালিকানার ধরণ</legend>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.AffectedPersonType, htmlAttributes: new { @class = "control-label" })
+                                            @Html.DropDownListFor(model => model.AffectedPersonType, new SelectList(ViewBag.ConstructionTypeOfInfra, "ConstructionTypeOfInfraID", "ConstructionTypeOfInfraNameBn"), string.Empty, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.AffectedPersonType, "", new { @class = "text-danger" })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.AffectedPersonTypeOther, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.AffectedPersonTypeOther, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AffectedPersonTypeOther, "", new { @class = "text-danger" })
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <hr />
+                                    <div class="form-group col-md-6">
+                                        <button id="btnSaveVictimInfraInfo" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                        <button id="btnClearVictimInfraInfo" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="HydrologicalInfo">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            অবকাঠামোর তথ্য (আবাসিক, বাণিজ্যিক, সামাজিক ও ধর্মীয় প্রতিষ্ঠান এবং অন্যান্য)
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <fieldset>
+                                        <legend style="margin-left: 15px;">ক্ষতিগ্রস্ত অবকাঠামোর ধরণ</legend>
+
+                                        <div class="form-group col-md-12" style="margin-left: 20px;">
+                                            <div id="chkTypeOfDamagedInfra">
+                                                @{ List<DOF003_TypeOfDamagedInfra> _tohrList = ViewBag.TypeOfDamagedInfra;
+
+                                                    if (_tohrList.Count > 0)
+                                                    {
+                                                        foreach (DOF003_TypeOfDamagedInfra tohr in _tohrList)
+                                                        {
+                                                            var id = "TypeOfDamagedInfra_" + tohr.TypeOfDamagedInfraID;
+
+                                                            <div class="checkbox checkbox-pink checkbox-inline" style="margin-right: 40px; padding-left: 0px !important; margin-top: 0px !important;">
+                                                                <input type="checkbox" name="TypeOfDamagedInfra" id="@id" value="@tohr.TypeOfDamagedInfraID">
+                                                                <label for="@id" style="padding-left: 5px !important;"> @tohr.TypeOfDamagedInfraNameBn </label>
+                                                            </div>
+                                                        }
+                                                    }
+                                                }
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-12">
+                                            @Html.LabelFor(model => model.TypeOfDamagedInfraOther, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.TypeOfDamagedInfraOther, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.TypeOfDamagedInfraOther, "", new { @class = "text-danger" })
+                                        </div>
+                                    </fieldset>
+
+                                    <div class="col-md-12">
+                                        <hr />
+                                        <div class="form-group">
+                                            <button id="btnSaveInfraInfo" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                            <button id="btnClearInfraInfo" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</button>
+                                        </div>
+                                    </div>
+
+                                    <br />
+
+                                    <div class="col-md-12">
+                                        <hr />
+                                        <fieldset>
+                                            <legend>ক্ষতিগ্রস্ত অবকাঠামোর তথ্য</legend>
+
+                                            <table id="tblDamagedInfraInfo" class="table table-bordered table-condensed table-hover">
+                                                <thead id="theadDamagedInfraInfo">
+                                                    <tr>
+                                                        <th class="text-center" rowspan="2">নং</th>
+                                                        <th class="text-center" rowspan="2">অবকাঠামোর ব্যবহার</th>
+                                                        <th class="text-center" colspan="4">অবকাঠামোর নির্মাণগত ধরণ*</th>
+                                                        <th class="text-center" colspan="4">অবকাঠামোর পরিমাপ*</th>
+                                                        <th class="text-center" rowspan="2">পরিমাপের একক*</th>
+                                                        <th class="text-center" colspan="2">ক্ষতির মাত্রা*</th>
+                                                        <th class="text-center" rowspan="2">*</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">ছাদ</th>
+                                                        <th class="text-center">দেয়াল</th>
+                                                        <th class="text-center">মেঝে</th>
+                                                        <th class="text-center">এক কথায়</th>
+                                                        <th class="text-center">দৈর্ঘ্য</th>
+                                                        <th class="text-center">প্রস্থ</th>
+                                                        <th class="text-center">উচ্চতা</th>
+                                                        <th class="text-center">ফ্লোর সংখ্যা (বহুতল ভবনের ক্ষেত্রে)</th>
+                                                        <th class="text-center">সম্পূর্ণ</th>
+                                                        <th class="text-center">আংশিক</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" colspan="2">
+                                                            @Html.DropDownList("UseOfInfraID", new SelectList(ViewBag.UseOfInfra, "UseOfInfraID", "UseOfInfraNameBn"), string.Empty, new { @class = "form-control" })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.DropDownList("RoofInfraTypeID", new SelectList(ViewBag.InfraType, "InfraTypeID", "InfraTypeNameBn"), string.Empty, new { @class = "form-control" })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.DropDownList("WallInfraTypeID", new SelectList(ViewBag.InfraType, "InfraTypeID", "InfraTypeNameBn"), string.Empty, new { @class = "form-control" })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.DropDownList("FloorInfraTypeID", new SelectList(ViewBag.InfraType, "InfraTypeID", "InfraTypeNameBn"), string.Empty, new { @class = "form-control" })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.DropDownList("OneWordInfraTypeID", new SelectList(ViewBag.InfraType, "InfraTypeID", "InfraTypeNameBn"), string.Empty, new { @class = "form-control" })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.Editor("Length", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.Editor("Width", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.Editor("Height", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.Editor("FloorNumber", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.DropDownList("MeasurementUnit", new SelectList(ViewBag.InfraUnit, "InfraUnitID", "InfraUnitNameBn"), string.Empty, new { @class = "form-control" })
+                                                            @*@Html.Editor("Measurement", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @readonly = "readonly" } })*@
+                                                        </th>
+                                                        <th class="text-center">
+                                                            <input type="checkbox" style="height: 25px; width: 25px;" name="DamageLevel" id="IsFullyDamaged" value="1">
+                                                        </th>
+                                                        <th class="text-center">
+                                                            <input type="checkbox" style="height: 25px; width: 25px;" name="DamageLevel" id="IsPartiallyDamaged" value="1">
+                                                        </th>
+                                                        <th class="text-center">
+                                                            <button type="button" id="btnSaveDamagedInfraInfo" class="btn btn-info"><i class="fa fa-save"></i></button>
+
+                                                            <script type="text/javascript">
+                                                                $(document).ready(function () {
+                                                                    $("#IsFullyDamaged").change(function () {
+                                                                        if ($(this).is(':checked')) {
+                                                                            $("#IsPartiallyDamaged").prop('checked', false);
+                                                                        }
+                                                                    });
+
+                                                                    $("#IsPartiallyDamaged").change(function () {
+                                                                        if ($(this).is(':checked')) {
+                                                                            $("#IsFullyDamaged").prop('checked', false);
+                                                                        }
+                                                                    });
+                                                                });
+                                                            </script>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">১</th>
+                                                        <th class="text-center">২</th>
+                                                        <th class="text-center">৩</th>
+                                                        <th class="text-center">৪</th>
+                                                        <th class="text-center">৫</th>
+                                                        <th class="text-center">৬</th>
+                                                        <th class="text-center">৭</th>
+                                                        <th class="text-center">৮</th>
+                                                        <th class="text-center">৯</th>
+                                                        <th class="text-center">১০</th>
+                                                        <th class="text-center">১১</th>
+                                                        <th class="text-center">১২</th>
+                                                        <th class="text-center">১৩</th>
+                                                        <th class="text-center"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbodyDamagedInfraInfo"></tbody>
+                                                <tfoot id="tfootDamagedInfraInfo"></tfoot>
+                                            </table>
+                                        </fieldset>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="UploadPhoto">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            গাছপালা সংক্রান্ত তথ্যাবলী (নিজ/ সামাজিক ও ধর্মীয় প্রতিষ্ঠান/ সরকারী/ অন্যান্য)
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="form-group col-md-3">
+                                        @Html.Label("আপনার গাছপালা প্রকল্পদ্বারা ক্ষতিগ্রস্ত হতে যাচ্ছে কিনা?", htmlAttributes: new { @class = "control-label" })
+                                        <select id="IsTreeAffected" name="IsTreeAffected" class="form-control">
+                                            <option></option>
+                                            <option value="1">Yes</option>
+                                            <option value="0">No</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="col-md-6" style="margin-top: 22px;">
+                                        <label class="control-label">&nbsp;</label>
+                                        <div class="form-group col-md-6">
+                                            <button id="btnSaveTreeInfo" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                            <button id="btnClearTreeInfo" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="clearfix"></div>
+
+                                    <fieldset>
+                                        <legend style="margin-left: 15px;">যদি ৩.১ নং প্রশ্নের উত্তর হ্যাঁ হয়, তাহলে জমির উপর অবস্থিত ক্ষতিগ্রস্ত গাছের বিস্তারিত বিবরণ দিন</legend>
+
+                                        <div class="col-md-12">
+                                            <h3 style="padding: 10px 0 20px 0; margin: 0 !important;" class="text-center">
+                                                গাছের আকার কোড:
+                                                <b style="color: #ff6a00;">বড় = ৭১-৪৭ ইঞ্চি বেড়;</b>
+                                                <b style="color: #5b24aa;">মাঝারী = ৩৬-৪৭ ইঞ্চি বেড়;</b>
+                                                <b style="color: #2081c1;">ছোট = ২৪-৩৫ ইঞ্চি বেড়;</b>
+                                                <b style="color: #1daa3a;">চারা = স্থানান্তর যোগ্য;</b>
+                                            </h3>
+
+                                            <table id="tblDamagedTreeInfo" class="table table-bordered table-condensed table-hover">
+                                                <thead id="theadDamagedTreeInfo">
+                                                    <tr>
+                                                        <th class="text-center" rowspan="2">ক্রমিক নং</th>
+                                                        <th class="text-center" rowspan="2">গাছের নাম</th>
+                                                        <th class="text-center" rowspan="2">গাছের ধরণ (কোড)</th>
+                                                        <th class="text-center" colspan="4">আকার অনুযায়ী ক্ষতিগ্রস্ত গাছের সংখ্যা</th>
+                                                        <th class="text-center" colspan="2">ক্ষতিগ্রস্ত গাছের মালিকানার তথ্য</th>
+                                                        <th class="text-center" rowspan="2">*</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" style="color: #ff6a00; font-size: 25px;">বড়</th>
+                                                        <th class="text-center" style="color: #5b24aa; font-size: 25px;">মাঝারী</th>
+                                                        <th class="text-center" style="color: #2081c1; font-size: 25px;">ছোট	</th>
+                                                        <th class="text-center" style="color: #1daa3a; font-size: 25px;">চারা</th>
+                                                        <th class="text-center">নিজ</th>
+                                                        <th class="text-center">সামাজিক ও ধর্মীয় প্রতিষ্ঠান/ সরকারী</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center" colspan="2">
+                                                            @Html.Editor("TreeName", new { htmlAttributes = new { @class = "form-control" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.DropDownList("TypeOfTreeID", new SelectList(ViewBag.TypeOfTree, "TypeOfTreeID", "TypeOfTreeNameBn"), string.Empty, new { @class = "form-control" })
+                                                        </th>
+
+                                                        <th class="text-center">
+                                                            @Html.Editor("BigTree", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.Editor("MediumTree", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.Editor("SmallTree", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            @Html.Editor("SaplingTree", new { htmlAttributes = new { @class = "form-control text-right", @type = "number", @min = "0" } })
+                                                        </th>
+                                                        <th class="text-center">
+                                                            <input type="checkbox" style="height: 25px; width: 25px;" name="TreeOwnerType" id="IsOwnerTree" value="1">
+                                                        </th>
+                                                        <th class="text-center">
+                                                            <input type="checkbox" style="height: 25px; width: 25px;" name="TreeOwnerType" id="IsSocialTree" value="1">
+                                                        </th>
+                                                        <th class="text-center">
+                                                            <button type="button" id="btnSaveDamagedTreeInfo" class="btn btn-info"><i class="fa fa-save"></i></button>
+
+                                                            <script type="text/javascript">
+                                                                $(document).ready(function () {
+                                                                    $("#IsOwnerTree").change(function () {
+                                                                        if ($(this).is(':checked')) {
+                                                                            $("#IsSocialTree").prop('checked', false);
+                                                                        }
+                                                                    });
+
+                                                                    $("#IsSocialTree").change(function () {
+                                                                        if ($(this).is(':checked')) {
+                                                                            $("#IsOwnerTree").prop('checked', false);
+                                                                        }
+                                                                    });
+                                                                });
+                                                            </script>
+                                                        </th>
+                                                    </tr>
+                                                    <tr>
+                                                        <th class="text-center">১</th>
+                                                        <th class="text-center">২</th>
+                                                        <th class="text-center">৩</th>
+                                                        <th class="text-center">৪</th>
+                                                        <th class="text-center">৫</th>
+                                                        <th class="text-center">৬</th>
+                                                        <th class="text-center">৭</th>
+                                                        <th class="text-center">৮</th>
+                                                        <th class="text-center">৯</th>
+                                                        <th class="text-center"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tbodyDamagedTreeInfo"></tbody>
+                                                <tfoot id="tfootDamagedTreeInfo"></tfoot>
+                                            </table>
+                                        </div>
+                                    </fieldset>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="LandInfo">
+                <div class="col-sm-12">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            জমি সংক্রান্ত তথ্য (ক্ষতগ্রিস্থ প্লট যদি পাওয়া যায়)
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <h3 style="margin-left: 25px; margin-top: 0 !important;">
+                                        পানি বিতরণ লাইন এবং ডিপ টিউব ওয়েল স্থাপনের কারনে রাজউক অধিগ্রহনকৃত এলাকায় কোন ব্যক্তি মালিকানাধীন জমি ক্ষতিগ্রস্থ হয়ে থাকলে –
+                                        <hr />
+                                    </h3>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group col-md-6">
+                                            <fieldset>
+                                                <legend style="font-size: 100%;">অক্ষাংশ-Latitude</legend>
+
+                                                <div class="col-md-12" style="padding: 0 0 0 0;">
+                                                    <div class="col-md-4" style="padding-left: 0;">
+                                                        <div class="input-group m-b">
+                                                            <span class="input-group-addon bold">Deg</span>
+                                                            <input id="tab5LatDeg" type="number" onblur="CalcLatLongToDD(2, 1)" class="form-control text-right" min="0" max="2" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="input-group m-b">
+                                                            <span class="input-group-addon bold">Min</span>
+                                                            <input id="tab5LatMin" type="number" onblur="CalcLatLongToDD(2, 1)" class="form-control text-right" min="0" max="2" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4" style="padding-right: 0;">
+                                                        <div class="input-group m-b">
+                                                            <span class="input-group-addon bold">Sec</span>
+                                                            <input id="tab5LatSec" type="number" onblur="CalcLatLongToDD(2, 1)" class="form-control text-right" min="0" max="5" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+                                            <div class="input-group m-b">
+                                                <span class="input-group-addon bold">Decimal Point</span>
+                                                @Html.EditorFor(model => model.AffectedPlotLatitude, new { htmlAttributes = new { @type = "number", @min = "0", @class = "form-control text-right" } })
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            <fieldset>
+                                                <legend style="font-size: 100%;">দ্রাঘিমাংশ-Longitude</legend>
+
+                                                <div class="col-md-12" style="padding: 0 0 0 0;">
+                                                    <div class="col-md-4" style="padding-left: 0;">
+                                                        <div class="input-group m-b">
+                                                            <span class="input-group-addon bold">Deg</span>
+                                                            <input id="tab5LongDeg" type="number" onblur="CalcLatLongToDD(2, 2)" class="form-control text-right" min="0" max="2" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="input-group m-b">
+                                                            <span class="input-group-addon bold">Min</span>
+                                                            <input id="tab5LongMin" type="number" onblur="CalcLatLongToDD(2, 2)" class="form-control text-right" min="0" max="2" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4" style="padding-right: 0;">
+                                                        <div class="input-group m-b">
+                                                            <span class="input-group-addon bold">Sec</span>
+                                                            <input id="tab5LongSec" type="number" onblur="CalcLatLongToDD(2, 2)" class="form-control text-right" min="0" max="5" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </fieldset>
+
+                                            <div class="input-group m-b">
+                                                <span class="input-group-addon bold">Decimal Point</span>
+                                                @Html.EditorFor(model => model.AffectedPlotLongitude, new { htmlAttributes = new { @type = "number", @min = "0", @class = "form-control text-right" } })
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotNo, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotNo, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotArea, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotArea, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotSectorNo, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotSectorNo, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotUnion, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotUnion, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotUpazila, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotUpazila, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotDistrict, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotDistrict, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotOwnerName, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotOwnerName, new { htmlAttributes = new { @class = "form-control" } })
+                                        </div>
+
+                                        <div class="form-group col-md-6">
+                                            @Html.LabelFor(model => model.PlotOwnerContact, htmlAttributes: new { @class = "control-label" })
+                                            @Html.EditorFor(model => model.PlotOwnerContact, new { htmlAttributes = new { @type = "number", @min = "0", @class = "form-control" } })
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <hr />
+                                        <div class="form-group col-md-6">
+                                            <button id="btnSaveLandInfo" class="btn btn-info"><i class="fa fa-save"></i> Save</button>
+                                            <button id="btnClearLandInfo" class="btn btn-danger"><i class="fa fa-times"></i> Cancel</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        GetDamagedInfraInfo();
+        GetDamagedTreeInfo();
+
+        var TypeOfDamagedInfraList = '@Model.TypeOfDamagedInfraList';
+        if (TypeOfDamagedInfraList != '') {
+            var todil = TypeOfDamagedInfraList.split(',');
+            $.each(todil, function (i, item) {
+                $(":checkbox[name='TypeOfDamagedInfra'][value='" + item + "']").attr('checked', true);
+            });
+        }
+     
+        var AffectedPersonType = '@Model.AffectedPersonType';
+        console.log(IsTreeAffected);
+        $("#AffectedPersonType").val(AffectedPersonType);
+
+        var IsTreeAffected = '@Model.IsTreeAffected';
+        IsTreeAffected = IsTreeAffected == 'True' ? 1 : 0;
+        $("#IsTreeAffected").val(IsTreeAffected);
+
+        $("#btnSaveVictimInfo").on('click', function () {
+            var SurveyMasterID = $("#SurveyMasterID").val();
+
+            var master = {
+                "SurveyMasterID": SurveyMasterID,
+                "SurveyDate": $('#SurveyDate').val(),
+                "AffectedPerson": $('#AffectedPerson').val(),
+                "DateOfBirth": $('#DateOfBirth').val(),
+                "GuardianName": $('#GuardianName').val(),
+                "Mobile": $('#Mobile').val(),
+                "Profession": $('#Profession').val(),
+                "PersonNid": $('#PersonNid').val(),
+                "Latitude": $('#Latitude').val(),
+                "Longitude": $('#Longitude').val()
+            };
+
+            console.log(JSON.stringify(master));
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("SaveMaster", "DOF003_Survey")',
+                data: JSON.stringify(master),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                processData: true,
+                success: function (data) {
+                    $('#SurveyMasterID').val(data.id);
+
+                    if (data.status == 'success') {
+                        Notification('Success', data.message, 'success');
+                    } else {
+                        if (data.exception != "") {
+                            Notification('Error', data.exception, 'danger');
+                        }
+                    }
+                }, error: function (jqXhr, exception) {
+                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                    Notification('Error', errorMsg, 'danger');
+                }
+            });
+        });
+
+        $("#btnSaveVictimInfraInfo").on('click', function () {
+            var SurveyMasterID = $("#SurveyMasterID").val();
+
+            if (SurveyMasterID != 0) {
+                var AffectedPersonType = $('#AffectedPersonType option:selected').val() == '' ? 0 : $('#AffectedPersonType option:selected').val();
+                var part2 = {
+                    "SurveyMasterID": SurveyMasterID,
+                    "HoldingNo": $('#HoldingNo').val(),
+                    "RoadNo": $('#RoadNo').val(),
+                    "SectorNo": $('#SectorNo').val(),
+                    "Union": $('#Union').val(),
+                    "Upazila": $('#Upazila').val(),
+                    "District": $('#District').val(),
+                    "AffectedPersonType": AffectedPersonType,
+                    "AffectedPersonTypeOther": $('#AffectedPersonTypeOther').val()
+                };
+
+                console.log(JSON.stringify(part2));
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Part2Info", "DOF003_Survey")',
+                    data: JSON.stringify(part2),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    processData: true,
+                    success: function (data) {
+                        //$('#SurveyMasterID').val(data.id);
+
+                        if (data.status == 'success') {
+                            Notification('Success', data.message, 'success');
+                        } else {
+                            if (data.exception != "") {
+                                Notification('Error', data.exception, 'danger');
+                            }
+                        }
+                    }, error: function (jqXhr, exception) {
+                        var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                        Notification('Error', errorMsg, 'danger');
+                    }
+                });
+            } else {
+                Notification('Warning', 'দয়া করে ক্ষতিগ্রস্থ ব্যক্তির পরিচয় দিয়ে আসুন এবং আবার চেষ্টা করুন!', 'danger');
+            }
+        });
+
+        $("#btnSaveInfraInfo").on('click', function () {
+            var SurveyMasterID = $("#SurveyMasterID").val();
+
+            var TypeOfDamagedInfra = $.map($(':checkbox[name=TypeOfDamagedInfra]:checked'), function (n, i) {
+                return n.value;
+            }).join(',');
+
+            if (SurveyMasterID != 0) {
+                var part3 = {
+                    "SurveyMasterID": SurveyMasterID,
+                    "TypeOfDamagedInfraList": TypeOfDamagedInfra,
+                    "TypeOfDamagedInfraOther": $('#TypeOfDamagedInfraOther').val()
+                };
+
+                console.log(JSON.stringify(part3));
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Part3Info", "DOF003_Survey")',
+                    data: JSON.stringify(part3),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    processData: true,
+                    success: function (data) {
+                        //$('#SurveyMasterID').val(data.id);
+
+                        if (data.status == 'success') {
+                            Notification('Success', data.message, 'success');
+                        } else {
+                            if (data.exception != "") {
+                                Notification('Error', data.exception, 'danger');
+                            }
+                        }
+                    }, error: function (jqXhr, exception) {
+                        var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                        Notification('Error', errorMsg, 'danger');
+                    }
+                });
+            } else {
+                Notification('Warning', 'দয়া করে ক্ষতিগ্রস্থ ব্যক্তির পরিচয় দিয়ে আসুন এবং আবার চেষ্টা করুন!', 'danger');
+            }
+        });
+
+        $("#btnSaveTreeInfo").on('click', function () {
+            var SurveyMasterID = $("#SurveyMasterID").val();
+            var IsTreeAffected = $('#IsTreeAffected option:selected').val();
+            IsTreeAffected = (IsTreeAffected == '' || IsTreeAffected == undefined) ? 0 : IsTreeAffected;
+
+            if (SurveyMasterID != 0) {
+                var part4 = {
+                    "SurveyMasterID": SurveyMasterID,
+                    "IsTreeAffected": IsTreeAffected
+                };
+
+                console.log(JSON.stringify(part4));
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Part4Info", "DOF003_Survey")',
+                    data: JSON.stringify(part4),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    processData: true,
+                    success: function (data) {
+                        //$('#SurveyMasterID').val(data.id);
+
+                        if (data.status == 'success') {
+                            Notification('Success', data.message, 'success');
+                        } else {
+                            if (data.exception != "") {
+                                Notification('Error', data.exception, 'danger');
+                            }
+                        }
+                    }, error: function (jqXhr, exception) {
+                        var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                        Notification('Error', errorMsg, 'danger');
+                    }
+                });
+            } else {
+                Notification('Warning', 'দয়া করে ক্ষতিগ্রস্থ ব্যক্তির পরিচয় দিয়ে আসুন এবং আবার চেষ্টা করুন!', 'danger');
+            }
+        });
+
+        $("#btnSaveLandInfo").on('click', function () {
+            var SurveyMasterID = $("#SurveyMasterID").val();
+
+            if (SurveyMasterID != 0) {
+                var part5 = {
+                    "SurveyMasterID": SurveyMasterID,
+                    "AffectedPlotLatitude": $('#AffectedPlotLatitude').val() == '' ? 0 : $('#AffectedPlotLatitude').val(),
+                    "AffectedPlotLongitude": $('#AffectedPlotLongitude').val() == '' ? 0 : $('#AffectedPlotLongitude').val(),
+                    "PlotNo": $('#PlotNo').val(),
+                    "PlotArea": $('#PlotArea').val() == '' ? 0 : $('#PlotArea').val(),
+                    "PlotSectorNo": $('#PlotSectorNo').val(),
+                    "PlotUnion": $('#PlotUnion').val(),
+                    "PlotUpazila": $('#PlotUpazila').val(),
+                    "PlotDistrict": $('#PlotDistrict').val(),
+                    "PlotOwnerName": $('#PlotOwnerName').val(),
+                    "PlotOwnerContact": $('#PlotOwnerContact').val()
+                };
+
+                //console.log(JSON.stringify(part2));
+
+                $.ajax({
+                    type: "POST",
+                    url: '@Url.Action("Part5Info", "DOF003_Survey")',
+                    data: JSON.stringify(part5),
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "json",
+                    processData: true,
+                    success: function (data) {
+                        //$('#SurveyMasterID').val(data.id);
+
+                        if (data.status == 'success') {
+                            Notification('Success', data.message, 'success');
+                        } else {
+                            if (data.exception != "") {
+                                Notification('Error', data.exception, 'danger');
+                            }
+                        }
+                    }, error: function (jqXhr, exception) {
+                        var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                        Notification('Error', errorMsg, 'danger');
+                    }
+                });
+            } else {
+                Notification('Warning', 'দয়া করে ক্ষতিগ্রস্থ ব্যক্তির পরিচয় দিয়ে আসুন এবং আবার চেষ্টা করুন!', 'danger');
+            }
+        });
+    });
+</script>
+
+<script id="DamagedInfraInfo" type="text/javascript">
+    $(document).ready(function () {
+        jQuery("#btnSaveDamagedInfraInfo").click(function () {
+            var SurveyMasterID = $("#SurveyMasterID").val();
+            var UseOfInfraID = $("#UseOfInfraID option:selected").val();
+            var RoofInfraTypeID = $("#RoofInfraTypeID option:selected").val();
+            var WallInfraTypeID = $("#WallInfraTypeID option:selected").val();
+            var FloorInfraTypeID = $("#FloorInfraTypeID option:selected").val();
+            var OneWordInfraTypeID = $("#OneWordInfraTypeID option:selected").val();
+            var Length = $("#Length").val();
+            var Width = $("#Width").val();
+            var Height = $("#Height").val();
+            var FloorNumber = $("#FloorNumber").val();
+            var MeasurementUnit = $("#MeasurementUnit option:selected").val();
+            var IsFullyDamaged = $("#IsFullyDamaged").is(':checked') ? 1 : 0;
+            var IsPartiallyDamaged = $("#IsPartiallyDamaged").is(':checked') ? 1 : 0;
+
+            if (UseOfInfraID == '') {
+                Notification('Required', 'অবকাঠামোর ব্যবহার সিলেক্ট করুন!', 'warning');
+                return;
+            }
+
+            var diid = {
+                "SurveyMasterID": SurveyMasterID,
+                "UseOfInfraID": UseOfInfraID,
+                "RoofInfraTypeID": RoofInfraTypeID == '' ? 'null' : RoofInfraTypeID,
+                "WallInfraTypeID": WallInfraTypeID == '' ? 'null' : WallInfraTypeID,
+                "FloorInfraTypeID": FloorInfraTypeID == '' ? 'null' : FloorInfraTypeID,
+                "OneWordInfraTypeID": OneWordInfraTypeID == '' ? 'null' : OneWordInfraTypeID,
+                "Length": Length == '' ? 'null' : Length,
+                "Width": Width == '' ? 'null' : Width,
+                "Height": Height == '' ? 'null' : Height,
+                "FloorNumber": FloorNumber == '' ? 'null' : FloorNumber,
+                "MeasurementUnit": MeasurementUnit == '' ? 'null' : MeasurementUnit,
+                "IsFullyDamaged": IsFullyDamaged,
+                "IsPartiallyDamaged": IsPartiallyDamaged
+            };
+
+            var url = '@Url.Action("SaveDamagedInfraInfo", "DOF003_Survey")';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: JSON.stringify(diid),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                processData: true,
+                success: function (data) {
+                    //$('#SurveyMasterID').val(data.id);
+
+                    if (data.status == 'success') {
+                        Notification('Success', data.message, 'success');
+                        ClearDamagedInfraInfo();
+                        GetDamagedInfraInfo();
+                    } else {
+                        if (data.exception != "") {
+                            Notification('Error', data.exception, 'danger');
+                        }
+                    }
+                }, error: function (jqXhr, exception) {
+                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                    Notification('Error', errorMsg, 'danger');
+                }
+            });
+        });
+
+        jQuery("#btnClearDamagedInfraInfo").click(function () {
+            ClearDamagedInfraInfo();
+        });
+    });
+
+    function ClearDamagedInfraInfo() {
+        $("#UseOfInfraID").val('');
+        $("#RoofInfraTypeID").val('');
+        $("#WallInfraTypeID").val('');
+        $("#FloorInfraTypeID").val('');
+        $("#OneWordInfraTypeID").val('');
+        $("#Length").val('');
+        $("#Width").val('');
+        $("#Height").val('');
+        $("#FloorNumber").val('');
+        $("#MeasurementUnit").val('');
+        $("#IsFullyDamaged").prop('checked', false);
+        $("#IsPartiallyDamaged").prop('checked', false);
+    }
+
+    function GetDamagedInfraInfo() {
+        var SurveyMasterID = $("#SurveyMasterID").val();
+        var url = '@Url.Action("GetDamagedInfraInfo", "DOF003_Survey")';
+        jQuery.ajax({
+            type: "GET",
+            url: url,
+            data: { SurveyMasterID: SurveyMasterID },
+            dataType: "json",
+            success: function (data, status, jqXHR) {
+                if (data.length > 0) {
+                    //console.log(data);
+                    var rows = '';
+
+                    var count = 0;
+                    $.each(data, function (i, item) {
+                        ++count;
+                        var IsFullyDamaged = item.IsFullyDamaged == 1 ? 'হ্যাঁ' : '-';
+                        var IsPartiallyDamaged = item.IsPartiallyDamaged == 1 ? 'হ্যাঁ' : '-';
+
+                        rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.UseOfInfraNameBn + '</td><td>' + item.RoofInfraTypeID + '</td><td>' + item.WallInfraTypeID + '</td><td>' + item.FloorInfraTypeID + '</td><td>' + item.OneWordInfraTypeID + '</td><td>' + item.Length + '</td><td>' + item.Width + '</td><td>' + item.Height + '</td><td>' + item.FloorNumber + '</td><td>' + item.MeasurementUnit + '</td><td>' + IsFullyDamaged + '</td><td>' + IsPartiallyDamaged + '</td><td class="text-center"><button onclick="javascript:DeleteDamagedInfraInfo(' + item.DamagedInfraInfoDetailID + ', ' + item.SurveyMasterID + '); GetDamagedInfraInfo();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+                    });
+
+                    $("#tbodyDamagedInfraInfo").html(rows);
+                } else {
+                    $("#tbodyDamagedInfraInfo").html('<tr><td colspan="14" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+                }
+            }, error: function (jqXHR, exception) {
+                var errorMsg = AjaxErrorHandle(jqXHR, exception);
+                $("#tbodyDamagedInfraInfo").html('<tr><td colspan="14" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+            }
+        });
+    }
+
+    function DeleteDamagedInfraInfo(DamagedInfraInfoDetailID, SurveyMasterID) {
+        var url = '@Url.Action("DeleteDamagedInfraInfo", "DOF003_Survey")';
+        jQuery.ajax({
+            type: "POST",
+            url: url,
+            data: { DamagedInfraInfoDetailID: DamagedInfraInfoDetailID, SurveyMasterID: SurveyMasterID },
+            dataType: "json",
+            success: function (data, status, jqXHR) {
+                if (data.status == 'success') {
+                    Notification('Success', data.message, 'success');
+                    GetDamagedInfraInfo();
+                } else {
+                    if (data.exception != "") {
+                        Notification('Error', data.exception, 'danger');
+                    }
+                }
+            }, error: function (jqXhr, exception) {
+                var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                Notification('Error', errorMsg, 'danger');
+            }
+        });
+    }
+</script>
+
+<script id="DamagedTreeInfo" type="text/javascript">
+    $(document).ready(function () {
+        jQuery("#btnSaveDamagedTreeInfo").click(function () {
+            var SurveyMasterID = $("#SurveyMasterID").val();
+            var TreeName = $("#TreeName").val();
+            var TypeOfTreeID = $("#TypeOfTreeID option:selected").val();
+            var BigTree = $("#BigTree").val();
+            var MediumTree = $("#MediumTree").val();
+            var SmallTree = $("#SmallTree").val();
+            var SaplingTree = $("#SaplingTree").val();
+            var IsOwnerTree = $("#IsOwnerTree").is(':checked') ? 1 : 0;
+            var IsSocialTree = $("#IsSocialTree").is(':checked') ? 1 : 0;
+
+            if (TypeOfTreeID == '') {
+                Notification('Required', 'গাছের ধরণ (কোড) সিলেক্ট করুন!', 'warning');
+                return;
+            }
+
+            var dtid = {
+                "SurveyMasterID": SurveyMasterID,
+                "TreeName": TreeName,
+                "TypeOfTreeID": TypeOfTreeID == '' ? 'null' : TypeOfTreeID,
+                "BigTree": BigTree == '' ? 'null' : BigTree,
+                "MediumTree": MediumTree == '' ? 'null' : MediumTree,
+                "SmallTree": SmallTree == '' ? 'null' : SmallTree,
+                "SaplingTree": SaplingTree == '' ? 'null' : SaplingTree,
+                "IsOwnerTree": IsOwnerTree,
+                "IsSocialTree": IsSocialTree
+            };
+
+            var url = '@Url.Action("SaveDamagedTreeInfo", "DOF003_Survey")';
+            $.ajax({
+                type: "POST",
+                url: url,
+                data: JSON.stringify(dtid),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                processData: true,
+                success: function (data) {
+                    //$('#SurveyMasterID').val(data.id);
+
+                    if (data.status == 'success') {
+                        Notification('Success', data.message, 'success');
+                        ClearDamagedTreeInfo();
+                        GetDamagedTreeInfo();
+                    } else {
+                        if (data.exception != "") {
+                            Notification('Error', data.exception, 'danger');
+                        }
+                    }
+                }, error: function (jqXhr, exception) {
+                    var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                    Notification('Error', errorMsg, 'danger');
+                }
+            });
+        });
+
+        jQuery("#btnClearDamagedTreeInfo").click(function () {
+            ClearDamagedTreeInfo();
+        });
+    });
+
+    function ClearDamagedTreeInfo() {
+        $("#TreeName").val('');
+        $("#TypeOfTreeID").val('');
+        $("#BigTree").val('');
+        $("#MediumTree").val('');
+        $("#SmallTree").val('');
+        $("#SaplingTree").val('');
+        $("#IsOwnerTree").prop('checked', false);
+        $("#IsSocialTree").prop('checked', false);
+    }
+
+    function GetDamagedTreeInfo() {
+        var SurveyMasterID = $("#SurveyMasterID").val();
+        var url = '@Url.Action("GetDamagedTreeInfo", "DOF003_Survey")';
+        jQuery.ajax({
+            type: "GET",
+            url: url,
+            data: { SurveyMasterID: SurveyMasterID },
+            dataType: "json",
+            success: function (data, status, jqXHR) {
+                if (data.length > 0) {
+                    //console.log(data);
+                    var rows = '';
+
+                    var count = 0;
+                    $.each(data, function (i, item) {
+                        ++count;
+                        var IsOwnerTree = item.IsOwnerTree == 1 ? 'হ্যাঁ' : '-';
+                        var IsSocialTree = item.IsSocialTree == 1 ? 'হ্যাঁ' : '-';
+
+                        rows += '<tr><td scope="row" class="bold">' + count + '</td><td>' + item.TreeName + '</td><td>' + item.TypeOfTreeNameBn + '</td><td>' + item.BigTree + '</td><td>' + item.MediumTree + '</td><td>' + item.SmallTree + '</td><td>' + item.SaplingTree + '</td><td>' + IsOwnerTree + '</td><td>' + IsSocialTree + '</td><td class="text-center"><button onclick="javascript:DeleteDamagedTreeInfo(' + item.DamagedTreeInfoDetailID + ', ' + item.SurveyMasterID + '); GetDamagedTreeInfo();" type="button" class="btn btn-danger waves-effect waves-light"><i class="fa fa-times"></i></button></td></tr>';
+                    });
+
+                    $("#tbodyDamagedTreeInfo").html(rows);
+                } else {
+                    $("#tbodyDamagedTreeInfo").html('<tr><td colspan="10" class="text-center text-red"><div class="alert alert-warning" role="alert"> Sorry, no data found </div></td></tr>');
+                }
+            }, error: function (jqXHR, exception) {
+                var errorMsg = AjaxErrorHandle(jqXHR, exception);
+                $("#tbodyDamagedTreeInfo").html('<tr><td colspan="10" class="text-center text-red"><div class="alert alert-danger" role="alert">' + errorMsg + '</div></td></tr>');
+            }
+        });
+    }
+
+    function DeleteDamagedTreeInfo(DamagedTreeInfoDetailID, SurveyMasterID) {
+        var url = '@Url.Action("DeleteDamagedTreeInfo", "DOF003_Survey")';
+        jQuery.ajax({
+            type: "POST",
+            url: url,
+            data: { DamagedTreeInfoDetailID: DamagedTreeInfoDetailID, SurveyMasterID: SurveyMasterID },
+            dataType: "json",
+            success: function (data, status, jqXHR) {
+                if (data.status == 'success') {
+                    Notification('Success', data.message, 'success');
+                    GetDamagedTreeInfo();
+                } else {
+                    if (data.exception != "") {
+                        Notification('Error', data.exception, 'danger');
+                    }
+                }
+            }, error: function (jqXhr, exception) {
+                var errorMsg = AjaxErrorHandle(jqXhr, exception);
+                Notification('Error', errorMsg, 'danger');
+            }
+        });
+    }
+
+    function ConvertDMSToDD(degrees, minutes, seconds/*, direction*/) {
+        var dd = degrees + minutes / 60 + seconds / (60 * 60);
+
+        //if (direction == "S" || direction == "W") {
+        //    dd = dd * -1;
+        //}
+
+        return dd;
+    }
+
+    function CalcLatLongToDD(tab, type) {
+        if (tab == 1) {
+            if (type == 1) {
+                var deg11 = $("#tab1LatDeg").val() == '' ? 0 : parseInt($("#tab1LatDeg").val());
+                var min11 = $("#tab1LatMin").val() == '' ? 0 : parseInt($("#tab1LatMin").val());
+                var sec11 = $("#tab1LatSec").val() == '' ? 0 : parseFloat($("#tab1LatSec").val());
+
+                var tab11DD = ConvertDMSToDD(deg11, min11, sec11);
+                $("#Latitude").val(tab11DD.toFixed(8));
+            }
+
+            if (type == 2) {
+                var deg12 = $("#tab1LongDeg").val() == '' ? 0 : parseInt($("#tab1LongDeg").val());
+                var min12 = $("#tab1LongMin").val() == '' ? 0 : parseInt($("#tab1LongMin").val());
+                var sec12 = $("#tab1LongSec").val() == '' ? 0 : parseFloat($("#tab1LongSec").val());
+
+                var tab12DD = ConvertDMSToDD(deg12, min12, sec12);
+                $("#Longitude").val(tab12DD.toFixed(8));
+            }
+        }
+
+        if (tab == 2) {
+            if (type == 1) {
+                var deg21 = $("#tab5LatDeg").val() == '' ? 0 : parseInt($("#tab5LatDeg").val());
+                var min21 = $("#tab5LatMin").val() == '' ? 0 : parseInt($("#tab5LatMin").val());
+                var sec21 = $("#tab5LatSec").val() == '' ? 0 : parseFloat($("#tab5LatSec").val());
+
+                var tab21DD = ConvertDMSToDD(deg21, min21, sec21);
+                $("#AffectedPlotLatitude").val(tab21DD.toFixed(8));
+            }
+
+            if (type == 2) {
+                var deg22 = $("#tab5LongDeg").val() == '' ? 0 : parseInt($("#tab5LongDeg").val());
+                var min22 = $("#tab5LongMin").val() == '' ? 0 : parseInt($("#tab5LongMin").val());
+                var sec22 = $("#tab5LongSec").val() == '' ? 0 : parseFloat($("#tab5LongSec").val());
+
+                var tab22DD = ConvertDMSToDD(deg22, min22, sec22);
+                $("#AffectedPlotLongitude").val(tab22DD.toFixed(8));
+            }
+        }
+    }
+</script>

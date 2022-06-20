@@ -1,0 +1,198 @@
+﻿@using Resources;
+@using Microsoft.AspNet.Identity;
+
+@{
+    ViewBag.Title = Resources.Home;
+}
+
+@*<div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="row m-l-none m-r-none bg-light lter">
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-one">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-one"></i>
+                            <i class="fa fa-th-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "Artisanal")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalArtisanalDataPA.ToString()</strong></span>
+                            <small class="text-white">Artisanal Project Area Data</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-two">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "Cluster")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalClusterDataCA.ToString()</strong></span>
+                            <small class="text-white">Artisanal Control Area Data</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-one">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "Cluster")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalClusterDataPA.ToString()</strong></span>
+                            <small class="text-white">Cluster Project Area Data</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-two">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "Cluster")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalClusterDataCA.ToString()</strong></span>
+                            <small class="text-white">Cluster Control Area Data</small>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="row m-l-none m-r-none bg-light lter">
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-one">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-one"></i>
+                            <i class="fa fa-th-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "FishMarket")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalFishMarketDataRetailer.ToString()</strong></span>
+                            <small class="text-white">Fish Market Data (Retailer)</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-two">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "FishMarket")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalFishMarketDataWholesaler.ToString()</strong></span>
+                            <small class="text-white">Fish Market Data (Wholesaler)</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-one">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "Hatchery")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalHatcheryGov.ToString()</strong></span>
+                            <small class="text-white">Government Hatchery Data</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-two">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "Hatchery")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalHatcheryPvt.ToString()</strong></span>
+                            <small class="text-white">Private Hatchery Data</small>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <div class="col-md-12">
+            <section class="panel panel-default">
+                <div class="row m-l-none m-r-none bg-light lter">
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-one">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-one"></i>
+                            <i class="fa fa-th-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "LandingSiteExist")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalLandingSiteExist.ToString()</strong></span>
+                            <small class="text-white">Existing Fish Landing Sites</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-two">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "LandingSiteProposed")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalLandingSiteProposed.ToString()</strong></span>
+                            <small class="text-white">Proposed Landing Sites</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-one">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "Aroatder")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalAroatder.ToString()</strong></span>
+                            <small class="text-white">Aroatder Data</small>
+                        </a>
+                    </div>
+
+                    <div class="col-sm-3 col-md-3 padder-v b-r b-light bg-color-two">
+                        <span class="fa-stack fa-2x pull-left m-r-sm">
+                            <i class="fa fa-circle fa-stack-2x text-color-two"></i>
+                            <i class="fa fa-list fa-stack-1x text-white"></i>
+                        </span>
+                        <a class="clear" href="@Url.Action("Index", "IndustrialFishingVessel")">
+                            <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalIndustrialFishingVessel.ToString()</strong></span>
+                            <small class="text-white">Industrial Fishing Vessel</small>
+                        </a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    <div class="col-md-12">
+        <section class="panel panel-default">
+            <div class="row m-l-none m-r-none bg-light lter">
+                <div class="col-sm-12 col-md-12 padder-v b-r b-light bg-color-one">
+                    <span class="fa-stack fa-2x pull-left m-r-sm">
+                        <i class="fa fa-circle fa-stack-2x text-color-one"></i>
+                        <i class="fa fa-th-list fa-stack-1x text-white"></i>
+                    </span>
+                    <a class="clear" href="@Url.Action("Index", "FishProcessingPlant")">
+                        <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalFishProcessingPlant.ToString()</strong></span>
+                        <small class="text-white">Fish Processing Plant</small>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </div>*@
+
+<div class="col-md-12">
+    <section class="panel panel-default">
+        <div class="row m-l-none m-r-none bg-light lter">
+            <div class="col-sm-12 col-md-12 padder-v b-r b-light bg-color-one">
+                <span class="fa-stack fa-2x pull-left m-r-sm">
+                    <i class="fa fa-circle fa-stack-2x text-color-one"></i>
+                    <i class="fa fa-th-list fa-stack-1x text-white"></i>
+                </span>
+                <a class="clear" href="@Url.Action("Index", "BaseLine")">
+                    <span class="h3 block m-t-xs text-white"><strong>@ViewBag.TotalMasterData.ToString()</strong></span>
+                    <small class="text-white">Welcome</small>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>
+
+@*<script type="text/javascript">
+        $(document).ready(function () {
+            setTimeout(function () {
+                window.location.reload(1);
+            }, 10000);
+        });
+    </script>*@

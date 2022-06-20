@@ -1,0 +1,65 @@
+﻿@using Resources
+@model BAC007.Models.SelectUserGroupsViewModel
+
+@{ ViewBag.Title = "User Groups"; }
+
+@using (Html.BeginForm("UserGroups", "Account", FormMethod.Post, new { encType = "multipart/form-data", name = "myform" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="col-sm-12">
+        <section class="panel panel-default">
+            <header class="panel-heading">
+                <i class="fa fa-user"></i> Groups for user: @Html.DisplayFor(model => model.UserName)
+                <div class="m-b-xs pull-right" style="margin-top: -7px">
+                    <div class="btn-group hidden-xs">
+                        <a class="btn btn-default" href="@Url.Action("Index", "Account")">
+                            <i class="fa fa-list"></i> @Resources.GoToList
+                        </a>
+                        @*<a class="btn btn-default" href="@Url.Action("Index", "WaterQualityParam")">
+                                <i class="fa fa-dashboard"></i> @Resources.GoToIndex
+                            </a>*@
+                    </div>
+                </div>
+            </header>
+            <div class="panel-body">
+                <form role="form">
+                    <div class="form-group">
+                        <label class="control-label">Group List</label>
+                        @Html.HiddenFor(model => model.UserName)
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label"></label>
+                        <div class="col-md-10">
+                            <table>
+                                <tbody>
+                                    @for (var i = 0; i < Model.Groups.Count; i++)
+                                    {
+                                        <tr>
+                                            <td>
+                                                @Html.HiddenFor(x => x.Groups[i].GroupId)
+                                                @Html.CheckBoxFor(x => x.Groups[i].Selected)
+                                                @Html.LabelFor(x => x.Groups[i].Selected, Model.Groups[i].GroupName)
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="form-group">
+                        <label class="control-label"></label>
+                        <div class="col-md-10">
+                            <input type="submit" value="@Resources.Submit" class="btn btn-default" />
+                            <input type="reset" value="@Resources.Cancel" class="btn btn-danger" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </div>
+}
