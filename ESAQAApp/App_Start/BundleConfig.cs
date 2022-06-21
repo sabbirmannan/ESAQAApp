@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace BAC007
+namespace ESAQAApp
 {
     public class BundleConfig
     {

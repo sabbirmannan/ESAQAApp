@@ -1,6 +1,6 @@
 using System;
 
-namespace BAC007.Areas.HelpPage.ModelDescriptions
+namespace ESAQAApp.Areas.HelpPage.ModelDescriptions
 {
     /// <summary>
     /// Describes a type model.

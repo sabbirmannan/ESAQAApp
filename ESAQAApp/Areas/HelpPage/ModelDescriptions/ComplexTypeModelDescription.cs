@@ -1,6 +1,6 @@
 using System.Collections.ObjectModel;
 
-namespace BAC007.Areas.HelpPage.ModelDescriptions
+namespace ESAQAApp.Areas.HelpPage.ModelDescriptions
 {
     public class ComplexTypeModelDescription : ModelDescription
     {

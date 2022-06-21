@@ -1,0 +1,41 @@
+﻿@using Resources
+@model ESAQAApp.Models.Master.EsaMaster
+@{
+    ViewBag.Title = "QA-Survey";
+}
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="~/Scripts/js/vaccord/easy-responsive-tabs.css" rel="stylesheet" />
+<script src="~/Scripts/js/vaccord/easyResponsiveTabs.js"></script>
+
+<section class="panel panel-default">
+    <div class="row wrapper">
+        <div class="col-sm-8 m-b-xs">
+            <h3 class="bold" style="margin: 0 !important;"><b>Ecosystem Service Assessment</b> - Questionnaire</h3>
+        </div>
+        <div class="col-sm-4">
+            <div class="btn-group pull-right right">
+                <a class="btn btn-default" href="@Url.Action("Index")">
+                    <i class="fa fa-table"></i> @Resources.GoToList
+                </a>
+            </div>
+        </div>
+    </div>
+    <header class="panel-heading bg-light" style="padding: 10px 15px 28px;">
+        <ul class="nav nav-tabs pull-left">
+            <li class="active">
+                <a href="#Master" data-toggle="tab"><i class="fa fa-pencil"></i>Master</a>
+            </li>
+            <li class="">
+                <a href="#TabTwo" data-toggle="tab"><i class="fa fa-pencil"></i> Provisioning Services</a>
+            </li>
+            <li class="">
+                <a href="#TabThree" data-toggle="tab"><i class="fa fa-pencil"></i>Regulating Services</a>
+            </li>
+            <li class="">
+                <a href="#TabFour" data-toggle="tab"><i class="fa fa-pencil"></i> Cultural Services</a>
+            </li>
+            
+        </ul>
+    </header>
+</section>

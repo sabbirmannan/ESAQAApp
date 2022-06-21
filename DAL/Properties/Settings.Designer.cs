@@ -26,7 +26,7 @@ namespace DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SKT,7669;Initial Catalog=CEGIS-BAC007-DB;Integrated Security=False;Us" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=SKT,7669;Initial Catalog=CEGIS-ESAQAApp-DB;Integrated Security=False;Us" +
             "er ID=sa;Password=cegis;MultipleActiveResultSets=True")]
         public string CEGIS_DOF003_DBConnectionString {
             get {

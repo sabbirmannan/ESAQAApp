@@ -11,10 +11,10 @@ using System.Net.Http.Headers;
 using System.Web.Http;
 using System.Web.Http.Controllers;
 using System.Web.Http.Description;
-using BAC007.Areas.HelpPage.ModelDescriptions;
-using BAC007.Areas.HelpPage.Models;
+using ESAQAApp.Areas.HelpPage.ModelDescriptions;
+using ESAQAApp.Areas.HelpPage.Models;
 
-namespace BAC007.Areas.HelpPage
+namespace ESAQAApp.Areas.HelpPage
 {
     public static class HelpPageConfigurationExtensions
     {

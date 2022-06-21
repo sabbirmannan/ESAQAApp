@@ -2,12 +2,12 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
-using BAC007.Models;
-using BAC007.Helpers;
+using ESAQAApp.Models;
+using ESAQAApp.Helpers;
 using System.Web;
 using System;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     [AccessDeniedAuthorize]
     public class GroupsController : BaseController

@@ -6,10 +6,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using BAC007.Models;
+using ESAQAApp.Models;
 using System;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     [Authorize]
     public class AccountController : BaseController

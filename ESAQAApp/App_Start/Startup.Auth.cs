@@ -3,7 +3,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
 
-namespace BAC007
+namespace ESAQAApp
 {
     public partial class Startup
     {

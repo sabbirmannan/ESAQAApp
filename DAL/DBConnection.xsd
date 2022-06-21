@@ -10,7 +10,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="sprCustomQueryTableAdapter" GeneratorDataComponentClassName="sprCustomQueryTableAdapter" Name="sprCustomQuery" UserDataComponentName="sprCustomQueryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="CEGIS_DOF003_DBConnectionString (Settings)" DbObjectName="[CEGIS-BAC007-DB].dbo.sprCustomQuery" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="ExecuteQuery" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="ExecuteQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="ExecuteQuery" UserSourceName="Fill">
+              <DbSource ConnectionRef="CEGIS_DOF003_DBConnectionString (Settings)" DbObjectName="[CEGIS-ESAQAApp-DB].dbo.sprCustomQuery" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="ExecuteQuery" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="ExecuteQuery" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="ExecuteQuery" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.sprCustomQuery</CommandText>

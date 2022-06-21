@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace BAC007.Models
+namespace ESAQAApp.Models.Master
 {
     public class Master
     {

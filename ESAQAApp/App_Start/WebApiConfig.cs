@@ -6,7 +6,7 @@ using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 
-namespace BAC007
+namespace ESAQAApp
 {
     public static class WebApiConfig
     {

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BAC007.Models
+namespace ESAQAApp.Models
 {
     public class Group
     {

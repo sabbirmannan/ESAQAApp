@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BAC007.Models
+namespace ESAQAApp.Models
 {
     public class District
     {

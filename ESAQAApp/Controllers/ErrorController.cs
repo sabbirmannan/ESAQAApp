@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     public class ErrorController : Controller
     {

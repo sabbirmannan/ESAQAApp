@@ -1,7 +1,7 @@
 using System.Web.Http;
 using System.Web.Mvc;
 
-namespace BAC007.Areas.HelpPage
+namespace ESAQAApp.Areas.HelpPage
 {
     public class HelpPageAreaRegistration : AreaRegistration
     {

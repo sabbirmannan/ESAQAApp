@@ -1,7 +1,6 @@
 ﻿@using Resources
-@using BAC007.Models
-@model BAC007.Models.Master
-
+@using ESAQAApp.Models
+@model ESAQAApp.Models.Master.Master
 @{
 	ViewBag.Title = "New | Khana Survey (Baseline) Data Entry";
 }
@@ -12,9 +11,9 @@
 
 <section class="panel panel-default">
 	<div class="row wrapper">
-		<div class="col-sm-8 m-b-xs">
-			<h3 class="bold" style="margin: 0 !important;"><b>খানা জরিপ প্রশ্নপত্র</b> - (বেইজলাইন ২০১৯-২০২০) [কেস নংঃ <span id="spnSavedCaseNo">-</span>]</h3>
-		</div>
+        <div class="col-sm-8 m-b-xs">
+            <h3 class="bold" style="margin: 0 !important;"><b>খানা জরিপ প্রশ্নপত্র</b> - (বেইজলাইন ২০১৯-২০২০) [কেস নংঃ <span id="spnSavedCaseNo">-</span>]</h3>
+        </div>
 		<div class="col-sm-4">
 			<div class="btn-group pull-right right">
 				<a class="btn btn-default" href="@Url.Action("Index")">
@@ -24,26 +23,29 @@
 		</div>
 	</div>
 	<header class="panel-heading bg-light" style="padding: 10px 15px 28px;">
-		<ul class="nav nav-tabs pull-left">
-			<li class="active">
-				<a href="#Master" data-toggle="tab"><i class="fa fa-pencil"></i> প্রধান ফর্ম</a>
-			</li>
-			<li class="">
-				<a href="#TabTwo" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ১ নংঃ আর্থ-সামাজিক অবস্থা</a>
-			</li>
-			<li class="">
-				<a href="#TabThree" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ২ নংঃ কৃষি সংক্রান্ত</a>
-			</li>
-			<li class="">
-				<a href="#TabFour" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ৩ নংঃ পানি ব্যবস্থাপনা সংক্রান্ত</a>
-			</li>
-			<li class="">
-				<a href="#TabFive" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ৪ নংঃ পরিবেশ সংক্রান্ত</a>
-			</li>
-			<li class="">
-				<a href="#TabSix" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ৫ নংঃ প্রাতিষ্ঠানিক</a>
-			</li>
-		</ul>
+        <ul class="nav nav-tabs pull-left">
+			
+            <li class="active">
+                <a href="#Master" data-toggle="tab"><i class="fa fa-pencil"></i> প্রধান ফর্ম</a>
+            </li>
+            <li class="">
+                <a href="#TabTwo" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ১ নংঃ আর্থ-সামাজিক অবস্থা</a>
+            </li>
+            <li class="">
+                <a href="#TabThree" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ২ নংঃ কৃষি সংক্রান্ত</a>
+            </li>
+            <li class="">
+                <a href="#TabFour" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ৩ নংঃ পানি ব্যবস্থাপনা সংক্রান্ত</a>
+            </li>
+            <li class="">
+                <a href="#TabFive" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ৪ নংঃ পরিবেশ সংক্রান্ত</a>
+            </li>
+            <li class="">
+                <a href="#TabSix" data-toggle="tab"><i class="fa fa-pencil"></i> মডিউল ৫ নংঃ প্রাতিষ্ঠানিক</a>
+            </li>
+
+            
+        </ul>
 	</header>
 	<div class="panel-body">
 		<div class="tab-content">

@@ -9,12 +9,12 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Http.Results;
 using Microsoft.AspNet.Identity;
-using BAC007.Models;
-//using BAC007.ViewModels;
+using ESAQAApp.Models;
+//using ESAQAApp.ViewModels;
 using System.Web.UI.WebControls;
 using System.ComponentModel.DataAnnotations;
 
-namespace BAC007.Helpers
+namespace ESAQAApp.Helpers
 {
     public class CommonHelper
     {

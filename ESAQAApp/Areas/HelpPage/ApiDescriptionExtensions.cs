@@ -3,7 +3,7 @@ using System.Text;
 using System.Web;
 using System.Web.Http.Description;
 
-namespace BAC007.Areas.HelpPage
+namespace ESAQAApp.Areas.HelpPage
 {
     public static class ApiDescriptionExtensions
     {

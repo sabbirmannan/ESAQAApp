@@ -1,11 +1,13 @@
-﻿using Microsoft.AspNet.Identity.EntityFramework;
+﻿using ESAQAApp.Models.Data;
+using ESAQAApp.Models.LookUpTable;
+using ESAQAApp.Models.Master;
+using ESAQAApp.Models.TableLookup;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
-using BAC007.Models.Data;
-using BAC007.Models.TableLookup;
 
-namespace BAC007.Models
+namespace ESAQAApp.Models
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -17,6 +19,14 @@ namespace BAC007.Models
             Database.SetInitializer<ApplicationDbContext>(null);
         }
 
+
+        public DbSet<EsaMaster> EsaMasters { get; set; }
+        public DbSet<LkpDegradationCauseQa2> LkpDegradationCauseQa2 { get; set; }
+        public DbSet<LkpDegradationLevelQa2> LkpDegradationLevelQa2 { get; set; }
+        public DbSet<LkpExistedWetLandQa1> LkpExistedWetLandQa1 { get; set; }
+
+
+
         public DbSet<Division> Division { get; set; }
         public DbSet<District> District { get; set; }
         public DbSet<Upazila> Upazila { get; set; }
@@ -25,7 +35,7 @@ namespace BAC007.Models
         public DbSet<AspNetUserMirror> AspNetUserMirror { get; set; }
 
         #region Khana Survey - Data
-        public DbSet<Master> Master { get; set; }
+        public DbSet<Master.Master> Master { get; set; }
         public DbSet<Mod1Sec1Detail> Mod1Sec1Detail { get; set; }
         public DbSet<Mod1Sec1Table110> Mod1Sec1Table110 { get; set; }
         public DbSet<Mod1Sec1Table111> Mod1Sec1Table111 { get; set; }

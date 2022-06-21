@@ -1,4 +1,4 @@
-namespace BAC007.Migrations
+namespace ESAQAApp.Migrations
 {
     using System;
     using System.Data.Entity;

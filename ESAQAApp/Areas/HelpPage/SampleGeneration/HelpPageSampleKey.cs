@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Net.Http.Headers;
 
-namespace BAC007.Areas.HelpPage
+namespace ESAQAApp.Areas.HelpPage
 {
     /// <summary>
     /// This is used to identify the place where the sample should be applied.

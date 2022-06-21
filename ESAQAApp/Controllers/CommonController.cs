@@ -12,13 +12,13 @@ using System.Web.Script.Serialization;
 using System.Web.UI.WebControls;
 using System.IO;
 using Microsoft.AspNet.Identity;
-using BAC007.Models;
-//using BAC007.ViewModels;
+using ESAQAApp.Models;
+//using ESAQAApp.ViewModels;
 using DAL;
 using Newtonsoft.Json;
-using BAC007.Helpers;
+using ESAQAApp.Helpers;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     public class CommonController : Controller
     {

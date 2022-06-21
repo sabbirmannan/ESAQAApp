@@ -6,9 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using BAC007.Models;
+using ESAQAApp.Models;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     public class TableInfoController : Controller
     {

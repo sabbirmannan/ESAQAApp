@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using System.Web.Http.Description;
 using Microsoft.AspNet.Identity;
-using BAC007.Models;
+using ESAQAApp.Models;
 using System.Web.Mvc;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     public class CommonAPIController : ApiController
     {

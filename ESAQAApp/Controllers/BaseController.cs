@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading;
 using System.Web;
 using System.Web.Mvc;
-using BAC007.Helpers;
+using ESAQAApp.Helpers;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     public class BaseController : Controller
     {

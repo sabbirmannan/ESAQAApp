@@ -1,9 +1,9 @@
-namespace BAC007.Migrations
+namespace ESAQAApp.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class BAC007 : DbMigration
+    public partial class ESAQAApp : DbMigration
     {
         public override void Up()
         {

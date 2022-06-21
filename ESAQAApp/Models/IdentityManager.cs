@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace BAC007.Models
+namespace ESAQAApp.Models
 {
     public class IdentityManager
     {

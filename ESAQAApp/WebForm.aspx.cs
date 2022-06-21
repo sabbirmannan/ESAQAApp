@@ -10,12 +10,12 @@ using System.Net;
 using System.Threading.Tasks;
 using DAL;
 using Microsoft.AspNet.Identity;
-using BAC007.Helpers;
-using BAC007.Models;
-using BAC007.Controllers;
+using ESAQAApp.Helpers;
+using ESAQAApp.Models;
+using ESAQAApp.Controllers;
 using System.IO;
 
-namespace BAC007
+namespace ESAQAApp
 {
     public partial class WebForm : System.Web.UI.Page
     {
@@ -49,7 +49,7 @@ namespace BAC007
                     string dataTableName = dr["DataSaveTableName"].ToString();
 
                     lookupClass = @"using System.ComponentModel.DataAnnotations;
-                                    namespace BAC007.Models
+                                    namespace ESAQAApp.Models
                                     {
                                         public class " + lookupTableName + @"
                                         {
@@ -64,7 +64,7 @@ namespace BAC007
                                     }";
 
                     dataClass = @"using System.ComponentModel.DataAnnotations;
-                                  namespace BAC007.Models
+                                  namespace ESAQAApp.Models
                                   {
                                       public class " + dataTableName + @"
                                       {

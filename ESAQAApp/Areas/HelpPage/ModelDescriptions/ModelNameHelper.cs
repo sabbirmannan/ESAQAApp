@@ -3,7 +3,7 @@ using System.Globalization;
 using System.Linq;
 using System.Reflection;
 
-namespace BAC007.Areas.HelpPage.ModelDescriptions
+namespace ESAQAApp.Areas.HelpPage.ModelDescriptions
 {
     internal static class ModelNameHelper
     {

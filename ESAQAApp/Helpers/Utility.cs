@@ -9,7 +9,7 @@ using System.Web;
 using System.Data.OleDb;
 using System.Globalization;
 
-namespace BAC007.Helpers
+namespace ESAQAApp.Helpers
 {
     public static class Utility
     {

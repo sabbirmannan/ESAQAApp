@@ -3,7 +3,7 @@ using Microsoft.AspNet.Identity;
 using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
 
-namespace BAC007.Models
+namespace ESAQAApp.Models
 {
     public class ApplicationRole : IdentityRole
     {

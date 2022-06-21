@@ -1,10 +1,10 @@
 using System;
 using System.Web.Http;
 using System.Web.Mvc;
-using BAC007.Areas.HelpPage.ModelDescriptions;
-using BAC007.Areas.HelpPage.Models;
+using ESAQAApp.Areas.HelpPage.ModelDescriptions;
+using ESAQAApp.Areas.HelpPage.Models;
 
-namespace BAC007.Areas.HelpPage.Controllers
+namespace ESAQAApp.Areas.HelpPage.Controllers
 {
     /// <summary>
     /// The controller that will handle requests for the help page.

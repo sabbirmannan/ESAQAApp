@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BAC007.Models.TableLookup
+namespace ESAQAApp.Models.TableLookup
 {
     public class LookupMod3CurrentStatus38
     {

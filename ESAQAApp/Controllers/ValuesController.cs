@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-namespace BAC007.Controllers
+namespace ESAQAApp.Controllers
 {
     [Authorize]
     public class ValuesController : ApiController

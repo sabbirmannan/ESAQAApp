@@ -1,4 +1,6 @@
-﻿namespace BAC007.Models.Master
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace ESAQAApp.Models.Master
 {
     public class EsaMaster
     {
@@ -6,11 +8,13 @@
         public int MasterDataId { get; set; }
 
         [StringLength(50)]
-        [Display(Name = "Name of the Respondent ")]
         public string RespondentName { get; set; }
 
         [StringLength(10)]
-        [Display(Name = "Date")]
         public string FormDate { get; set; }
+
+        public int ModuleADetailId { get; set; }
+        public int TypeOfWetLandQa1Id { get; set; }
+        public int TypeOfEcoSysQa3Id { get; set; }
     }
 }

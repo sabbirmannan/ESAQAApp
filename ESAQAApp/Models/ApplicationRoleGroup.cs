@@ -1,4 +1,4 @@
-﻿namespace BAC007.Models
+﻿namespace ESAQAApp.Models
 {
     public class ApplicationRoleGroup
     {

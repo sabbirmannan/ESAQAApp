@@ -5,7 +5,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Web;
 
-namespace BAC007.Helpers
+namespace ESAQAApp.Helpers
 {
     public static class CultureHelper
     {

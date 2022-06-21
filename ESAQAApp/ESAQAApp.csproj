@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BAC007</RootNamespace>
-    <AssemblyName>BAC007</AssemblyName>
+    <RootNamespace>ESAQAApp</RootNamespace>
+    <AssemblyName>ESAQAApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -234,6 +234,7 @@
     <Compile Include="Controllers\CommonAPIController.cs" />
     <Compile Include="Controllers\CommonController.cs" />
     <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\EsaMasterController.cs" />
     <Compile Include="Controllers\GroupsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RolesController.cs" />
@@ -251,9 +252,9 @@
     <Compile Include="Migrations\202109260353120_DOF003.Designer.cs">
       <DependentUpon>202109260353120_DOF003.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202111240759197_BAC007-Initial.cs" />
-    <Compile Include="Migrations\202111240759197_BAC007-Initial.Designer.cs">
-      <DependentUpon>202111240759197_BAC007-Initial.cs</DependentUpon>
+    <Compile Include="Migrations\202111240759197_ESAQAApp-Initial.cs" />
+    <Compile Include="Migrations\202111240759197_ESAQAApp-Initial.Designer.cs">
+      <DependentUpon>202111240759197_ESAQAApp-Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs">
@@ -297,6 +298,9 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IdentityManager.cs" />
+    <Compile Include="Models\LookUpTable\LkpDegradationCauseQa2.cs" />
+    <Compile Include="Models\LookUpTable\LkpDegradationLevelQa2.cs" />
+    <Compile Include="Models\LookUpTable\LkpExistedWetLandQa1.cs" />
     <Compile Include="Models\Master\EsaMaster.cs" />
     <Compile Include="Models\Master\Master.cs" />
     <Compile Include="Models\TableInfo.cs" />
@@ -988,6 +992,7 @@
     <Content Include="Views\BaseLine\Details.cshtml" />
     <Content Include="Views\BaseLine\Edit.cshtml" />
     <Content Include="Views\BaseLine\Index.cshtml" />
+    <Content Include="Views\EsaMaster\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -1019,8 +1024,8 @@
     <EmbeddedResource Include="Migrations\202109260353120_DOF003.resx">
       <DependentUpon>202109260353120_DOF003.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202111240759197_BAC007-Initial.resx">
-      <DependentUpon>202111240759197_BAC007-Initial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202111240759197_ESAQAApp-Initial.resx">
+      <DependentUpon>202111240759197_ESAQAApp-Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

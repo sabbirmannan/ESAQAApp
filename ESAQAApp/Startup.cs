@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartup(typeof(BAC007.Startup))]
+[assembly: OwinStartup(typeof(ESAQAApp.Startup))]
 
-namespace BAC007
+namespace ESAQAApp
 {
     public partial class Startup
     {

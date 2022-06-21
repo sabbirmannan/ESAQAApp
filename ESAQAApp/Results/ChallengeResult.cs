@@ -7,7 +7,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Web.Http;
 
-namespace BAC007.Results
+namespace ESAQAApp.Results
 {
     public class ChallengeResult : IHttpActionResult
     {

@@ -2,7 +2,7 @@
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Collections.Generic;
 
-namespace BAC007.Models
+namespace ESAQAApp.Models
 {
     public class ManageUserViewModel
     {

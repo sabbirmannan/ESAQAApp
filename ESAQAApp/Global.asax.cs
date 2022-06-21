@@ -7,7 +7,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
-namespace BAC007
+namespace ESAQAApp
 {
     public class WebApiApplication : System.Web.HttpApplication
     {
@@ -19,7 +19,7 @@ namespace BAC007
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            //BAC007.Settings.MaxJsonResponseSize = int.MaxValue;
+            //ESAQAApp.Settings.MaxJsonResponseSize = int.MaxValue;
         }
     }
 }

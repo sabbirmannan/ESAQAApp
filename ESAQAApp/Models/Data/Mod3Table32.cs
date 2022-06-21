@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BAC007.Models.Data
+namespace ESAQAApp.Models.Data
 {
     public class Mod3Table32
     {

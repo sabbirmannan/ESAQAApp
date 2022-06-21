@@ -1,4 +1,4 @@
-namespace BAC007.Areas.HelpPage
+namespace ESAQAApp.Areas.HelpPage
 {
     /// <summary>
     /// Indicates whether the sample is used for request or response
