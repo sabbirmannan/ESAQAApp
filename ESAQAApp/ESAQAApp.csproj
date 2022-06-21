@@ -297,6 +297,7 @@
     <Compile Include="Models\Education.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\IdentityManager.cs" />
+    <Compile Include="Models\Master\EsaMaster.cs" />
     <Compile Include="Models\Master\Master.cs" />
     <Compile Include="Models\TableInfo.cs" />
     <Compile Include="Models\TableLookup\LookupMod3CurrentStatus38.cs" />
